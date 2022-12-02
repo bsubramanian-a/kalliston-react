@@ -1,19 +1,32 @@
+import React, { useContext, useState, useEffect } from 'react';
+import Logo from '../assets/img/logo-d.svg';
+// import { Images } from '../utils/Images';
+import Trending from '../assets/img/d-menu/trending_up.svg';
+import Person from '../assets/img/d-menu/person.svg';
+import ChatBubble from '../assets/img/d-menu/chat_bubble_outline.svg';
+import Calendar from '../assets/img/d-menu/calendar_today.png';
+import FitnessCenter from '../assets/img/d-menu/fitness_center.svg';
+
 function Dashboard() {
+   
+    // const images = Images(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
+    // console.log("images", images);
+    
     return (
         <div id="wrapper">
             <nav className="navbar navbar-dark align-items-start d-flex flex-column justify-content-between align-items-center sidebar sidebar-dark accordion bg-white-primary shadow-n p-0">
                 <div className="container-fluid d-flex flex-column p-0 vh-100">
                     <div><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                        <div className="sidebar-brand-icon rotate-n-15"><img src="assets/img/logo-d.svg" /></div>
+                        <div className="sidebar-brand-icon rotate-n-15"><img src={Logo} /></div>
                         <div className="sidebar-brand-text mx-3"><span className="text-black fw-bolded h5">Kalliston</span></div>
                     </a>
                         <hr className="sidebar-divider my-0" />
                             <ul className="navbar-nav text-light" id="accordionSidebar">
-                                <li className="nav-item"><a className="nav-link active" href="index.html"><img src="assets/img/d-menu/trending_up.svg" /><span className="f-color ms-md-4 l-size">Sales</span></a></li>
-                                <li className="nav-item"><a className="nav-link" href="client.html"><img src="assets/img/d-menu/person.svg" /><span className="f-color ms-md-4 l-size">Client</span></a></li>
-                                <li className="nav-item"><a className="nav-link" href="chat.html"><img src="assets/img/d-menu/chat_bubble_outline.svg" /><span className="f-color ms-md-4 l-size">Chat</span></a></li>
-                                <li className="nav-item"><a className="nav-link" href="schedule.html"><img src="assets/img/d-menu/calendar_today.png" /><span className="f-color ms-md-4 l-size">Schedule</span></a></li>
-                                <li className="nav-item"><a className="nav-link" href="fitness.html"><img src="assets/img/d-menu/fitness_center.svg" /><span className="f-color ms-md-4 l-size">Fitness Programs</span></a></li>
+                                <li className="nav-item"><a className="nav-link active" href="index.html"><img src={Trending} /><span className="f-color ms-md-4 l-size">Sales</span></a></li>
+                                <li className="nav-item"><a className="nav-link" href="client.html"><img src={Person} /><span className="f-color ms-md-4 l-size">Client</span></a></li>
+                                <li className="nav-item"><a className="nav-link" href="chat.html"><img src={ChatBubble} /><span className="f-color ms-md-4 l-size">Chat</span></a></li>
+                                <li className="nav-item"><a className="nav-link" href="schedule.html"><img src={Calendar} /><span className="f-color ms-md-4 l-size">Schedule</span></a></li>
+                                <li className="nav-item"><a className="nav-link" href="fitness.html"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></a></li>
                             </ul>
                     </div>
                     <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -187,14 +200,14 @@ function Dashboard() {
                                                         <th className="fw-medium f-color table-s w-25">Head</th>
                                                         <th className="fw-medium f-color table-s" style={{width: "20%"}}>Package</th>
                                                         <th className="fw-medium f-color table-s" style={{width: "20%"}}>Location</th>
-                                                        <th className="fw-medium f-color text-end" {{width: "35%"}}>Action</th>
+                                                        <th className="fw-medium f-color text-end" style={{width: "35%"}}>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="table-s">
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style="height: 10px;width: 10px;position: absolute;bottom: 0;right: 0;" /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -217,7 +230,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style="height: 10px;width: 10px;position: absolute;bottom: 0;right: 0;" /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -240,7 +253,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style="height: 10px;width: 10px;position: absolute;bottom: 0;right: 0;" /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -263,7 +276,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style="height: 10px;width: 10px;position: absolute;bottom: 0;right: 0;" /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -286,7 +299,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style="height: 10px;width: 10px;position: absolute;bottom: 0;right: 0;" /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -331,7 +344,6 @@ function Dashboard() {
                     </div>
                 </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
             </div>
-        </div>
             );
   }
 
