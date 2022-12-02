@@ -6,16 +6,29 @@ import Person from '../assets/img/d-menu/person.svg';
 import ChatBubble from '../assets/img/d-menu/chat_bubble_outline.svg';
 import Calendar from '../assets/img/d-menu/calendar_today.png';
 import FitnessCenter from '../assets/img/d-menu/fitness_center.svg';
+import Computer from '../assets/img/d-menu/computer.svg';
+import StoreFront from '../assets/img/d-menu/storefront.svg';
+import Notifications from '../assets/img/d-menu/notifications.svg';
+import ProfilePic from '../assets/img/avatars/avatar1.jpeg';
+import ChartData1 from '../assets/img/d-img/chartData-1.svg';
+import ChartData2 from '../assets/img/d-img/chartData-2.svg';
+import ChartData3 from '../assets/img/d-img/chartData-3.svg';
+import ProImg from '../assets/img/avatars/avatar2.jpeg';
+import Online from '../assets/img/online.svg';
+import Accept from '../assets/img/d-img/accept.svg';
+import Reject from '../assets/img/d-img/reject.svg';
+import Left from '../assets/img/d-img/left.svg';
+import Right from '../assets/img/d-img/right.svg';
 
 function Dashboard() {
-   
+    
     return (
-        <div id="wrapper">
+        <div id="wrapper" className='d-flex'>
             <nav className="navbar navbar-dark align-items-start d-flex flex-column justify-content-between align-items-center sidebar sidebar-dark accordion bg-white-primary shadow-n p-0">
                 <div className="container-fluid d-flex flex-column p-0 vh-100">
                     <div><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                         <div className="sidebar-brand-icon rotate-n-15"><img src={Logo} /></div>
-                        <div className="sidebar-brand-text mx-3"><span className="text-black fw-bolded h5">Kalliston</span></div>
+                        <div className="sidebar-brand-text mx-3"><span className="text-black" style={{fontSize: "21px",fontWeight: "900"}}>Kalliston</span></div>
                     </a>
                         <hr className="sidebar-divider my-0" />
                             <ul className="navbar-nav text-light" id="accordionSidebar">
@@ -26,10 +39,9 @@ function Dashboard() {
                                 <li className="nav-item"><a className="nav-link" href="fitness.html"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></a></li>
                             </ul>
                     </div>
-                    <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                     <ul className="navbar-nav text-light" id="accordionSidebar-1">
-                        <li className="nav-item"><a className="nav-link" href="profile.html"><img src="assets/img/d-menu/computer.svg" /><span className="f-color ms-md-4 l-size">Coach Profile</span></a></li>
-                        <li className="nav-item"><a className="nav-link" href="package.html"><img src="assets/img/d-menu/storefront.svg" /><span className="f-color ms-md-4 l-size">Packages</span></a></li>
+                        <li className="nav-item"><a className="nav-link" href="profile.html"><img src={Computer} /><span className="f-color ms-md-4 l-size">Coach Profile</span></a></li>
+                        <li className="nav-item"><a className="nav-link" href="package.html"><img src={StoreFront} /><span className="f-color ms-md-4 l-size">Packages</span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -51,7 +63,7 @@ function Dashboard() {
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown no-arrow mx-1">
-                                    <div className="nav-item dropdown no-arrow" style={{zIndex: 999}}><a className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span className="badge bg-danger badge-counter">3+</span><img src="assets/img/d-menu/notifications.svg" /></a>
+                                    <div className="nav-item dropdown no-arrow" style={{zIndex: 999}}><a className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span className="badge bg-danger badge-counter">3+</span><img src={Notifications} /></a>
                                         <div className="dropdown-menu dropdown-menu-end dropdown-list position-fixed animated--grow-in">
                                             <h6 className="dropdown-header">alerts center</h6><a className="dropdown-item d-flex align-items-center" href="#">
                                                 <div className="me-3">
@@ -82,7 +94,7 @@ function Dashboard() {
                                     <div className="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
                                 </li>
                                 <li className="nav-item dropdown no-arrow">
-                                    <div className="nav-item dropdown show no-arrow" style={{zIndex: 999}}><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src="assets/img/avatars/avatar1.jpeg" /></a>
+                                    <div className="nav-item dropdown show no-arrow" style={{zIndex: 999}}><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={ProfilePic} /></a>
                                         <div className="dropdown-menu show shadow dropdown-menu-end animated--grow-in position-fixed me-5 d-block" data-bs-popper="none" ><a className="dropdown-item" href="#"><i className="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a className="dropdown-item" href="#"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a className="dropdown-item" href="#"><i className="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
                                             <div className="dropdown-divider"></div><a className="dropdown-item" href="#"><i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                         </div>
@@ -92,8 +104,8 @@ function Dashboard() {
                         </div>
                     </nav>
                     <div className="container-fluid vh-100">
-                        <div><span className="text-black-50 l-size">Sales</span>
-                            <h1 className="h-size mb-4 f-color fw-normal mt-1">Sales</h1>
+                        <div className='text-start'><span className="text-black-50 l-size">Sales</span>
+                            <h1 className="h-size mb-4 f-color fw-normal mt-1 text-start">Sales</h1>
                         </div>
                         <div className="row mb-4">
                             <div className="col col-12 col-lg-6 col-xl-4 mb-4">
@@ -101,10 +113,10 @@ function Dashboard() {
                                     <div className="card-body">
                                         <div className="row align-items-center no-gutters">
                                             <div className="col col-12 px-2">
-                                                <div className="text-uppercase text-primary fw-bold text-xs mb-4"><span className="text-capitalize fw-normal l-size f-color">Live revenue (this month)</span></div>
+                                                <div className="mb-4 text-start"><span className="text-capitalize fw-normal l-size f-color text-start">Live revenue (this month)</span></div>
                                             </div>
                                             <div className="col-auto col-12 px-2 d-flex justify-content-between align-items-center">
-                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">£2,456.20</span></div><img src="assets/img/d-img/chartData-1.svg" />
+                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">£2,456.20</span></div><img src={ChartData1} />
                                             </div>
                                         </div>
                                     </div>
@@ -115,10 +127,10 @@ function Dashboard() {
                                     <div className="card-body">
                                         <div className="row align-items-center no-gutters">
                                             <div className="col col-12 px-2">
-                                                <div className="text-uppercase text-primary fw-bold text-xs mb-4"><span className="text-capitalize fw-normal l-size f-color">Active Client</span></div>
+                                                <div className="mb-4 text-start"><span className="text-capitalize fw-normal l-size f-color text-start">Active Client</span></div>
                                             </div>
                                             <div className="col-auto col-12 px-2 d-flex justify-content-between align-items-center">
-                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">62</span></div><img src="assets/img/d-img/chartData-2.svg" />
+                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">62</span></div><img src={ChartData2} />
                                             </div>
                                         </div>
                                     </div>
@@ -129,10 +141,10 @@ function Dashboard() {
                                     <div className="card-body">
                                         <div className="row align-items-center no-gutters">
                                             <div className="col col-12 px-2">
-                                                <div className="text-uppercase text-primary fw-bold text-xs mb-4"><span className="text-capitalize fw-normal l-size f-color">New client (weekly)</span></div>
+                                                <div className="mb-4 text-start"><span className="text-capitalize fw-normal l-size f-color text-start">New client (weekly)</span></div>
                                             </div>
                                             <div className="col-auto col-12 px-2 d-flex justify-content-between align-items-center">
-                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">2</span></div><img src="assets/img/d-img/chartData-3.svg" />
+                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">2</span></div><img src={ChartData3} />
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +155,7 @@ function Dashboard() {
                                     <div className="card-body">
                                         <div className="row align-items-center no-gutters">
                                             <div className="col col-12 px-2">
-                                                <div className="text-uppercase text-primary mb-1"><span className="text-capitalize fw-normal l-size f-color text-black-50">Profile View (this month)</span></div>
+                                                <div className="mb-1 text-start"><span className="text-capitalize fw-normal l-size text-black-50">Profile View (this month)</span></div>
                                             </div>
                                             <div className="col-auto col-12 px-2 d-flex justify-content-between align-items-center">
                                                 <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">24,154</span></div>
@@ -158,7 +170,7 @@ function Dashboard() {
                                     <div className="card-body">
                                         <div className="row align-items-center no-gutters">
                                             <div className="col col-12 px-2">
-                                                <div className="text-uppercase text-primary mb-1"><span className="text-capitalize fw-normal l-size text-black-50">Profile Convesion (this month)</span></div>
+                                                <div className="mb-1 text-start"><span className="text-capitalize fw-normal l-size text-black-50">Profile Convesion (this month)</span></div>
                                             </div>
                                             <div className="col-auto col-12 px-2 d-flex justify-content-between align-items-center">
                                                 <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">12,5%</span></div>
@@ -173,10 +185,10 @@ function Dashboard() {
                                     <div className="card-body">
                                         <div className="row align-items-center no-gutters">
                                             <div className="col col-12 px-2">
-                                                <div className="text-uppercase text-primary mb-1"><span className="text-capitalize fw-normal l-size f-color text-black-50">Active Package</span></div>
+                                                <div className="mb-1 text-start"><span className="text-capitalize fw-normal l-size text-black-50">Active Package</span></div>
                                             </div>
                                             <div className="col-auto col-12 px-2 d-flex justify-content-between align-items-center">
-                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal f-color">3</span></div>
+                                                <div className="text-dark fw-bold h5 mb-0"><span className="h-size fw-normal text-black-50">3</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -186,17 +198,17 @@ function Dashboard() {
                         <div className="row">
                             <div className="col col-12">
                                 <div className="card shadow mb-4 shadow-n">
-                                    <div className="card-header py-3 bg-white border-0">
-                                        <h6 className="text-primary h-size f-color fw-normal">Client Request</h6>
+                                    <div className="card-header py-3 bg-white border-0 text-start">
+                                        <h6 className="text-primary h-size f-color fw-normal mb-0">Client Request</h6>
                                     </div>
                                     <div className="card-body">
                                         <div className="table-responsive">
                                             <table className="table">
                                                 <thead>
                                                     <tr>
-                                                        <th className="fw-medium f-color table-s w-25">Head</th>
-                                                        <th className="fw-medium f-color table-s" style={{width: "20%"}}>Package</th>
-                                                        <th className="fw-medium f-color table-s" style={{width: "20%"}}>Location</th>
+                                                        <th className="fw-medium f-color table-s w-25 text-start">Head</th>
+                                                        <th className="fw-medium f-color table-s text-start" style={{width: "20%"}}>Package</th>
+                                                        <th className="fw-medium f-color table-s text-start" style={{width: "20%"}}>Location</th>
                                                         <th className="fw-medium f-color text-end" style={{width: "35%"}}>Action</th>
                                                     </tr>
                                                 </thead>
@@ -204,7 +216,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src={ProImg} /><img src={Online} style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -218,8 +230,8 @@ function Dashboard() {
                                                         <td className="w-100">
                                                             <div className="c-img w-100 d-flex justify-content-end align-items-center gap-2">
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/accept.svg" /><span className="t-h fw-normal text-uppercase">Accept</span></div>
-                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/reject.svg" /><span className="t-h fw-normal text-uppercase">Reject</span></div>
+                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src={Accept} /><span className="t-h fw-normal text-uppercase">Accept</span></div>
+                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src={Reject} /><span className="t-h fw-normal text-uppercase">Reject</span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -227,7 +239,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src={ProImg} /><img src={Online} style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -241,8 +253,8 @@ function Dashboard() {
                                                         <td className="w-100">
                                                             <div className="c-img w-100 d-flex justify-content-end align-items-center gap-2">
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/accept.svg" /><span className="t-h fw-normal text-uppercase">Accept</span></div>
-                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/reject.svg" /><span className="t-h fw-normal text-uppercase">Reject</span></div>
+                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src={Accept} /><span className="t-h fw-normal text-uppercase">Accept</span></div>
+                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src={Reject} /><span className="t-h fw-normal text-uppercase">Reject</span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -250,7 +262,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src={ProImg} /><img src={Online} style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -264,8 +276,8 @@ function Dashboard() {
                                                         <td className="w-100">
                                                             <div className="c-img w-100 d-flex justify-content-end align-items-center gap-2">
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/accept.svg" /><span className="t-h fw-normal text-uppercase">Accept</span></div>
-                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/reject.svg" /><span className="t-h fw-normal text-uppercase">Reject</span></div>
+                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src={Accept} /><span className="t-h fw-normal text-uppercase">Accept</span></div>
+                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src={Reject} /><span className="t-h fw-normal text-uppercase">Reject</span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -273,7 +285,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src={ProImg} /><img src={Online} style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -287,8 +299,8 @@ function Dashboard() {
                                                         <td className="w-100">
                                                             <div className="c-img w-100 d-flex justify-content-end align-items-center gap-2">
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/accept.svg" /><span className="t-h fw-normal text-uppercase">Accept</span></div>
-                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/reject.svg" /><span className="t-h fw-normal text-uppercase">Reject</span></div>
+                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src={Accept} /><span className="t-h fw-normal text-uppercase">Accept</span></div>
+                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src={Reject} /><span className="t-h fw-normal text-uppercase">Reject</span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -296,7 +308,7 @@ function Dashboard() {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex justify-content-start align-items-center gap-2">
-                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src="assets/img/avatars/avatar2.jpeg" /><img src="assets/img/online.svg" style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
+                                                                <div className="position-relative c-img"><img className="rounded-circle c-img" src={ProImg} /><img src={Online} style={{height: "10px",width: "10px",position: "absolute",bottom: 0,right: 0}} /></div><span className="f-color">Helen Sega</span>
                                                                 </div>
                                                         </td>
                                                         <td>
@@ -310,8 +322,8 @@ function Dashboard() {
                                                         <td className="w-100">
                                                             <div className="c-img w-100 d-flex justify-content-end align-items-center gap-2">
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/accept.svg" /><span className="t-h fw-normal text-uppercase">Accept</span></div>
-                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src="assets/img/d-img/reject.svg" /><span className="t-h fw-normal text-uppercase">Reject</span></div>
+                                                                    <div className="px-2 a-div d-flex justify-content-center align-items-center"><img className="me-2" src={Accept} /><span className="t-h fw-normal text-uppercase">Accept</span></div>
+                                                                    <div className="px-2 r-div d-flex justify-content-center align-items-center"><img className="me-2" src={Reject} /><span className="t-h fw-normal text-uppercase">Reject</span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -330,7 +342,7 @@ function Dashboard() {
                                                 <div>
                                                     <p className="fw-normal t-h f-color mb-0"><span>1-5&nbsp;</span>of<span>&nbsp;13</span></p>
                                                 </div>
-                                                <div><img className="pe-2" src="assets/img/d-img/left.svg" /><img className="ms-3" src="assets/img/d-img/right.svg" /></div>
+                                                <div><img className="pe-2" src={Left} /><img className="ms-3" src={Right} /></div>
                                                 </div>
                                             </div>
                                         </div>
