@@ -9,9 +9,6 @@ import FitnessCenter from '../assets/img/d-menu/fitness_center.svg';
 
 function Dashboard() {
    
-    // const images = Images(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
-    // console.log("images", images);
-    
     return (
         <div id="wrapper">
             <nav className="navbar navbar-dark align-items-start d-flex flex-column justify-content-between align-items-center sidebar sidebar-dark accordion bg-white-primary shadow-n p-0">
