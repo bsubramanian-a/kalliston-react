@@ -1,6 +1,3 @@
-(function() {
-  "use strict"; // Start of use strict
-
   var sidebar = document.querySelector('.sidebar');
   var sidebarToggles = document.querySelectorAll('#sidebarToggle, #sidebarToggleTop');
   
@@ -73,4 +70,3 @@
     });
   }
 
-})(); // End of use strict
