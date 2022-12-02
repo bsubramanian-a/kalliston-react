@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Logo from '../assets/img/logo-d.svg';
-// import { Images } from '../utils/Images';
 import Trending from '../assets/img/d-menu/trending_up.svg';
 import Person from '../assets/img/d-menu/person.svg';
 import ChatBubble from '../assets/img/d-menu/chat_bubble_outline.svg';

@@ -6,6 +6,9 @@ import Login from './screens/Login';
 import VerifyMail from './screens/VerifyMail';
 import ForgotPassword from './screens/ForgotPassword';
 import Register from './screens/Register';
+import SecurityCode from './screens/SecurityCode';
+import ThankYou from './screens/ThankYou';
+import Profile from './screens/Profile';
 import { Route, Routes } from 'react-router-dom';
 import Package from './screens/Package';
 import Settings
@@ -21,6 +24,9 @@ function App() {
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/settings' element={<Settings/>}/>
+        <Route path='/security-code' element={<SecurityCode/>}/>
+        <Route path='/thank-you' element={<ThankYou/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </div>
   );
