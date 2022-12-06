@@ -74,7 +74,7 @@ function TopNav() {
                                 <Link to={"/coach/settings"} className="dropdown-item"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</Link>
                                 <Link to={"/coach/invoice-billing"} className="dropdown-item"><i className="fas fa-credit-card fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Inovice & Billing</Link>
                                 <div className="dropdown-divider"></div>
-                                <span onClick={handleLogout} className="dropdown-item"><i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</span>
+                                <span onClick={handleLogout} style={{cursor:'pointer'}} className="dropdown-item"><i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400" ></i>&nbsp;Logout</span>
                             </div>
                         </div>
                     </li>
