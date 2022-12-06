@@ -6,12 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import { login,otp } from '../../slices/auth';
+import { login, otp } from '../../slices/auth';
+import OtpInput from 'react18-input-otp';
 
 function Login() {
     let navigate = useNavigate();
 
-    const { isLoggedIn } = useSelector((state:any) => state.auth);
+    const { isLoggedIn } = useSelector((state: any) => state.auth);
 
     const [successful, setSuccessful] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -20,6 +21,7 @@ function Login() {
     const [errormessage, setErrorMessage] = useState();
     const [isLogin, setIsLogin] = useState(true);
     const [isOTP, setIsOTP] = useState(false);
+    const [otpcode, setOtpCode] = useState('');
 
     const dispatch = useDispatch<any>();
 
@@ -43,6 +45,11 @@ function Login() {
         password: Yup.string()
             .required("This field is required!")
     });
+
+    
+    const handleChange = (enteredOtp: any) => {
+        setOtpCode(enteredOtp);
+    };
 
     const handleLogin = (formValue: any) => {
         const { email, password } = formValue;
@@ -78,13 +85,13 @@ function Login() {
     };
 
     const handleCode = (formValue: any) => {
-        const { code1, code2, code3, code4, code5, code6 } = formValue;
-        let finalCode = parseInt(code1 + code2 + code3 + code4 + code5 + code6);
-        console.log("final code", finalCode);
+        // const { code1, code2, code3, code4, code5, code6 } = formValue;
+        // let finalCode = parseInt(code1 + code2 + code3 + code4 + code5 + code6);
+        // console.log("final code", finalCode);
         setIsLogin(false);
         setIsOTP(true);
 
-        dispatch(otp({ email, otp:finalCode }))
+        dispatch(otp({ email, otp:otpcode }))
             .unwrap()
             .then((res: any) => {
                 console.log("otp response coming in", res);
@@ -136,8 +143,8 @@ function Login() {
                         )}
                     </div>
                     {isError && (
-                                    <div className="alert alert-danger"> {errormessage} </div>
-                                )}
+                        <div className="alert alert-danger"> {errormessage} </div>
+                    )}
                     {!successful && isLogin && (
                         <Formik
                             initialValues={initialValues}
@@ -145,7 +152,7 @@ function Login() {
                             onSubmit={handleLogin}
                         >
                             <Form>
-                                
+
                                 <div>
                                     <div className="row mb-2">
                                         <div className="col col-12 mb-3">
@@ -197,12 +204,13 @@ function Login() {
                                 initialValues={initialCode}
                                 onSubmit={handleCode}
                             >
-                                
+
                                 <Form>
                                     <div className="row mb-2">
                                         <div className="col col-9 mb-3 d-flex justify-content-start align-items-center gap-3">
-                                            <div className="form-group">
-                                                <Field name="code1" type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} />
+                                            <OtpInput value={otpcode} onChange={handleChange} numInputs={6} separator={<span>-</span>} />
+                                            {/* <div className="form-group">
+                                                <Field name="code1" type="number" maxLength="1" min={1} max={9} className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} />
                                             </div>
                                             <div className="form-group">
                                                 <Field name="code2" type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} />
@@ -218,7 +226,7 @@ function Login() {
                                             </div>
                                             <div className="form-group">
                                                 <Field name="code6" type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} />
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="row">
