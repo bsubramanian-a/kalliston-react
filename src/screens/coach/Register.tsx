@@ -50,16 +50,16 @@ function Register() {
                 setSuccessful(false);
             });
     };
-
+    
     return (
         <div className="vh-100">
-            <div className="row mx-0">
-                <div className="col col-12 col-lg-6 main-limg"></div>
-                <div className="col col-12 col-lg-6 d-flex justify-content-center alert">
-                    <div className="container my-auto mx-md-5">
-                        <div className="row mb-4">
-                            <div className="col col-12 mb-4 text-start"><img src={LogoMain} /></div>
-                            {successful && (
+        <div className="row mx-0">
+            <div className="col col-12 col-lg-6 main-limg"></div>
+            <div className="col col-12 col-lg-6 d-flex justify-content-center alert">
+                <div className="container my-auto mx-md-5">
+                    <div className="row mb-4">
+                        <div className="col col-12 mb-4 text-start"><img src={LogoMain} /></div>
+                        {successful && (
                             <div className="col col-12">
                                 <p className="f-color f-h mb-0 text-start">Thank you for your email!</p>
                                 <p className="text-black-50 l-size mb-0 text-start">We will get back to you within 48 working hours</p>
@@ -71,8 +71,8 @@ function Register() {
                                 <p className="text-black-50 l-size mb-0 text-start">To create a coach account please enter your details and we will get back to you within 48 hours</p>
                             </div>
                             )}
-                        </div>
-                        <Formik
+                    </div>
+                    <Formik
                             initialValues={initialValues}
                             validationSchema={validationSchema}
                             onSubmit={handleRegister}
@@ -111,12 +111,11 @@ function Register() {
 
                             </Form>
                         </Formik>
-
-                    </div>
                 </div>
             </div>
         </div>
-    );
-}
-
-export default Register;
+    </div>
+        );
+    }
+  
+              export default Register;

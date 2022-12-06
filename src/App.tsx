@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Dashboard from './screens/coach/Dashboard';
 import Login from './screens/coach/Login';
@@ -10,8 +9,11 @@ import SecurityCode from './screens/coach/SecurityCode';
 import Profile from './screens/coach/Profile';
 import { Route, Routes } from 'react-router-dom';
 import Package from './screens/coach/Package';
-import Settings
- from './screens/coach/Settings';
+import Settings from './screens/coach/Settings';
+import InvoiceBilling from './screens/coach/InvoiceBilling';
+import AddPackage from './screens/coach/AddPackage';
+import Schedule from './screens/coach/Schedule';
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +28,9 @@ function App() {
         <Route path='/coach/settings' element={<Settings/>}/>
         <Route path='/coach/security-code' element={<SecurityCode/>}/>
         <Route path='/coach/profile' element={<Profile/>}/>
+        <Route path='/coach/invoice-billing' element={<InvoiceBilling />} />
+        <Route path='/coach/add-package' element={<AddPackage />} />
+        <Route path='/coach/schedule' element={<Schedule />} />
       </Routes>
     </div>
   );
