@@ -1,18 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dashboard from './screens/Dashboard';
-import Login from './screens/Login';
-import VerifyMail from './screens/VerifyMail';
-import ForgotPassword from './screens/ForgotPassword';
-import Register from './screens/Register';
-import SecurityCode from './screens/SecurityCode';
-import ThankYou from './screens/ThankYou';
-import Profile from './screens/Profile';
+import Dashboard from './screens/coach/Dashboard';
+import Login from './screens/coach/Login';
+import VerifyMail from './screens/coach/VerifyMail';
+import ForgotPassword from './screens/coach/ForgotPassword';
+import Register from './screens/coach/Register';
+import SecurityCode from './screens/coach/SecurityCode';
+import ThankYou from './screens/coach/ThankYou';
+import Profile from './screens/coach/Profile';
 import { Route, Routes } from 'react-router-dom';
-import Package from './screens/Package';
+import Package from './screens/coach/Package';
 import Settings
- from './screens/Settings';
+ from './screens/coach/Settings';
 function App() {
   return (
     <div className="App">

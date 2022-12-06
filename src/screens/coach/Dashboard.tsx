@@ -1,23 +1,23 @@
 import React, { useContext, useState, useEffect } from 'react';
-import Logo from '../assets/img/logo-d.svg';
-import Trending from '../assets/img/d-menu/trending_up.svg';
-import Person from '../assets/img/d-menu/person.svg';
-import ChatBubble from '../assets/img/d-menu/chat_bubble_outline.svg';
-import Calendar from '../assets/img/d-menu/calendar_today.png';
-import FitnessCenter from '../assets/img/d-menu/fitness_center.svg';
-import Computer from '../assets/img/d-menu/computer.svg';
-import StoreFront from '../assets/img/d-menu/storefront.svg';
-import Notifications from '../assets/img/d-menu/notifications.svg';
-import ProfilePic from '../assets/img/avatars/avatar1.jpeg';
-import ChartData1 from '../assets/img/d-img/chartData-1.svg';
-import ChartData2 from '../assets/img/d-img/chartData-2.svg';
-import ChartData3 from '../assets/img/d-img/chartData-3.svg';
-import ProImg from '../assets/img/avatars/avatar2.jpeg';
-import Online from '../assets/img/online.svg';
-import Accept from '../assets/img/d-img/accept.svg';
-import Reject from '../assets/img/d-img/reject.svg';
-import Left from '../assets/img/d-img/left.svg';
-import Right from '../assets/img/d-img/right.svg';
+import Logo from '../../assets/img/logo-d.svg';
+import Trending from '../../assets/img/d-menu/trending_up.svg';
+import Person from '../../assets/img/d-menu/person.svg';
+import ChatBubble from '../../assets/img/d-menu/chat_bubble_outline.svg';
+import Calendar from '../../assets/img/d-menu/calendar_today.png';
+import FitnessCenter from '../../assets/img/d-menu/fitness_center.svg';
+import Computer from '../../assets/img/d-menu/computer.svg';
+import StoreFront from '../../assets/img/d-menu/storefront.svg';
+import Notifications from '../../assets/img/d-menu/notifications.svg';
+import ProfilePic from '../../assets/img/avatars/avatar1.jpeg';
+import ChartData1 from '../../assets/img/d-img/chartData-1.svg';
+import ChartData2 from '../../assets/img/d-img/chartData-2.svg';
+import ChartData3 from '../../assets/img/d-img/chartData-3.svg';
+import ProImg from '../../assets/img/avatars/avatar2.jpeg';
+import Online from '../../assets/img/online.svg';
+import Accept from '../../assets/img/d-img/accept.svg';
+import Reject from '../../assets/img/d-img/reject.svg';
+import Left from '../../assets/img/d-img/left.svg';
+import Right from '../../assets/img/d-img/right.svg';
 
 function Dashboard() {
     
