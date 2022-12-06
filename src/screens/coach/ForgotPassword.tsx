@@ -98,7 +98,7 @@ function ForgotPassword() {
           setIsForget(false);
           setIsOTP(true);
         }
-        if (res.status == "success") {
+        if (res == "success") {
           setIsLoading(false);
           navigate("/coach/login");
           window.location.reload();
