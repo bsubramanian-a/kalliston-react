@@ -1,5 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import LogoMain from '../../assets/img/logo.svg';
+import { useDispatch, useSelector } from "react-redux";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 function SecurityCode() {
 
@@ -20,17 +23,17 @@ function SecurityCode() {
                         </div>
                         <div className="row mb-2">
                             <div className="col col-9 mb-3 d-flex justify-content-start align-items-center gap-3">
-                                <div className="form-group"><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
-                                <div className="form-group"><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
-                                <div className="form-group"><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
-                                <div className="form-group"><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
-                                <div className="form-group"><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
-                                <div className="form-group"><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                <div className="form-group"><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                <div className="form-group"><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                <div className="form-group"><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                <div className="form-group"><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                <div className="form-group"><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                <div className="form-group"><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col col-12 mb-5 text-start"><a className="l-color l-size" href="#">Resend code</a></div>
-                            <div className="col col-12 text-start"><button className="btn btn-primary text-uppercase px-4" type="button">Continue</button></div>
+                            <div className="col col-12 text-start"><button className="btn btn-primary text-uppercase px-4" type="submit">Continue</button></div>
                         </div>
                     </div>
                 </div>

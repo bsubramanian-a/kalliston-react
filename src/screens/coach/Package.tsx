@@ -34,7 +34,7 @@ function Package() {
                                                     <h1 className="f-color mb-3 fw-medium" style={{ fontSize: '20px' }}>Offer</h1>
                                                     <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Duration</span><span className="f-color l-size fw-normal">4 weeks</span></div>
                                                     <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Priority direct chat </span><span className="f-color l-size fw-normal">No</span></div>
-                                                    <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-semibold">Checking Calls</span><span className="f-color l-size fw-normal">No</span></div><button className="btn btn-primary w-100 text-uppercase btn-edit" type="button">Edit</button>
+                                                    <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-semibold">Checking Calls</span><span className="f-color l-size fw-normal">No</span></div><button className="btn btn-primary w-100 text-uppercase btn-edit" type="submit">Edit</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@ function Package() {
                                                     <h1 className="f-color mb-3 fw-medium" style={{ fontSize: '20px' }}>Offer</h1>
                                                     <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Duration</span><span className="f-color l-size fw-normal">12 weeks</span></div>
                                                     <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Priority direct chat </span><span className="f-color l-size fw-normal">Yes</span></div>
-                                                    <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-semibold">Checking Calls</span><span className="f-color l-size fw-normal">6</span></div><button className="btn btn-primary w-100 text-uppercase btn-edit" type="button">Edit</button>
+                                                    <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-semibold">Checking Calls</span><span className="f-color l-size fw-normal">6</span></div><button className="btn btn-primary w-100 text-uppercase btn-edit" type="submit">Edit</button>
                                                 </div>
                                             </div>
                                         </div>

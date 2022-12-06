@@ -7,6 +7,9 @@ import Security from '../../assets/img/set-img/s-security.svg';
 import SCalendar from '../../assets/img/set-img/s-calendar.svg';
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
+import { useDispatch, useSelector } from "react-redux";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 function Settings() {
 
@@ -37,7 +40,7 @@ function Settings() {
                                                         <div className="row mb-4">
                                                             <div className="col">
                                                                 <h1 className="f-color l-size mb-4">Avatar</h1>
-                                                                <div className="flex-column d-flex justify-content-start align-items-start gap-3"><img className="img-profile rounded-circle" src={Avatar} /><button className="btn btn-primary text-uppercase btn-profile px-3" type="button">Change</button></div>
+                                                                <div className="flex-column d-flex justify-content-start align-items-start gap-3"><img className="img-profile rounded-circle" src={Avatar} /><button className="btn btn-primary text-uppercase btn-profile px-3" type="submit">Change</button></div>
                                                             </div>
                                                         </div>
                                                         <div className="row mb-4">
@@ -46,18 +49,18 @@ function Settings() {
                                                                 <div className="mb-3">
                                                                     <div className="row">
                                                                         <div className="col col-12 col-md-6 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">First name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">First name</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>''
                                                                         <div className="col col-12 col-md-6 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Last name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Last name</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                         <div className="col col-12 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Email address</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Email address</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="button">SAve changes</button>
-                                                                    <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">CAncel</span></div>
+                                                                <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="submit">Save changes</button>
+                                                                    <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">Cancel</span></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -72,14 +75,14 @@ function Settings() {
                                                                 <h1 className="f-h f-color fw-normal mb-4">Privacy</h1>
                                                                 <div className="mb-3">
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <input type="checkbox" />
+                                                                        <Field type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">Email notification</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                                                                 </div>
                                                                 <div>
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <input type="checkbox" />
+                                                                        <Field type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">New logins</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
@@ -89,22 +92,22 @@ function Settings() {
                                                                 <h1 className="f-h f-color fw-normal mb-4">Clients</h1>
                                                                 <div className="mb-3">
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <input type="checkbox" />
+                                                                        <Field type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">New request</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                                                                 </div>
                                                                 <div>
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <input type="checkbox" />
+                                                                        <Field type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">Messages</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                                                                 </div>
                                                             </div>
                                                             <div className="col pt-5">
-                                                                <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="button">SAve changes</button>
-                                                                    <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">CAncel</span></div>
+                                                                <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="submit">Save changes</button>
+                                                                    <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">Cancel</span></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -120,21 +123,21 @@ function Settings() {
                                                                 <div className="mb-5">
                                                                     <div className="row mb-5">
                                                                         <div className="col col-12 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Current Password</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Current Password</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                         <div className="col col-12">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">New Password</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">New Password</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                     </div>
                                                                     <div className="row">
                                                                         <div className="col mb-5">
                                                                             <h1 className="f-color l-size mb-1">Two-Factor Authentication</h1>
-                                                                            <p className="mb-4">Enabling this will provide an extra layer of security for your account. When logging in, we will ask for a special authentication code from your device.</p><button className="btn btn-primary text-uppercase btn-profile px-3" type="button" style={{ height: '36px', fontSize: '14px' }}>Enable Two-factor authentication</button>
+                                                                            <p className="mb-4">Enabling this will provide an extra layer of security for your account. When logging in, we will ask for a special authentication code from your device.</p><button className="btn btn-primary text-uppercase btn-profile px-3" type="submit" style={{ height: '36px', fontSize: '14px' }}>Enable Two-factor authentication</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="button">SAve changes</button>
-                                                                    <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">CAncel</span></div>
+                                                                <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="submit">Save changes</button>
+                                                                    <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">Cancel</span></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -147,7 +150,7 @@ function Settings() {
                                                         <div className="row">
                                                             <div className="col py-3">
                                                                 <h1 className="f-color l-size mb-1">Synchronize on Google calendar</h1>
-                                                                <p className="mb-4">Enabling this will provide an extra layer of security for your account. When logging in, we will ask for a special authentication code from your device.</p><button className="btn btn-primary text-uppercase btn-profile px-3" type="button" style={{ height: '36px', fontSize: '14px' }}>synchronize your google calendar</button>
+                                                                <p className="mb-4">Enabling this will provide an extra layer of security for your account. When logging in, we will ask for a special authentication code from your device.</p><button className="btn btn-primary text-uppercase btn-profile px-3" type="submit" style={{ height: '36px', fontSize: '14px' }}>synchronize your google calendar</button>
                                                             </div>
                                                         </div>
                                                     </div>

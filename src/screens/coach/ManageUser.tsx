@@ -23,7 +23,7 @@ function ManageUser() {
                     <div>
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item"><Link to={"/coach/clients"} className="text-decoration-none"><span className="t-color text-decoration-none">Client List</span></Link></li>
-                            <li className="breadcrumb-item"><a className="text-decoration-none" href="#"><span className="f-color">John Doe</span></a></li>
+                            <li className="breadcrumb-item"><Link to={"#"} className="text-decoration-none"><span className="f-color">John Doe</span></Link></li>
                         </ol>
                         <h1 className="h-size mb-5 f-color fw-normal mt-1">Manage Users</h1>
                     </div>
@@ -57,7 +57,7 @@ function ManageUser() {
                                                 <div className="d-flex justify-content-between align-items-center mb-3"><span className="f-color l-size fw-medium">Description</span><span className="f-color l-size fw-normal">client info</span></div>
                                                 <div className="d-flex justify-content-between align-items-center mb-3"><span className="f-color l-size fw-medium">Description</span><span className="f-color l-size fw-normal">client info</span></div>
                                                 <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-medium">Desctipiton</span><span className="f-color l-size fw-normal">client info</span></div>
-                                            </div><button className="btn btn-primary w-100 text-uppercase btn-view" type="button">View Onboarding Answers</button>
+                                            </div><button className="btn btn-primary w-100 text-uppercase btn-view" type="submit">View Onboarding Answers</button>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@ function ManageUser() {
                                                         </div><span className="m-p text-black-50">50%</span>
                                                     </div>
                                                 </div>
-                                            </div><button className="btn btn-primary w-100 text-uppercase btn-view" type="button">edit program</button>
+                                            </div><button className="btn btn-primary w-100 text-uppercase btn-view" type="submit">edit program</button>
                                         </div>
                                     </div>
                                 </div>

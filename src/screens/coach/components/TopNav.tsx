@@ -3,7 +3,9 @@ import Notifications from '../../../assets/img/d-menu/notifications.svg';
 import ProfilePic from '../../../assets/img/avatars/avatar1.jpeg';
 import { Link } from 'react-router-dom';
 import { logout } from '../../../slices/auth';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 function TopNav() {
 
@@ -24,7 +26,7 @@ function TopNav() {
                     <li className="nav-item dropdown d-sm-none no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i className="fas fa-search"></i></a>
                         <div className="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                             <form className="me-auto navbar-search w-100">
-                                <div className="input-group"><input className="bg-light form-control border-0 small" type="text" placeholder="Search for ..." />
+                                <div className="input-group"><Field className="bg-light form-control border-0 small" type="text" placeholder="Search for ..." />
                                     <div className="input-group-append"><button className="btn btn-primary py-0" type="button"><i className="fas fa-search"></i></button></div>
                                 </div>
                             </form>
