@@ -15,7 +15,7 @@ const login = (email:string, password:string) => {
       password
     })
     .then((response) => {
-      console.log("response from server", response);
+      //console.log("response from server", response);
       // if (response.data.accessToken) {
       //   localStorage.setItem("user", JSON.stringify(response.data));
       // }
@@ -23,14 +23,29 @@ const login = (email:string, password:string) => {
     });
 };
 
+const otp = (email:string, otp:number) => {
+  console.log("sending otp",otp);
+  return axios.post(API_URL + "coach-otp", {
+    email,
+    otp
+  }).then((response) => {
+    console.log("response from server", response);
+    if (response.data.token) {
+      localStorage.setItem("coach", JSON.stringify(response.data.coach));
+    }
+    return response.data;
+  });;
+};
+
 const logout = () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem("coach");
 };
 
 const authService = {
   register,
   login,
   logout,
+  otp
 };
 
 export default authService;

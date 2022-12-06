@@ -11,8 +11,28 @@ import Right from '../../assets/img/d-img/right.svg';
 
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { logout } from '../../slices/auth';
 
 function Dashboard() {
+
+    const dispatch = useDispatch<any>();
+
+    const { coach: currentUser } = useSelector((state:any) => state.auth);
+    console.log("currentUser",currentUser);
+    if (currentUser // 👈 null and undefined check
+    && Object.keys(currentUser).length === 0
+    && Object.getPrototypeOf(currentUser) === Object.prototype) {
+        console.log("coming inside current user");
+        dispatch(logout());
+        return <Navigate to="/coach/login" />;
+    }
+
+    if (currentUser == null) {
+        return <Navigate to="/coach/login" />;
+    }
+    
 
     return (
         <div id="wrapper" className='d-flex'>

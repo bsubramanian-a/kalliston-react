@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import AuthService from "../services/auth.service";
 
-//const user = JSON.parse(localStorage.getItem("user"));
+const coach = JSON.parse(localStorage.getItem("coach") || "{}");
 
 export const register = createAsyncThunk(
   "auth/register",
@@ -14,14 +14,15 @@ export const register = createAsyncThunk(
       //thunkAPI.dispatch(setMessage(response.data.message));
       return response.data;
     } catch (error:any) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
+      return error.response;
+      // const message =
+      //   (error.response &&
+      //     error.response.data &&
+      //     error.response.data.message) ||
+      //   error.message ||
+      //   error.toString();
       //thunkAPI.dispatch(setMessage(message));
-      return thunkAPI.rejectWithValue(await error.response.json());
+      // return thunkAPI.rejectWithValue(await error.response.json());
     }
   }
 );
@@ -33,60 +34,64 @@ export const login = createAsyncThunk(
       const response = await AuthService.login(email, password);
       return response;
     } catch (error:any) {
-      return error.response;
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
-      //thunkAPI.dispatch(setMessage(message));
-      //return thunkAPI.rejectWithValue(await error.response.json());
+      return error.response;      
+    }
+  }
+);
+
+export const otp = createAsyncThunk(
+  "auth/otp",
+  async ({ email, otp }:any, thunkAPI) => {
+    console.log("otp coming in",otp);
+    try {
+      const response = await AuthService.otp(email, otp);
+      return response;
+    } catch (error:any) {
+      return error.response;      
     }
   }
 );
 
 export const logout = createAsyncThunk("auth/logout", async () => {
   await AuthService.logout();
+  return true;
 });
 
-// const initialState = user
-//   ? { isLoggedIn: true, user }
-//   : { isLoggedIn: false, user: null };
-
-const initialState = { isLoggedIn: false, user: null };
+const initialState = coach
+  ? { isLoggedIn: true, coach }
+  : { isLoggedIn: false, coach: null };
 
 const authSlice = createSlice({
-  name:"auth",
+  name: "auth",
   initialState,
   reducers: {
+  },
+  extraReducers: (builder) => {
+    builder.addCase(register.fulfilled, (state) => {
+      state.isLoggedIn = false;
+    });
+
+    builder.addCase(register.rejected, (state) => {
+      state.isLoggedIn = false;
+    });
+
+    builder.addCase(login.fulfilled, (state, action) => {
+      state.isLoggedIn = true;
+      state.coach = action.payload.coach;
+    });
+
+    builder.addCase(login.rejected, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
+
+    builder.addCase(logout.fulfilled, (state) => {
+      console.log("coming inside logout fullfilled");
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
   }
 });
-
-// const authSlice = createSlice({
-//   name: "auth",
-//   initialState,
-//   // extraReducers: {
-//   //   [register.fulfilled]: (state, action) => {
-//   //     state.isLoggedIn = false;
-//   //   },
-//   //   [register.rejected]: (state, action) => {
-//   //     state.isLoggedIn = false;
-//   //   },
-//   //   [login.fulfilled]: (state, action) => {
-//   //     state.isLoggedIn = true;
-//   //     state.user = action.payload.user;
-//   //   },
-//   //   [login.rejected]: (state, action) => {
-//   //     state.isLoggedIn = false;
-//   //     state.user = null;
-//   //   },
-//   //   [logout.fulfilled]: (state, action) => {
-//   //     state.isLoggedIn = false;
-//   //     state.user = null;
-//   //   },
-//   // },
-// });
 
 const { reducer } = authSlice;
 export default reducer;

@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Dashboard from './screens/coach/Dashboard';
 import Login from './screens/coach/Login';
-import VerifyMail from './screens/coach/VerifyMail';
 import ForgotPassword from './screens/coach/ForgotPassword';
 import Register from './screens/coach/Register';
 import SecurityCode from './screens/coach/SecurityCode';
@@ -22,7 +21,6 @@ function App() {
         <Route path='/coach/dashboard' element={<Dashboard/>}/>
         <Route path='/coach/package' element={<Package/>}/>
         <Route path='/coach/login' element={<Login/>}/>
-        <Route path='/coach/verify-mail' element={<VerifyMail/>}/>
         <Route path='/coach/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/coach/register' element={<Register/>}/>
         <Route path='/coach/settings' element={<Settings/>}/>

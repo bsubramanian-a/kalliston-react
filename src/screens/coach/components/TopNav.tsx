@@ -2,8 +2,18 @@ import React, { useContext, useState, useEffect } from 'react';
 import Notifications from '../../../assets/img/d-menu/notifications.svg';
 import ProfilePic from '../../../assets/img/avatars/avatar1.jpeg';
 import { Link } from 'react-router-dom';
+import { logout } from '../../../slices/auth';
+import { useDispatch } from 'react-redux';
 
 function TopNav() {
+
+    const dispatch = useDispatch<any>();
+
+    const handleLogout = () => {
+        dispatch(logout());            
+    };
+
+    
     return (
         <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar shadow-n overflow-hidden">
             <div className="container-fluid"><button className="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i className="fas fa-bars"></i></button>
@@ -64,7 +74,7 @@ function TopNav() {
                                 <Link to={"/coach/settings"} className="dropdown-item"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</Link>
                                 <Link to={"/coach/invoice-billing"} className="dropdown-item"><i className="fas fa-credit-card fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Inovice & Billing</Link>
                                 <div className="dropdown-divider"></div>
-                                <Link to={"#"} className="dropdown-item"><i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</Link>
+                                <span onClick={handleLogout} className="dropdown-item"><i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</span>
                             </div>
                         </div>
                     </li>
