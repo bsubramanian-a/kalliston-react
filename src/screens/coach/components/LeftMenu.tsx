@@ -20,7 +20,7 @@ function LeftMenu() {
                     <hr className="sidebar-divider my-0" />
                     <ul className="navbar-nav text-light" id="accordionSidebar">
                         <li className="nav-item"><Link to={"/coach/dashboard"} className="nav-link active"><img src={Trending} /><span className="f-color ms-md-4 l-size">Sales</span></Link></li>
-                        <li className="nav-item"><Link to={"/coach/client"} className="nav-link"><img src={Person} /><span className="f-color ms-md-4 l-size">Client</span></Link></li>
+                        <li className="nav-item"><Link to={"/coach/clients"} className="nav-link"><img src={Person} /><span className="f-color ms-md-4 l-size">Client</span></Link></li>
                         <li className="nav-item"><Link to={"/coach/chat"} className="nav-link"><img src={ChatBubble} /><span className="f-color ms-md-4 l-size">Chat</span></Link></li>
                         <li className="nav-item"><Link to={"/coach/schedule"} className="nav-link"><img src={Calendar} /><span className="f-color ms-md-4 l-size">Schedule</span></Link></li>
                         <li className="nav-item"><Link to={"/coach/fitness"} className="nav-link"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></Link></li>

@@ -12,6 +12,11 @@ import Settings from './screens/coach/Settings';
 import InvoiceBilling from './screens/coach/InvoiceBilling';
 import AddPackage from './screens/coach/AddPackage';
 import Schedule from './screens/coach/Schedule';
+import BillingSettings from './screens/coach/BillingSettings';
+import CardSettings from './screens/coach/CardSettings';
+import Chat from './screens/coach/Chat';
+import Clients from './screens/coach/Clients';
+import ManageUser from './screens/coach/ManageUser';
 
 function App() {
   return (
@@ -29,6 +34,11 @@ function App() {
         <Route path='/coach/invoice-billing' element={<InvoiceBilling />} />
         <Route path='/coach/add-package' element={<AddPackage />} />
         <Route path='/coach/schedule' element={<Schedule />} />
+        <Route path='/coach/billing-settings' element={<BillingSettings />} />
+        <Route path='/coach/card-settings' element={<CardSettings />} />
+        <Route path='/coach/chat' element={<Chat />} />
+        <Route path='/coach/clients' element={<Clients />} />
+        <Route path='/coach/manage-user' element={<ManageUser />} />
       </Routes>
     </div>
   );
