@@ -32,10 +32,10 @@ function Clients() {
                                         <div className="card-header py-3 bg-white border-0">
                                             <div className="row justify-content-start align-items-center">
                                                 <div className="col col-12 col-md-4">
-                                                    <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Search</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
+                                                    <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Search</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
                                                 </div>
                                                 <div className="col col-12 col-md-3">
-                                                    <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Attribute</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
+                                                    <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Attribute</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
                                                 </div>
                                                 <div className="col col-12 col-md-5"><img src={Filter} /></div>
                                             </div>

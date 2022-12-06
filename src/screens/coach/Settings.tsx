@@ -49,13 +49,13 @@ function Settings() {
                                                                 <div className="mb-3">
                                                                     <div className="row">
                                                                         <div className="col col-12 col-md-6 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">First name</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">First name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>''
                                                                         <div className="col col-12 col-md-6 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Last name</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Last name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                         <div className="col col-12 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Email address</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Email address</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -75,14 +75,14 @@ function Settings() {
                                                                 <h1 className="f-h f-color fw-normal mb-4">Privacy</h1>
                                                                 <div className="mb-3">
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <Field type="checkbox" />
+                                                                        <input type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">Email notification</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                                                                 </div>
                                                                 <div>
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <Field type="checkbox" />
+                                                                        <input type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">New logins</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
@@ -92,14 +92,14 @@ function Settings() {
                                                                 <h1 className="f-h f-color fw-normal mb-4">Clients</h1>
                                                                 <div className="mb-3">
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <Field type="checkbox" />
+                                                                        <input type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">New request</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                                                                 </div>
                                                                 <div>
                                                                     <div className="mb-1"><label className="switch">
-                                                                        <Field type="checkbox" />
+                                                                        <input type="checkbox" />
                                                                         <span className="slider round"></span>
                                                                     </label><span className="f-color l-size">Messages</span></div>
                                                                     <p className="text-black-50 t-h">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
@@ -123,10 +123,10 @@ function Settings() {
                                                                 <div className="mb-5">
                                                                     <div className="row mb-5">
                                                                         <div className="col col-12 mb-3">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Current Password</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Current Password</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                         <div className="col col-12">
-                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">New Password</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
+                                                                            <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">New Password</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: 'none' }} /></div>
                                                                         </div>
                                                                     </div>
                                                                     <div className="row">

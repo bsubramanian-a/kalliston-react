@@ -37,30 +37,30 @@ function CardSettings() {
                                                     <div className="mb-5">
                                                         <div className="row mb-5">
                                                             <div className="col col-12 mb-3">
-                                                                <div className="form-group position-relative d-flex justify-content-center align-items-center"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Card number</label><img className="me-2" src={CreditCard} /><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative d-flex justify-content-center align-items-center"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Card number</label><img className="me-2" src={CreditCard} /><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Cardholder name</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Cardholder name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 col-md-6 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Expiration date</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" placeholder="MM / YY" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Expiration date</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" placeholder="MM / YY" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 col-md-6 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">CVC / CVC2</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">CVC / CVC2</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                         </div>
                                                         <div className="row pt-4">
                                                             <div className="col col-12 mb-3">style
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Address line 1</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Address line 1</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Address line 2</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Address line 2</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 col-md-6 mb-3 mb-md-0">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">City</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">City</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 col-md-6 mb-3 mb-md-0">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Country</label><Field type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Country</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -4,7 +4,6 @@ import Dashboard from './screens/coach/Dashboard';
 import Login from './screens/coach/Login';
 import ForgotPassword from './screens/coach/ForgotPassword';
 import Register from './screens/coach/Register';
-import SecurityCode from './screens/coach/SecurityCode';
 import Profile from './screens/coach/Profile';
 import { Route, Routes } from 'react-router-dom';
 import Package from './screens/coach/Package';
@@ -32,7 +31,6 @@ function App() {
         <Route path='/coach/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/coach/register' element={<Register/>}/>
         <Route path='/coach/settings' element={<Settings/>}/>
-        <Route path='/coach/security-code' element={<SecurityCode/>}/>
         <Route path='/coach/profile' element={<Profile/>}/>
         <Route path='/coach/invoice-billing' element={<InvoiceBilling />} />
         <Route path='/coach/add-package' element={<AddPackage />} />
