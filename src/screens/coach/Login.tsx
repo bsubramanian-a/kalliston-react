@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import LogoMain from '../assets/img/logo.svg';
+import LogoMain from '../../assets/img/logo.svg';
 
 function Login() {
     

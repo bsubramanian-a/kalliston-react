@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import LogoMain from '../assets/img/logo.svg';
+import LogoMain from '../../assets/img/logo.svg';
 
 function SecurityCode() {
     

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
-import Notifications from '../assets/img/d-menu/notifications.svg';
-import ProfilePic from '../assets/img/avatars/avatar1.jpeg';
+import Notifications from '../../assets/img/d-menu/notifications.svg';
+import ProfilePic from '../../assets/img/avatars/avatar1.jpeg';
 import LeftMenu from './components/LeftMenu';
 
 

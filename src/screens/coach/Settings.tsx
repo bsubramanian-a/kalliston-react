@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 
-import Avatar from '../assets/img/avatars/avatar1.jpeg'
-import Account from '../assets/img/set-img/s-account.svg'
-import Notification from '../assets/img/set-img/s-notification.svg';
-import Security from '../assets/img/set-img/s-security.svg';
-import SCalendar from '../assets/img/set-img/s-calendar.svg';
+import Avatar from '../../assets/img/avatars/avatar1.jpeg'
+import Account from '../../assets/img/set-img/s-account.svg'
+import Notification from '../../assets/img/set-img/s-notification.svg';
+import Security from '../../assets/img/set-img/s-security.svg';
+import SCalendar from '../../assets/img/set-img/s-calendar.svg';
 import LeftMenu from './components/LeftMenu';
 
 function Settings() {

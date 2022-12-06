@@ -1,16 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import Logo from '../assets/img/logo-d.svg';
-// import { Images } from '../utils/Images';
-import Trending from '../assets/img/d-menu/trending_up.svg';
-import Person from '../assets/img/d-menu/person.svg';
-import ChatBubble from '../assets/img/d-menu/chat_bubble_outline.svg';
-import Calendar from '../assets/img/d-menu/calendar_today.png';
-import FitnessCenter from '../assets/img/d-menu/fitness_center.svg';
-import Computer from '../assets/img/d-menu/computer.svg';
-import StoreFront from '../assets/img/d-menu/storefront.svg';
-import Notifications from '../assets/img/d-menu/notifications.svg';
-import Avatar from '../assets/img/avatars/avatar1.jpeg'
-import CloseFilled from '../assets/img/package-img/closeFilled.svg'
+import Notifications from '../../assets/img/d-menu/notifications.svg';
+import Avatar from '../../assets/img/avatars/avatar1.jpeg'
+import CloseFilled from '../../assets/img/package-img/closeFilled.svg'
 import LeftMenu from './components/LeftMenu';
 
 function Package() {
