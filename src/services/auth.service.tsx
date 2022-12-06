@@ -15,10 +15,10 @@ const login = (email:string, password:string) => {
       password
     })
     .then((response) => {
-      if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-      }
-
+      console.log("response from server", response);
+      // if (response.data.accessToken) {
+      //   localStorage.setItem("user", JSON.stringify(response.data));
+      // }
       return response.data;
     });
 };
