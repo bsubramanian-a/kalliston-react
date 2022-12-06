@@ -24,7 +24,7 @@ function Login() {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col col-12 mb-4 text-start"><Link to={"/register"} className="me-4 l-color l-size">Create an account</Link><Link to={"/forgot-password"} className="l-color l-size" >Forgot password</Link></div>
+                    <div className="col col-12 mb-4 text-start"><Link to={"/coach/register"} className="me-4 l-color l-size">Create an account</Link><Link to={"/coach/forgot-password"} className="l-color l-size" >Forgot password</Link></div>
                     <div className="col col-12"><button className="btn btn-primary w-100 text-uppercase" type="button">Sign in</button></div>
                 </div>
             </div>

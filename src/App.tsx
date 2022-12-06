@@ -18,16 +18,16 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Login/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/package' element={<Package/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/verify-mail' element={<VerifyMail/>}/>
-        <Route path='/forgot-password' element={<ForgotPassword/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/settings' element={<Settings/>}/>
-        <Route path='/security-code' element={<SecurityCode/>}/>
-        <Route path='/thank-you' element={<ThankYou/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/coach/dashboard' element={<Dashboard/>}/>
+        <Route path='/coach/package' element={<Package/>}/>
+        <Route path='/coach/login' element={<Login/>}/>
+        <Route path='/coach/verify-mail' element={<VerifyMail/>}/>
+        <Route path='/coach/forgot-password' element={<ForgotPassword/>}/>
+        <Route path='/coach/register' element={<Register/>}/>
+        <Route path='/coach/settings' element={<Settings/>}/>
+        <Route path='/coach/security-code' element={<SecurityCode/>}/>
+        <Route path='/coach/thank-you' element={<ThankYou/>}/>
+        <Route path='/coach/profile' element={<Profile/>}/>
       </Routes>
     </div>
   );
