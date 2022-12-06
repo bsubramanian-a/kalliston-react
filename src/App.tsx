@@ -7,7 +7,6 @@ import VerifyMail from './screens/coach/VerifyMail';
 import ForgotPassword from './screens/coach/ForgotPassword';
 import Register from './screens/coach/Register';
 import SecurityCode from './screens/coach/SecurityCode';
-import ThankYou from './screens/coach/ThankYou';
 import Profile from './screens/coach/Profile';
 import { Route, Routes } from 'react-router-dom';
 import Package from './screens/coach/Package';
@@ -26,7 +25,6 @@ function App() {
         <Route path='/coach/register' element={<Register/>}/>
         <Route path='/coach/settings' element={<Settings/>}/>
         <Route path='/coach/security-code' element={<SecurityCode/>}/>
-        <Route path='/coach/thank-you' element={<ThankYou/>}/>
         <Route path='/coach/profile' element={<Profile/>}/>
       </Routes>
     </div>
