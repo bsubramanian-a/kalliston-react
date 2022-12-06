@@ -10,19 +10,9 @@ export const register = createAsyncThunk(
   async (email:string, thunkAPI) => {
     try {
       const response = await AuthService.register(email);
-      //console.log("response from registration", response);
-      //thunkAPI.dispatch(setMessage(response.data.message));
       return response.data;
     } catch (error:any) {
       return error.response;
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
-      //thunkAPI.dispatch(setMessage(message));
-      // return thunkAPI.rejectWithValue(await error.response.json());
     }
   }
 );
@@ -57,6 +47,31 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   return true;
 });
 
+export const forget = createAsyncThunk(
+  "auth/forget",
+  async (email:string, thunkAPI) => {
+    try {
+      const response = await AuthService.forget(email);
+      return response.data;
+    } catch (error:any) {
+      return error.response;
+    }
+  }
+);
+
+export const forgetotp = createAsyncThunk(
+  "auth/forgetotp",
+  async ({ email, otp }:any, thunkAPI) => {
+    console.log("otp coming in",otp);
+    try {
+      const response = await AuthService.forgetotp(email, otp);
+      return response;
+    } catch (error:any) {
+      return error.response;      
+    }
+  }
+);
+
 const initialState = coach
   ? { isLoggedIn: true, coach }
   : { isLoggedIn: false, coach: null };
@@ -75,9 +90,19 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
     });
 
-    builder.addCase(login.fulfilled, (state, action) => {
+    builder.addCase(otp.fulfilled, (state, action) => {
       state.isLoggedIn = true;
       state.coach = action.payload.coach;
+    });
+
+    builder.addCase(otp.rejected, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
+
+    builder.addCase(login.fulfilled, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
     });
 
     builder.addCase(login.rejected, (state, action) => {
@@ -85,8 +110,27 @@ const authSlice = createSlice({
       state.coach = null;
     });
 
+    builder.addCase(forget.fulfilled, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
+
+    builder.addCase(forget.rejected, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
+
+    builder.addCase(forgetotp.fulfilled, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
+
+    builder.addCase(forgetotp.rejected, (state, action) => {
+      state.isLoggedIn = false;
+      state.coach = null;
+    });
+
     builder.addCase(logout.fulfilled, (state) => {
-      console.log("coming inside logout fullfilled");
       state.isLoggedIn = false;
       state.coach = null;
     });

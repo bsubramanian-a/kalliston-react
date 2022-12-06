@@ -8,6 +8,26 @@ const register = (email:string) => {
   });
 };
 
+const forget = (email:string) => {
+  return axios.post(API_URL + "coach-forget", {
+    email
+  });
+};
+
+const forgetotp = (email:string, otp:number) => {
+  console.log("sending otp",otp);
+  return axios.post(API_URL + "coach-otp-forget", {
+    email,
+    otp
+  }).then((response) => {
+    console.log("response from server", response);
+    if (response.data.token) {
+      localStorage.setItem("coach", JSON.stringify(response.data.coach));
+    }
+    return response.data;
+  });;
+};
+
 const login = (email:string, password:string) => {
   return axios
     .post(API_URL + "coach-login", {
@@ -45,7 +65,9 @@ const authService = {
   register,
   login,
   logout,
-  otp
+  otp,
+  forget,
+  forgetotp
 };
 
 export default authService;
