@@ -1,14 +1,17 @@
 export default function authHeader() {
-  return {};
-    // const user = JSON.parse(localStorage.getItem("user"));
+  const coach = JSON.parse(localStorage.getItem("coach") || "{}");
+  const accesstoken = JSON.parse(localStorage.getItem("accesstoken") || "");
+  console.log("coach from header",coach);
+  console.log("accesstoken from header", accesstoken);
   
-    // if (user && user.accessToken) {
-    //   // For Spring Boot back-end
-    //   return { Authorization: "Bearer " + user.accessToken };
+    if (coach && accesstoken) {
+      console.log("accesstoken coming in");
+      // For Spring Boot back-end
+      return { Authorization: "Bearer " + accesstoken };
   
-    //   // for Node.js Express back-end
-    //   // return { "x-access-token": user.accessToken };
-    // } else {
-    //   return {};
-    // }
+      // for Node.js Express back-end
+      // return { "x-access-token": user.accessToken };
+    } else {
+      return {};
+    }
   }

@@ -3,7 +3,7 @@ import Avatar from "../../../assets/img/avatars/avatar1.jpeg";
 
 function AccountTab() {
     return (
-        <div className="tab-pane  active" role="tabpanel" id="tab-1">
+        <div className="tab-pane active" role="tabpanel" id="tab-1">
             <div className="card card-s">
                 <div className="card-body">
                     <div className="row mb-4">
@@ -42,7 +42,6 @@ function AccountTab() {
                                             />
                                         </div>
                                     </div>
-                                    ''
                                     <div className="col col-12 col-md-6 mb-3">
                                         <div className="form-group position-relative">
                                             <label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">

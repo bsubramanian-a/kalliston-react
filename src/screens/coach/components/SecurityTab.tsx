@@ -18,9 +18,11 @@ function SecurityTab() {
   
     const handleChangePassword = (formValue: any) => {
       const { oldpassword, newpassword } = formValue;
+
+      console.log("formvalue",formValue);
       
   
-      dispatch(changepassword({ email : currentUser?.email, oldpassword, newpassword}))
+      dispatch(changepassword({ email : currentUser?.email, currentpassword:oldpassword, newpassword}))
           .unwrap()
           .then((res: any) => {
               console.log("response coming in", res);

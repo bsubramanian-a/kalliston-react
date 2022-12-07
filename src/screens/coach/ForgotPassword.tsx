@@ -20,6 +20,8 @@ function ForgotPassword() {
   const [isForget, setIsForget] = useState(true);
   const [isOTP, setIsOTP] = useState(false);
   const [otpcode, setOtpCode] = useState("");
+  const [otpSent, setOTPSent] = useState(false);
+
 
   const dispatch = useDispatch<any>();
 
@@ -85,6 +87,7 @@ function ForgotPassword() {
     // console.log("final code", finalCode);
     setIsForget(false);
     setIsOTP(true);
+    
 
     dispatch(forgetotp({ email, otp: otpcode }))
       .unwrap()
@@ -97,12 +100,13 @@ function ForgotPassword() {
           setIsError(true);
           setIsForget(false);
           setIsOTP(true);
+          setOTPSent(false);
         }
         if (res == "success") {
           setIsLoading(false);
+          setOTPSent(true);
           navigate("/coach/login");
           window.location.reload();
-          //setSuccessful(true);
         }
       })
       .catch(() => {
@@ -215,12 +219,17 @@ function ForgotPassword() {
                         </a>
                       </div>
                       <div className="col col-12 text-start">
+                      {!otpSent && (
                         <button
                           className="btn btn-primary text-uppercase px-4"
                           type="submit"
                         >
                           Continue
                         </button>
+                      )}
+                      {otpSent && (
+                        <span>Sending New Password</span>
+                      )}  
                       </div>
                     </div>
                   </Form>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import authHeader from "./auth-header";
 
 const API_URL = "http://localhost:8000/api/v1/users/";
 
@@ -58,15 +59,18 @@ const otp = (email:string, otp:number) => {
 };
 
 const changepassword = (email:string, currentpassword:number, newpassword:number) => {
-  console.log("sending otp",otp);
-  return axios.post(API_URL + "coach-otp", {
+  console.log("email1",email);
+    console.log("currentpassword1",currentpassword);
+    console.log("newpassword1",newpassword);
+  return axios.post(API_URL + "coach-change-password", {
     email,
     currentpassword,
     newpassword
-  }).then((response) => {
+  }, { headers: authHeader() }).then((response) => {
     console.log("response from server", response);
     if (response.data.token) {
       localStorage.setItem("coach", JSON.stringify(response.data.coach));
+      localStorage.setItem("accesstoken", JSON.stringify(response.data.token));
     }
     return response.data;
   });;

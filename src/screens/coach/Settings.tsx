@@ -34,7 +34,7 @@ function Settings() {
                     >
                       <li className="nav-item" role="presentation">
                         <a
-                          className="nav-link d-flex justify-content-start align-items-center"
+                          className="nav-link active d-flex justify-content-start align-items-center"
                           role="tab"
                           data-bs-toggle="tab"
                           href="#tab-1"
@@ -67,7 +67,7 @@ function Settings() {
                       </li>
                       <li className="nav-item" role="presentation">
                         <a
-                          className="nav-link active d-flex justify-content-start align-items-center"
+                          className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
                           data-bs-toggle="tab"
                           href="#tab-4"
