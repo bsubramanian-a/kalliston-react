@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import CreditCard from '../../assets/img/card-img/_creditCards.svg';
+import CreditCard from '../../../assets/img/card-img/_creditCards.svg';
 import { Link } from 'react-router-dom';
 
 function BillingTab() {

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import Avatar from "../../assets/img/avatars/avatar1.jpeg";
+import Avatar from "../../../assets/img/avatars/avatar1.jpeg";
 
 function AccountTab() {
     return (

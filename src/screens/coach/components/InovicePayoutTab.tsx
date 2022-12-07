@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
-import Left from '../../assets/img/d-img/left.svg';
-import Right from '../../assets/img/d-img/right.svg';
+import Left from '../../../assets/img/d-img/left.svg';
+import Right from '../../../assets/img/d-img/right.svg';
 
 function InvoicePayoutTab() {
 
