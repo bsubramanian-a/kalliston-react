@@ -12,6 +12,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 import { changepassword } from '../../slices/auth';
+import { Link } from "react-router-dom";
 
 function Settings() {
   const { coach: currentUser } = useSelector((state: any) => state.auth);
@@ -410,9 +411,9 @@ function Settings() {
             </div>
           </div>
         </div>
-        <a className="border rounded d-inline scroll-to-top" href="#page-top">
+        <Link to={"#page-top"} className="border rounded d-inline scroll-to-top">
           <i className="fas fa-angle-up"></i>
-        </a>
+        </Link>
       </div>
     </div>
   );

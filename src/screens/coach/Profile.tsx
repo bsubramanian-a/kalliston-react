@@ -4,6 +4,7 @@ import TopNav from './components/TopNav';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { Link } from 'react-router-dom';
 
 
 function Profile() {
@@ -110,7 +111,7 @@ function Profile() {
                             </div>
                         </div>
                     </div>
-                </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
+                </div><Link to={"#page-top"} className="border rounded d-inline scroll-to-top"><i className="fas fa-angle-up"></i></Link>
             </div>
         </div>
     );

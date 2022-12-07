@@ -88,10 +88,10 @@ function Register() {
                                                     <ErrorMessage
                                                         name="email"
                                                         component="div"
-                                                        className="alert alert-danger"
+                                                        className="alert alert-danger small border-0 py-1 mb-0"
                                                     />
                                                     {emailExist && (
-                                                        <div className="alert alert-danger"> Email already exist </div>
+                                                        <div className="alert alert-danger small border-0 py-1 mb-0"> Email already exist </div>
                                                     )}
                                                 </div>
                                             </div>

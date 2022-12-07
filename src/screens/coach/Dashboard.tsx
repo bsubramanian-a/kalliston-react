@@ -12,7 +12,7 @@ import Right from '../../assets/img/d-img/right.svg';
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { logout } from '../../slices/auth';
 
 function Dashboard() {
@@ -289,7 +289,7 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
-            </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
+            </div><Link to={"#page-top"} className="border rounded d-inline scroll-to-top"><i className="fas fa-angle-up"></i></Link>
         </div>
     );
 }

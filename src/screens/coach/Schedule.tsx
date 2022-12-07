@@ -22,7 +22,7 @@ function Schedule() {
                             </div>
                         </div>
                     </div>
-                </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
+                </div><Link to={"#page-top"} className="border rounded d-inline scroll-to-top"><i className="fas fa-angle-up"></i></Link>
             </div>
         </div>
     );

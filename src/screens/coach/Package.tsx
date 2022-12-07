@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import CloseFilled from '../../assets/img/package-img/closeFilled.svg'
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
@@ -75,7 +76,7 @@ function Package() {
                             </div>
                         </div>
                     </div>
-                </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
+                </div><Link to={"#page-top"} className="border rounded d-inline scroll-to-top"><i className="fas fa-angle-up"></i></Link>
             </div>
         </div>
     );

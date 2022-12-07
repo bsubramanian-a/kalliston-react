@@ -143,7 +143,7 @@ function Login() {
                         )}
                     </div>
                     {isError && (
-                        <div className="alert alert-danger"> {errormessage} </div>
+                        <div className="alert alert-danger small border-0 py-1 mb-0"> {errormessage} </div>
                     )}
                     {!successful && isLogin && (
                         <Formik
@@ -162,7 +162,7 @@ function Login() {
                                                 <ErrorMessage
                                                     name="email"
                                                     component="div"
-                                                    className="alert alert-danger"
+                                                    className="alert alert-danger small border-0 py-1 mb-0"
                                                 />
                                             </div>
                                         </div>
@@ -173,7 +173,7 @@ function Login() {
                                                 <ErrorMessage
                                                     name="password"
                                                     component="div"
-                                                    className="alert alert-danger"
+                                                    className="alert alert-danger small border-0 py-1 mb-0"
                                                 />
                                             </div>
                                         </div>
@@ -207,8 +207,8 @@ function Login() {
 
                                 <Form>
                                     <div className="row mb-2">
-                                        <div className="col col-9 mb-3 d-flex justify-content-start align-items-center gap-3">
-                                            <OtpInput value={otpcode} onChange={handleChange} numInputs={6} separator={<span>-</span>} />
+                                        <div className="col col-10 mb-3">
+                                            <OtpInput value={otpcode} onChange={handleChange} numInputs={6} separator={false} inputStyle={{padding: "16px 12px", border: "1px solid #C2C2C2", borderRadius: "4px", width: "100%", fontWeight: "400", fontSize: "16px", color: "#656565 !important"}} containerStyle={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}} />
                                             {/* <div className="form-group">
                                                 <Field name="code1" type="number" maxLength="1" min={1} max={9} className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} />
                                             </div>

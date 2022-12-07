@@ -197,12 +197,14 @@ function ForgotPassword() {
                 <Formik initialValues={initialCode} onSubmit={handleCode}>
                   <Form>
                     <div className="row mb-2">
-                      <div className="col col-9 mb-3 d-flex justify-content-start align-items-center gap-3">
+                      <div className="col col-10 mb-3">
                         <OtpInput
                           value={otpcode}
                           onChange={handleChange}
                           numInputs={6}
-                          separator={<span>-</span>}
+                          separator={false}
+                          inputStyle={{padding: "16px 12px", border: "1px solid #C2C2C2", borderRadius: "4px", width: "100%", fontWeight: "400", fontSize: "16px", color: "#656565 !important"}} 
+                          containerStyle={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}}
                         />
                       </div>
                     </div>
