@@ -57,6 +57,21 @@ const otp = (email:string, otp:number) => {
   });;
 };
 
+const changepassword = (email:string, currentpassword:number, newpassword:number) => {
+  console.log("sending otp",otp);
+  return axios.post(API_URL + "coach-otp", {
+    email,
+    currentpassword,
+    newpassword
+  }).then((response) => {
+    console.log("response from server", response);
+    if (response.data.token) {
+      localStorage.setItem("coach", JSON.stringify(response.data.coach));
+    }
+    return response.data;
+  });;
+};
+
 const logout = () => {
   localStorage.removeItem("coach");
 };
@@ -67,7 +82,8 @@ const authService = {
   logout,
   otp,
   forget,
-  forgetotp
+  forgetotp,
+  changepassword
 };
 
 export default authService;

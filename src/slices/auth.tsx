@@ -72,6 +72,19 @@ export const forgetotp = createAsyncThunk(
   }
 );
 
+export const changepassword = createAsyncThunk(
+  "auth/forgetotp",
+  async ({ email, currentpassword, newpassword }:any, thunkAPI) => {
+    console.log("otp coming in",otp);
+    try {
+      const response = await AuthService.changepassword(email, currentpassword,newpassword);
+      return response;
+    } catch (error:any) {
+      return error.response;      
+    }
+  }
+);
+
 const initialState = coach
   ? { isLoggedIn: true, coach }
   : { isLoggedIn: false, coach: null };

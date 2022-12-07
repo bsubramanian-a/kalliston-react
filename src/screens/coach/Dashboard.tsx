@@ -21,6 +21,7 @@ function Dashboard() {
 
     const { coach: currentUser } = useSelector((state:any) => state.auth);
     console.log("currentUser",currentUser);
+    
     if (currentUser // 👈 null and undefined check
     && Object.keys(currentUser).length === 0
     && Object.getPrototypeOf(currentUser) === Object.prototype) {
