@@ -46,13 +46,17 @@ function Login() {
             .required("This field is required!")
     });
 
-    
+
     const handleChange = (enteredOtp: any) => {
         setOtpCode(enteredOtp);
     };
 
     const handleLogin = (formValue: any) => {
         const { email, password } = formValue;
+        // setIsLoading(false);
+        // setSuccessful(true);
+        // setIsLogin(false);
+        // setIsOTP(true);
         setEmail(email);
         setIsLogin(true);
         setIsOTP(false);
@@ -91,7 +95,7 @@ function Login() {
         setIsLogin(false);
         setIsOTP(true);
 
-        dispatch(otp({ email, otp:otpcode }))
+        dispatch(otp({ email, otp: otpcode }))
             .unwrap()
             .then((res: any) => {
                 console.log("otp response coming in", res);
@@ -208,7 +212,7 @@ function Login() {
                                 <Form>
                                     <div className="row mb-2">
                                         <div className="col col-10 mb-3">
-                                            <OtpInput value={otpcode} onChange={handleChange} numInputs={6} separator={false} inputStyle={{padding: "16px 12px", border: "1px solid #C2C2C2", borderRadius: "4px", width: "100%", fontWeight: "400", fontSize: "16px", color: "#656565 !important"}} containerStyle={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}} />
+                                            <OtpInput value={otpcode} onChange={handleChange} numInputs={6} separator={false} inputStyle={{ padding: "16px 12px", border: "1px solid #C2C2C2", borderRadius: "4px", width: "100%", fontWeight: "400", fontSize: "16px", color: "#656565 !important" }} containerStyle={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px" }} />
                                             {/* <div className="form-group">
                                                 <Field name="code1" type="number" maxLength="1" min={1} max={9} className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} />
                                             </div>

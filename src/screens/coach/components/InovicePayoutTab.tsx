@@ -5,7 +5,7 @@ import Right from '../../../assets/img/d-img/right.svg';
 function InvoicePayoutTab() {
 
     return (
-        <div className="tab-pane  active" role="tabpanel" id="tab-1">
+        <div className="tab-pane" role="tabpanel" id="tab-5">
             <div className="card card-s mb-4">
                 <div className="card-body">
                     <div className="row py-2">

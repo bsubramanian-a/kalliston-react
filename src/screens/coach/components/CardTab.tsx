@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function CardTab() {
 
     return (
-        <div className="tab-pane" role="tabpanel" id="tab-3">
+        <div className="tab-pane" role="tabpanel" id="tab-7">
             <div className="card card-s mb-4">
                 <div className="card-body">
                     <div className="row py-2">

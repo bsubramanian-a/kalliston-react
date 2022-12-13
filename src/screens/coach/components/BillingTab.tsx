@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function BillingTab() {
 
     return (
-        <div className="tab-pane" role="tabpanel" id="tab-2">
+        <div className="tab-pane" role="tabpanel" id="tab-6">
             <div className="card mb-4 card-s">
                 <div className="card-body">
                     <div className="row py-2">

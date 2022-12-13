@@ -11,6 +11,9 @@ import AccountTab from "./components/AccountTab";
 import NotificationTab from "./components/NotificationTab";
 import SecurityTab from "./components/SecurityTab";
 import ScheduleTab from "./components/ScheduleTab";
+import InvoicePayoutTab from './components/InovicePayoutTab';
+import BillingTab from './components/BillingTab';
+import CardTab from './components/CardTab';
 
 function Settings() {
   return (
@@ -30,58 +33,73 @@ function Settings() {
                     <ul
                       className="nav nav-tabs flex-column mt-1 border-0 w-25"
                       role="tablist"
-                      style={{float: "left"}}
+                      style={{ float: "left" }}
                     >
                       <li className="nav-item" role="presentation">
-                        <a
+                        <Link to={"#tab-1"}
                           className="nav-link active d-flex justify-content-start align-items-center"
                           role="tab"
-                          data-bs-toggle="tab"
-                          href="#tab-1"
-                        >
-                          <img src={Account} />
-                          &nbsp; &nbsp; &nbsp;Account
-                        </a>
+                          data-bs-toggle="tab">
+                          Account
+                        </Link>
                       </li>
                       <li className="nav-item" role="presentation">
-                        <a
+                        <Link to={"#tab-2"}
                           className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
-                          data-bs-toggle="tab"
-                          href="#tab-2"
-                        >
-                          <img src={Notification} />
-                          &nbsp; &nbsp; &nbsp;Notification
-                        </a>
+                          data-bs-toggle="tab">
+                          Notification
+                        </Link>
                       </li>
                       <li className="nav-item" role="presentation">
-                        <a
+                        <Link to={"#tab-3"}
                           className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
-                          data-bs-toggle="tab"
-                          href="#tab-3"
-                        >
-                          <img src={Security} />
-                          &nbsp; &nbsp; &nbsp;Security
-                        </a>
+                          data-bs-toggle="tab">
+                          Security
+                        </Link>
                       </li>
                       <li className="nav-item" role="presentation">
-                        <a
+                        <Link to={"#tab-4"}
                           className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
-                          data-bs-toggle="tab"
-                          href="#tab-4"
-                        >
-                          <img src={SCalendar} />
-                          &nbsp; &nbsp; &nbsp;Schedule
-                        </a>
+                          data-bs-toggle="tab">
+                          Schedule
+                        </Link>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <Link to={"#tab-5"}
+                          className="nav-link d-flex justify-content-start align-items-center"
+                          role="tab"
+                          data-bs-toggle="tab">
+                          Invoice & Payout
+                        </Link>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <Link to={"#tab-6"}
+                          className="nav-link d-flex justify-content-start align-items-center"
+                          role="tab"
+                          data-bs-toggle="tab">
+                          Billing Setting
+                        </Link>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <Link to={"#tab-7"}
+                          className="nav-link d-flex justify-content-start align-items-center"
+                          role="tab"
+                          data-bs-toggle="tab">
+                          Card Setting
+                        </Link>
                       </li>
                     </ul>
-                    <div className="tab-content px-4 w-75" style={{float: "right"}}>
+                    <div className="tab-content px-4 w-75" style={{ float: "right" }}>
                       <AccountTab />
                       <NotificationTab />
                       <SecurityTab />
                       <ScheduleTab />
+                      <InvoicePayoutTab />
+                      <BillingTab />
+                      <CardTab />
                     </div>
                   </div>
                 </div>
