@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
-import ClientPro from '../../assets/img/avatars/avatar2.jpeg';
-import Left from '../../assets/img/d-img/left.svg';
-import Right from '../../assets/img/d-img/right.svg'
-import Msg from '../../assets/img/d-menu/message.svg';
-import Accept from '../../assets/img/d-img/accept.svg';
-import Reject from '../../assets/img/d-img/reject.svg';
+import ClientPro from '../../../assets/img/avatars/avatar2.jpeg';
+import Left from '../../../assets/img/d-img/left.svg';
+import Right from '../../../assets/img/d-img/right.svg'
+import Msg from '../../../assets/img/d-menu/message.svg';
+import Accept from '../../../assets/img/d-img/accept.svg';
+import Reject from '../../../assets/img/d-img/reject.svg';
 import { Link } from 'react-router-dom';
 
 function RequestTab() {

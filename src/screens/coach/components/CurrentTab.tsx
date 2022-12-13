@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import ClientPro from '../../assets/img/avatars/avatar2.jpeg';
-import Left from '../../assets/img/d-img/left.svg';
-import Right from '../../assets/img/d-img/right.svg'
+import ClientPro from '../../../assets/img/avatars/avatar2.jpeg';
+import Left from '../../../assets/img/d-img/left.svg';
+import Right from '../../../assets/img/d-img/right.svg'
 import { Link } from 'react-router-dom';
 
 function CurrentTab() {
