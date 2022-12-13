@@ -19,6 +19,7 @@ import ManageUser from './screens/coach/ManageUser';
 import EditProgram from './screens/coach/EditProgram';
 import EditProgram1 from './screens/coach/EditProgram1';
 import OnboardingAnswer from './screens/coach/OnboardingAnswer';
+import Onboarding from './screens/client/Onboarding';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path='/coach/manage-user' element={<ManageUser />} />
         <Route path='/coach/edit-program1' element={<EditProgram1 />} />
         <Route path='/coach/onboarding-answer' element={<OnboardingAnswer />} />
+        <Route path='/client/onboarding' element={<Onboarding />} />
       </Routes>
     </div>
   );
