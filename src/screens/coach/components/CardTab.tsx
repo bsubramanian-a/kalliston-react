@@ -17,7 +17,7 @@ function CardTab() {
                                     <p>[Post code]</p>
                                     <p>[City]</p>
                                     <p>[Country]</p>
-                                </div><Link to={"#"} className="expire-f mt-1 l-color fw-normal text-uppercase text-decoration-none">Change</Link>
+                                </div><Link to={"/coach/card-settings"} className="expire-f mt-1 l-color fw-normal text-uppercase text-decoration-none">Change</Link>
                             </div>
                         </div>
                     </div>

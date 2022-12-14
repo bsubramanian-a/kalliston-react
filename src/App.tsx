@@ -41,6 +41,7 @@ function App() {
         <Route path='/coach/chat' element={<Chat />} />
         <Route path='/coach/clients' element={<Clients />} />
         <Route path='/coach/manage-user' element={<ManageUser />} />
+        <Route path='/coach/edit-program' element={<EditProgram />} />
         <Route path='/coach/edit-program1' element={<EditProgram1 />} />
         <Route path='/coach/onboarding-answer' element={<OnboardingAnswer />} />
         <Route path='/client/onboarding' element={<Onboarding />} />

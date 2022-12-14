@@ -17,11 +17,11 @@ function CardSettings() {
                 <div className="d-flex flex-column" id="content-wrapper">
                     <div id="content">
                         <TopNav />
-                        <div className="container-fluid vh-100">
+                        <div className="container-fluid vh-100 text-start">
                             <div>
                                 <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><a className="text-decoration-none" href="#"><span className="t-color text-decoration-none">Billing Settings</span></a></li>
-                                    <li className="breadcrumb-item"><a className="text-decoration-none" href="#"><span className="f-color">Card Settings</span></a></li>
+                                    <li className="breadcrumb-item"><Link to={"/coach/settings"} className="text-decoration-none"><span className="t-color text-decoration-none">Billing Settings</span></Link></li>
+                                    <li className="breadcrumb-item"><Link to={"#"} className="text-decoration-none"><span className="f-color">Card Settings</span></Link></li>
                                 </ol>
                                 <h1 className="h-size mb-2 f-color fw-normal mt-1">Card Settings</h1>
                             </div>
@@ -50,7 +50,7 @@ function CardSettings() {
                                                             </div>
                                                         </div>
                                                         <div className="row pt-4">
-                                                            <div className="col col-12 mb-3">style
+                                                            <div className="col col-12 mb-3">
                                                                 <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Address line 1</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                                             </div>
                                                             <div className="col col-12 mb-3">

@@ -1349,3 +1349,13 @@ input:focus, select:focus, textarea:focus, button:focus {
   font-size: 13px;
   font-weight: 500;
 }
+
+.msg-count {
+  background: #EA1C1C;
+  height: 16px;
+  width: 16px;
+}
+
+.s-size {
+  font-size: 10px;
+}

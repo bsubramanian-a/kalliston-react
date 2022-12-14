@@ -17,7 +17,7 @@ function BillingTab() {
                                         <p className="f-color fw-normal mb-0" style={{ fontSize: "20px" }}>**** 4242</p>
                                         <p className="expire-f text-black-50 fw-normal mb-0">Expires at 08/24</p>
                                     </div>
-                                </div><Link to={"#"} className="expire-f mt-1 l-color fw-normal text-uppercase text-decoration-none">Change</Link>
+                                </div><Link to={"/coach/billing-settings"} className="expire-f mt-1 l-color fw-normal text-uppercase text-decoration-none">Change</Link>
                             </div>
                         </div>
                     </div>
