@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { logout } from '../../slices/auth';
 
+
 function Dashboard() {
 
     const dispatch = useDispatch<any>();
@@ -133,7 +134,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
+                        {/* <div className="row">
                             <div className="col col-12">
                                 <div className="card shadow mb-4 shadow-n">
                                     <div className="card-header py-3 bg-white border-0 text-start">
@@ -286,7 +287,7 @@ function Dashboard() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div><Link to={"#page-top"} className="border rounded d-inline scroll-to-top"><i className="fas fa-angle-up"></i></Link>

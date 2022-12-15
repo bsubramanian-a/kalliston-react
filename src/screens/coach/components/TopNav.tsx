@@ -6,11 +6,12 @@ import { logout } from '../../../slices/auth';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import moment from 'moment';
 
 function TopNav() {
 
     const dispatch = useDispatch<any>();
-
+    const { coach: currentUser } = useSelector((state:any) => state.auth);
     const handleLogout = () => {
         dispatch(logout());            
     };
@@ -20,7 +21,7 @@ function TopNav() {
         <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar shadow-n overflow-hidden">
             <div className="container-fluid"><button className="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i className="fas fa-bars"></i></button>
                 <div>
-                    <p className="mb-0 f-color l-size fw-medium">Hi&nbsp;<span>Zakari</span>&nbsp;-&nbsp;<span className="fw-normal">Thu 8 Sep</span></p>
+                    <p className="mb-0 f-color l-size fw-medium"><span>{currentUser?.firstname ? `Hi ${currentUser?.firstname}` : currentUser?.email}</span>&nbsp;-&nbsp;<span className="fw-normal">{moment().format('ddd D MMM')}</span></p>
                 </div>
                 <ul className="navbar-nav flex-nowrap ms-auto">
                     <li className="nav-item dropdown d-sm-none no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i className="fas fa-search"></i></a>
@@ -70,8 +71,8 @@ function TopNav() {
                     <li className="nav-item dropdown no-arrow">
                         <div className="nav-item dropdown show no-arrow" style={{ zIndex: 999 }}><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={ProfilePic} /></a>
                             <div className="dropdown-menu show shadow dropdown-menu-end animated--grow-in position-fixed me-5 d-block" data-bs-popper="none" style={{ right: "-26px"}} >
-                                <p className="mb-1 py-0" style={{fontSize: "16px", padding: "16px"}}>Zakari Smith</p>
-                                <p className="mb-0 py-0 text-black-50" style={{fontSize: "14px", padding: "16px"}}>zakari@acme.com</p>
+                                <p className="mb-1 py-0" style={{fontSize: "16px", padding: "16px"}}>{currentUser?.firstname ?? ''} {currentUser?.lastname ?? ''}</p>
+                                <p className="mb-0 py-0 text-black-50" style={{fontSize: "14px", padding: "16px"}}>{currentUser?.email ?? ''}</p>
                                 <div className="dropdown-divider"></div>
                                 <Link to={"/coach/settings"} className="dropdown-item"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</Link>
                                 <Link to={"/coach/invoice-billing"} className="dropdown-item"><i className="fas fa-credit-card fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Inovice & Billing</Link>

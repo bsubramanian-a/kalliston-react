@@ -2,7 +2,7 @@ import axios from "axios";
 import authHeader from "./auth-header";
 
 //const API_URL = "http://localhost:8000/api/v1/users/";
-const API_URL = "https://kalliston-api.onrender.com/";
+const API_URL = "https://kalliston-api.onrender.com/api/v1/users/";
 
 
 const register = (email:string) => {

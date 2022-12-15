@@ -7,6 +7,7 @@ import Calendar from '../../../assets/img/d-menu/calendar_today.png';
 import FitnessCenter from '../../../assets/img/d-menu/fitness_center.svg';
 import Computer from '../../../assets/img/d-menu/computer.svg';
 import StoreFront from '../../../assets/img/d-menu/storefront.svg';
+import Settings from '../Settings';
 import { Link } from 'react-router-dom';
 
 function LeftMenu() {
@@ -20,15 +21,15 @@ function LeftMenu() {
                     <hr className="sidebar-divider my-0" />
                     <ul className="navbar-nav text-light" id="accordionSidebar">
                         <li className="nav-item"><Link to={"/coach/dashboard"} className="nav-link active"><img src={Trending} /><span className="f-color ms-md-4 l-size">Sales</span></Link></li>
-                        <li className="nav-item"><Link to={"/coach/clients"} className="nav-link"><img src={Person} /><span className="f-color ms-md-4 l-size">Client</span></Link></li>
+                        <li className="nav-item"><Link to={"/coach/clients"} className="nav-link"><img src={Person} /><span className="f-color ms-md-4 l-size">Clients</span></Link></li>
                         <li className="nav-item"><Link to={"/coach/chat"} className="nav-link"><img src={ChatBubble} /><span className="f-color ms-md-4 l-size">Chat</span></Link></li>
-                        <li className="nav-item"><Link to={"/coach/schedule"} className="nav-link"><img src={Calendar} /><span className="f-color ms-md-4 l-size">Schedule</span></Link></li>
-                        <li className="nav-item"><Link to={"/coach/fitness"} className="nav-link"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></Link></li>
+                        <li className="nav-item"><Link to={"/coach/package"} className="nav-link"><img src={StoreFront} /><span className="f-color ms-md-4 l-size">Packages</span></Link></li>
+                        {/* <li className="nav-item"><Link to={"/coach/schedule"} className="nav-link"><img src={Calendar} /><span className="f-color ms-md-4 l-size">Schedule</span></Link></li> */}
+                        {/* <li className="nav-item"><Link to={"/coach/fitness"} className="nav-link"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></Link></li> */}
                     </ul>
                 </div>
                 <ul className="navbar-nav text-light" id="accordionSidebar-1">
-                    <li className="nav-item"><Link to={"/coach/profile"} className="nav-link"><img src={Computer} /><span className="f-color ms-md-4 l-size">Coach Profile</span></Link></li>
-                    <li className="nav-item"><Link to={"/coach/package"} className="nav-link"><img src={StoreFront} /><span className="f-color ms-md-4 l-size">Packages</span></Link></li>
+                <li className="nav-item"><Link to={"/coach/settings"} className="nav-link"><i className="fas fa-cogs fa-fw me-2 text-black" style={{fontSize: "20px"}}></i><span className="f-color ms-md-4 l-size">Settings</span></Link></li>
                 </ul>
             </div>
         </nav>
