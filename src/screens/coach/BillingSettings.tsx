@@ -20,7 +20,7 @@ function BillingSettings() {
                         <div className="container-fluid text-start vh-100">
                             <div>
                                 <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><Link to={"#"} className="text-decoration-none"><span className="t-color text-decoration-none">Billing settings</span></Link></li>
+                                    <li className="breadcrumb-item"><Link to={"/coach/settings"} className="text-decoration-none"><span className="t-color text-decoration-none">Billing settings</span></Link></li>
                                     <li className="breadcrumb-item"><Link to={"#"} className="text-decoration-none"><span className="f-color">Billing settings</span></Link></li>
                                 </ol>
                                 <h1 className="h-size mb-2 f-color fw-normal mt-1">Card Settings</h1>
