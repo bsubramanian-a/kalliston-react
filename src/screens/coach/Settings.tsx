@@ -59,7 +59,7 @@ function Settings() {
                           Security
                         </Link>
                       </li>
-                      <li className="nav-item" role="presentation">
+                      {/* <li className="nav-item" role="presentation">
                         <Link to={"#tab-4"}
                           className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
@@ -74,9 +74,9 @@ function Settings() {
                           data-bs-toggle="tab">
                           Invoice & Payout
                         </Link>
-                      </li>
+                      </li> */}
                       <li className="nav-item" role="presentation">
-                        <Link to={"#tab-6"}
+                        <Link to={"#tab-7"}
                           className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
                           data-bs-toggle="tab">
@@ -84,7 +84,7 @@ function Settings() {
                         </Link>
                       </li>
                       <li className="nav-item" role="presentation">
-                        <Link to={"#tab-7"}
+                        <Link to={"#tab-6"}
                           className="nav-link d-flex justify-content-start align-items-center"
                           role="tab"
                           data-bs-toggle="tab">
@@ -96,8 +96,8 @@ function Settings() {
                       <AccountTab />
                       <NotificationTab />
                       <SecurityTab />
-                      <ScheduleTab />
-                      <InvoicePayoutTab />
+                      {/* <ScheduleTab /> */}
+                      {/* <InvoicePayoutTab /> */}
                       <BillingTab />
                       <CardTab />
                     </div>

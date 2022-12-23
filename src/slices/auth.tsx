@@ -12,7 +12,7 @@ export const register = createAsyncThunk(
       const response = await AuthService.register(email);
       return response.data;
     } catch (error:any) {
-      return error.response;
+      return thunkAPI.rejectWithValue(error.response); 
     }
   }
 );
@@ -24,10 +24,37 @@ export const login = createAsyncThunk(
       const response = await AuthService.login(email, password);
       return response;
     } catch (error:any) {
-      return error.response;      
+      return thunkAPI.rejectWithValue(error.response);      
     }
   }
 );
+
+export const coachUpdateProfile = createAsyncThunk(
+  "auth/coach-update-profile",
+  async ({ email, firstname, lastname }:any, thunkAPI) => {
+    console.log("coach profile", firstname)
+    try {
+      const response = await AuthService.coachUpdateProfile(email, firstname, lastname);
+      return response;
+    } catch (error:any) {
+      return thunkAPI.rejectWithValue(error.response);      
+    }
+  }
+);
+
+export const coachUpdateProfilePic = createAsyncThunk(
+  "auth/coach-update-profile-pic",
+  async (image:any, thunkAPI) => {
+    console.log("coach image", image)
+    try {
+      const response = await AuthService.coachUpdateProfilePic(image);
+      return response;
+    } catch (error:any) {
+      return thunkAPI.rejectWithValue(error.response);      
+    }
+  }
+);
+
 
 export const otp = createAsyncThunk(
   "auth/otp",
@@ -37,7 +64,8 @@ export const otp = createAsyncThunk(
       const response = await AuthService.otp(email, otp);
       return response;
     } catch (error:any) {
-      return error.response;      
+      console.log("error auth otp", error);
+      return thunkAPI.rejectWithValue(error.response);  
     }
   }
 );
@@ -54,7 +82,7 @@ export const forget = createAsyncThunk(
       const response = await AuthService.forget(email);
       return response.data;
     } catch (error:any) {
-      return error.response;
+      return thunkAPI.rejectWithValue(error.response); 
     }
   }
 );
@@ -67,7 +95,7 @@ export const forgetotp = createAsyncThunk(
       const response = await AuthService.forgetotp(email, otp);
       return response;
     } catch (error:any) {
-      return error.response;      
+      return thunkAPI.rejectWithValue(error.response);       
     }
   }
 );
@@ -82,21 +110,27 @@ export const changepassword = createAsyncThunk(
       const response = await AuthService.changepassword(email, currentpassword,newpassword);
       return response;
     } catch (error:any) {
-      return error.response;      
+      return thunkAPI.rejectWithValue(error.response);       
     }
   }
 );
 
-const initialState = coach
-  ? { isLoggedIn: true, coach }
-  : { isLoggedIn: false, coach: null };
+const initialState = (coach
+  && Object.keys(coach).length === 0
+  && Object.getPrototypeOf(coach) === Object.prototype)
+    ? { isLoggedIn: false, coach:null }
+    : { isLoggedIn: true, coach };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-  },
+  }, 
   extraReducers: (builder) => {
+    builder.addCase(coachUpdateProfile.fulfilled, (state, action) => {
+      state.coach = action.payload.coach;
+    });
+
     builder.addCase(register.fulfilled, (state) => {
       state.isLoggedIn = false;
     });
@@ -107,6 +141,10 @@ const authSlice = createSlice({
 
     builder.addCase(otp.fulfilled, (state, action) => {
       state.isLoggedIn = true;
+      state.coach = action.payload.coach;
+    });
+
+    builder.addCase(coachUpdateProfilePic.fulfilled, (state, action) => {
       state.coach = action.payload.coach;
     });
 

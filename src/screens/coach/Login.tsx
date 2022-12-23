@@ -83,8 +83,13 @@ function Login() {
                     setIsOTP(true);
                 }
             })
-            .catch(() => {
+            .catch((error:any) => {
+                setIsLoading(false);
                 setSuccessful(false);
+                setErrorMessage(error.data.status);
+                setIsError(true);
+                setIsLogin(true);
+                setIsOTP(false);
             });
     };
 
@@ -114,8 +119,13 @@ function Login() {
                     //setSuccessful(true);                    
                 }
             })
-            .catch(() => {
-                setSuccessful(false);
+            .catch((error:any) => {
+                setIsLoading(false);
+                setSuccessful(true);
+                setErrorMessage(error.data.status);
+                setIsError(true);
+                setIsLogin(false);
+                setIsOTP(true);
             });
     };
 

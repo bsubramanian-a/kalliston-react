@@ -66,10 +66,10 @@ function Register() {
                             </div>
                             )}
                             {!successful && (
-                            <div className="col col-12">
-                                <p className="f-color f-h mb-0 text-start">Contact us to create an account</p>
-                                <p className="text-black-50 l-size mb-0 text-start">To create a coach account please enter your details and we will get back to you within 48 hours</p>
-                            </div>
+                                <div className="col col-12">
+                                    <p className="f-color f-h mb-0 text-start">Contact us to create an account</p>
+                                    <p className="text-black-50 l-size mb-0 text-start">To create a coach account please enter your details and we will get back to you within 48 hours</p>
+                                </div>
                             )}
                     </div>
                     <Formik
@@ -102,7 +102,7 @@ function Register() {
                                                     <div>Creating the coach...</div>
                                                 )}
                                                 {!isLoading && (
-                                                <button className="btn btn-primary px-4 text-uppercase" type="submit">Send</button>
+                                                    <button className="btn btn-primary px-4 text-uppercase" type="submit">Send</button>
                                                 )}
                                             </div>
                                         </div>

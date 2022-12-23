@@ -8,9 +8,16 @@ import FitnessCenter from '../../../assets/img/d-menu/fitness_center.svg';
 import Computer from '../../../assets/img/d-menu/computer.svg';
 import StoreFront from '../../../assets/img/d-menu/storefront.svg';
 import Settings from '../Settings';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function LeftMenu() {
+    const location = useLocation();
+    const [clocation, setCLocation] = useState('');
+
+    useEffect(() => {
+        setCLocation(location.pathname)
+    }, [location.pathname]);
+
     return (
         <nav className="navbar navbar-dark align-items-start d-flex flex-column justify-content-between align-items-center sidebar sidebar-dark accordion bg-white-primary shadow-n p-0">
             <div className="container-fluid d-flex flex-column p-0 vh-100">
@@ -29,7 +36,7 @@ function LeftMenu() {
                     </ul>
                 </div>
                 <ul className="navbar-nav text-light" id="accordionSidebar-1">
-                <li className="nav-item"><Link to={"/coach/settings"} className="nav-link"><i className="fas fa-cogs fa-fw me-2 text-black" style={{fontSize: "20px"}}></i><span className="f-color ms-md-4 l-size">Settings</span></Link></li>
+                <li className="nav-item"><Link to={"/coach/settings"} className="nav-link {clocation == '/coach/settings' && 'active'}"><i className="fas fa-cogs fa-fw me-2 text-black" style={{fontSize: "20px"}}></i><span className="f-color ms-md-4 l-size">Settings</span></Link></li>
                 </ul>
             </div>
         </nav>

@@ -76,8 +76,13 @@ function ForgotPassword() {
           setIsOTP(true);
         }
       })
-      .catch(() => {
+      .catch((error:any) => {
+        setIsLoading(false);
         setSuccessful(false);
+        setErrorMessage(error.data.status);
+        setIsError(true);
+        setIsForget(true);
+        setIsOTP(false);
       });
   };
 
@@ -102,15 +107,21 @@ function ForgotPassword() {
           setIsOTP(true);
           setOTPSent(false);
         }
-        if (res == "success") {
+        if (res.status == "success") {
           setIsLoading(false);
           setOTPSent(true);
           navigate("/coach/login");
           window.location.reload();
         }
       })
-      .catch(() => {
-        setSuccessful(false);
+      .catch((error:any) => {
+        setIsLoading(false);
+        setSuccessful(true);
+        setErrorMessage(error.data.status);
+        setIsError(true);
+        setIsForget(false);
+        setIsOTP(true);
+        setOTPSent(false);
       });
   };
 
