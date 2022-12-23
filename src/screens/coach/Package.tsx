@@ -1,6 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import CloseFilled from '../../assets/img/package-img/closeFilled.svg'
+import Publish from '../../assets/img/package-img/publish.svg'
+import Preview from '../../assets/img/package-img/preview.svg'
+import Modify from '../../assets/img/package-img/modify.svg'
+import User from '../../assets/img/package-img/user.svg'
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
 
@@ -8,67 +11,136 @@ function Package() {
 
     return (
         <div id="page-top">
-            <div id="wrapper" className='d-flex'>
+            <div id="wrapper" className="d-flex">
                 <LeftMenu />
                 <div className="d-flex flex-column" id="content-wrapper">
                     <div id="content">
                         <TopNav />
                         <div className="container-fluid vh-100">
-                            <div className='text-start'><span className="text-black-50 l-size text-start">Sales</span>
-                                <h1 className="h-size mb-4 f-color fw-normal mt-1 text-start">Sales</h1>
+                            <div className="row mb-4 gap-3 gap-lg-0 align-items-lg-end">
+                                <div className="col col-12 col-lg-6">
+                                    <div><span className="text-black-50 l-size">Marketplace Profile</span>
+                                        <h1 className="h-size f-color fw-normal mt-1 mb-0">Packages</h1>
+                                    </div>
+                                </div>
+                                <div className="col col-12 col-lg-6">
+                                    <div className="d-flex justify-content-lg-end align-items-center gap-3">
+                                        <div className="px-2 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Preview} /><span className="m-p fw-medium text-uppercase">Preview</span></div>
+                                        <div className="px-3 d-flex justify-content-center align-items-center border-0 n-br p-btn"><img className="me-2" src={Publish} /><span className="m-p fw-medium text-uppercase">Publish</span></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="row mb-4 text-start">
-                                <div className="col col-12 col-md-6 col-xl-4">
-                                    <div className="card shadow border-0 card-s">
+                            <div className="row mb-4 gap-4 gap-lg-0">
+                                <div className="col col-12 col-lg-6">
+                                    <div className="card card-s">
                                         <div className="card-body">
-                                            <div className="row align-items-center no-gutters">
-                                                <div className="col col-12 px-2 d-flex mb-3">
-                                                    <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white" style={{ fontSize: '12px' }}>Published</span></div>
+                                            <div className="row">
+                                                <div className="col">
+                                                    <h1 className="f-h f-color fw-normal mb-0">Profile</h1>
                                                 </div>
-                                                <div className="col col-12 px-2">
-                                                    <h1 className="f-h f-color fw-semibold mb-3">Calisthenics Taster</h1>
-                                                    <p className="f-color mb-5">A programme to introduce you to the basics <br />of calisthenics</p>
-                                                    <h1 className="f-color mb-3 fw-medium" style={{ fontSize: '20px' }}>Program type</h1>
-                                                    <p className="f-color mb-5 l-size">Catisthenics</p>
+                                                <div className="col">
+                                                    <div className="d-flex justify-content-sm-end align-items-center">
+                                                        <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white t-h">Published</span></div>
+                                                    </div>
                                                 </div>
-                                                <div className="col col-12 px-2">
-                                                    <h1 className="f-color mb-3 fw-medium" style={{ fontSize: '20px' }}>Offer</h1>
-                                                    <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Duration</span><span className="f-color l-size fw-normal">4 weeks</span></div>
-                                                    <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Priority direct chat </span><span className="f-color l-size fw-normal">No</span></div>
-                                                    <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-semibold">Checking Calls</span><span className="f-color l-size fw-normal">No</span></div><button className="btn btn-primary w-100 text-uppercase btn-edit" type="submit">Edit</button>
+                                            </div>
+                                        </div>
+                                        <div className="position-relative mb-5 pro-cover">
+                                            <div className="position-absolute" style={{bottom: "-40%", left: "2%"}}><img className="me-3" src={User} /><span className="f-color fw-medium big-font">Isa Smith</span></div>
+                                        </div>
+                                        <div className="card-body pt-4">
+                                            <div className="row">
+                                                <div className="col col-12 mb-4">
+                                                    <div className="row gap-2 gap-lg-0">
+                                                        <div className="col col-12 col-lg-6">
+                                                            <h1 className="l-size f-color fw-semibold mb-0">Trainning cathegory</h1>
+                                                        </div>
+                                                        <div className="col col-12 col-lg-6">
+                                                            <div className="d-flex justify-content-lg-end align-items-center"><span className="l-size f-color fw-regular mb-0">General training</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col col-12 mb-4">
+                                                    <h1 className="l-size f-color fw-semibold mb-3">Bio</h1>
+                                                    <p className="l-size fw-regular mb-0 f-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                                    <div className="d-flex justify-content-between align-items-center"></div>
+                                                </div>
+                                                <div className="col col-12 mb-4">
+                                                    <h1 className="l-size f-color fw-semibold mb-3">Media</h1>
+                                                    <div className="row">
+                                                        <div className="col col-6 col-md-3 mb-3 mb-md-0">
+                                                            <div className="w-100 n-br package-div"></div>
+                                                        </div>
+                                                        <div className="col col-6 col-md-3 mb-3 mb-md-0">
+                                                            <div className="w-100 n-br package-div"></div>
+                                                        </div>
+                                                        <div className="col col-6 col-md-3">
+                                                            <div className="w-100 n-br package-div"></div>
+                                                        </div>
+                                                        <div className="col col-6 col-md-3">
+                                                            <div className="w-100 n-br package-div"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col col-12 d-flex justify-content-end align-items-center">
+                                                    <div className="px-3 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col col-12 col-md-6 col-xl-4">
-                                    <div className="card shadow border-0 card-s">
+                                <div className="col col-12 col-lg-6">
+                                    <div className="card card-s">
                                         <div className="card-body">
-                                            <div className="row align-items-center no-gutters">
-                                                <div className="col col-12 px-2 d-flex mb-3">
-                                                    <div className="px-3 py-1 tag-d d-flex justify-content-center align-items-center rounded-pill"><span className="text-white" style={{ fontSize: '12px' }}>Draft</span></div>
+                                            <div className="row mb-3 gap-2 gap-sm-0">
+                                                <div className="col col-12 col-sm-6">
+                                                    <h1 className="f-h f-color fw-normal mb-0">Packages</h1>
                                                 </div>
-                                                <div className="col col-12 px-2">
-                                                    <h1 className="f-h f-color fw-semibold mb-3">Calisthenics Taster</h1>
-                                                    <p className="f-color mb-5">A programme to introduce you to the basics <br />of calisthenics</p>
-                                                    <h1 className="f-color mb-3 fw-medium" style={{ fontSize: '20px' }}>Program type</h1>
-                                                    <p className="f-color mb-5 l-size">Catisthenics</p>
-                                                </div>
-                                                <div className="col col-12 px-2">
-                                                    <h1 className="f-color mb-3 fw-medium" style={{ fontSize: '20px' }}>Offer</h1>
-                                                    <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Duration</span><span className="f-color l-size fw-normal">12 weeks</span></div>
-                                                    <div className="d-flex justify-content-between align-items-center mb-2"><span className="f-color l-size fw-semibold">Priority direct chat </span><span className="f-color l-size fw-normal">Yes</span></div>
-                                                    <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-semibold">Checking Calls</span><span className="f-color l-size fw-normal">6</span></div><button className="btn btn-primary w-100 text-uppercase btn-edit" type="submit">Edit</button>
+                                                <div className="col col-12 col-sm-6">
+                                                    <div className="d-flex justify-content-sm-end align-items-center">
+                                                        <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white t-h">Published</span></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col col-12 col-md-6 col-xl-4">
-                                    <div className="card border-0 card-s h-100" style={{ backgroundColor: '#ECECEC', height: '538px !important' }}>
-                                        <div className="card-body d-flex justify-content-center align-items-center">
-                                            <div className="d-flex justify-content-center align-items-center flex-column"><img className="mb-2" src={CloseFilled} />
-                                                <p className="mb-0 text-uppercase m-p fw-semibold" style={{ color: '#868686' }}>Add</p>
+                                            <div className="row">
+                                                <div className="col col-12 mb-4">
+                                                    <div className="p-3 mb-3 n-br p-border">
+                                                        <div className="row align-items-sm-end">
+                                                            <div className="col col-12 col-sm-6 px-2">
+                                                                <p className="mb-2 fw-regular font-size text-black-50">Package 1</p>
+                                                                <p className="f-color fw-medium mb-0 big-font">Basic</p>
+                                                            </div>
+                                                            <div className="col col-12 col-sm-6 px-2">
+                                                                <p className="mb-0 f-h f-color">20.00&nbsp;<span className="fw-regular font-size text-black-50">/per month</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-3 mb-3 n-br p-border">
+                                                        <div className="row align-items-sm-end">
+                                                            <div className="col col-12 col-sm-6 px-2">
+                                                                <p className="mb-2 fw-regular text-black-50 size-font">Package 2</p>
+                                                                <p className="f-color fw-medium mb-0 big-font">Premium</p>
+                                                            </div>
+                                                            <div className="col col-12 col-sm-6 px-2">
+                                                                <p className="mb-0 f-h f-color">30.00&nbsp;<span className="fw-regular font-size text-black-50">/per month</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-3 mb-3 n-br p-border">
+                                                        <div className="row align-items-sm-end">
+                                                            <div className="col col-12 col-sm-6 px-2">
+                                                                <p className="mb-2 fw-regular text-black-50 size-font">Package 3</p>
+                                                                <p className="f-color fw-medium mb-0 big-font">Elite</p>
+                                                            </div>
+                                                            <div className="col col-12 col-sm-6 px-2">
+                                                                <p className="mb-0 f-h f-color">40.00&nbsp;<span className="fw-regular text-black-50 size-font">/per month</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col col-12 d-flex justify-content-end align-items-center">
+                                                    <div className="px-3 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +148,7 @@ function Package() {
                             </div>
                         </div>
                     </div>
-                </div><Link to={"#page-top"} className="border rounded d-inline scroll-to-top"><i className="fas fa-angle-up"></i></Link>
+                </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
             </div>
         </div>
     );
