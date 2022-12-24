@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, CSSProperties } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { changepassword } from '../../../slices/auth';
@@ -13,16 +13,6 @@ function SecurityTab() {
     const [isLoading, setIsLoading] = useState(false);
     // const [initialValues, setInitialValues] = useState({oldpassword: "", newpassword:""});
   
-    const override: CSSProperties = {
-        display: "block",
-        margin: "0 auto",
-        borderColor: "red",
-        position: 'absolute',
-        zIndex: 1000,
-        left: '45%',
-        top: '45%',
-    };
-
     const initialValues = {
       oldpassword: "",
       newpassword:""
@@ -71,14 +61,6 @@ function SecurityTab() {
     return (
         <div className="tab-pane" role="tabpanel" id="tab-3">
             <div className="card card-s">
-                <ClipLoader
-                    color={'#ffffff'}
-                    loading={isLoading}
-                    cssOverride={override}
-                    size={150}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
-                />
                 <div className="card-body">
                     <div className="row mb-4">
                         <div className="col">
@@ -158,12 +140,15 @@ function SecurityTab() {
                                         </div>
                                     </div>
                                     <div className="d-flex justify-content-start align-items-center gap-3">
-                                        <button
+                                        {!isLoading && <button
                                             className="btn btn-primary text-uppercase px-3"
                                             type="submit"
                                         >
                                             Save changes
-                                        </button>
+                                        </button>}
+                                        {isLoading && (
+                                                <div>Updating New Password...</div>
+                                        )}
                                         <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase">
                                             <span className="l-size">Cancel</span>
                                         </div>

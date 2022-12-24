@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Notifications from '../../../assets/img/d-menu/notifications.svg';
-import ProfilePic from '../../../assets/img/avatars/avatar1.jpeg';
+import Avatar from "../../../assets/img/avatar.webp";
 import { logout } from '../../../slices/auth';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -76,7 +76,7 @@ function TopNav() {
                         <div className="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
                     </li>
                     <li className="nav-item dropdown no-arrow">
-                        <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={ProfilePic} /></a>
+                        <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={currentUser?.avatar || Avatar} /></a>
                             <div className="dropdown-menu shadow dropdown-menu-end animated--grow-in position-fixed me-5" data-bs-popper="none" style={{ right: "-26px"}} >
                                 <p className="mb-1 py-0" style={{fontSize: "16px", padding: "16px"}}>{currentUser?.firstname ?? ''} {currentUser?.lastname ?? ''}</p>
                                 <p className="mb-0 py-0 text-black-50" style={{fontSize: "14px", padding: "16px"}}>{currentUser?.email ?? ''}</p>

@@ -1,10 +1,9 @@
-import React, { useContext, useState, useEffect, CSSProperties, useRef } from 'react';
-import Avatar from "../../../assets/img/avatars/avatar1.jpeg";
+import React, { useContext, useState, useEffect, useRef } from 'react';
+import Avatar from "../../../assets/img/avatar.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
-import ClipLoader from "react-spinners/ClipLoader";
 
 function AccountTab() {
     const { coach: currentUser } = useSelector((state:any) => state.auth);
@@ -13,16 +12,6 @@ function AccountTab() {
     const [errormessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const hiddenFileInput = useRef<any>(null);
-
-    const override: CSSProperties = {
-        display: "block",
-        margin: "0 auto",
-        borderColor: "red",
-        position: 'absolute',
-        zIndex: 1000,
-        left: '45%',
-        top: '45%',
-    };
       
     const initialValues = {
         email: currentUser?.email || "",
@@ -68,7 +57,10 @@ function AccountTab() {
     const handleChange = async(event:any) => {
         setIsLoading(true);
         const fileUploaded = event.target.files[0];
-        console.log("file", fileUploaded);
+
+        setErrorMessage("");
+        setSuccessMessage("");
+
         dispatch(coachUpdateProfilePic(fileUploaded))
         .unwrap()
         .then((res: any) => {
@@ -79,10 +71,11 @@ function AccountTab() {
             }
             if (res.status == 200) {
                 setIsLoading(false);
-                setErrorMessage(res.message);
+                setSuccessMessage(res.message);
             }
             setTimeout(() => {
-                setErrorMessage("")
+                setErrorMessage("");
+                setSuccessMessage("");
             }, 3000)
         })
         .catch((error:any) => {
@@ -98,14 +91,6 @@ function AccountTab() {
   
     return (
         <div className="tab-pane active" role="tabpanel" id="tab-1">
-            <ClipLoader
-                color={'#ffffff'}
-                loading={isLoading}
-                cssOverride={override}
-                size={150}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-            />
             <div className="card card-s">
                 <div className="card-body">
                     <div className="row mb-4">
@@ -199,15 +184,18 @@ function AccountTab() {
                                         </div>
                                     </div>
                                     <div className="d-flex justify-content-start align-items-center gap-3">
-                                        <button
+                                        {!isLoading && <button
                                             className="btn btn-primary text-uppercase px-3"
                                             type="submit"
                                         >
                                             Save changes
-                                        </button>
-                                        <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase">
+                                        </button>}
+                                        {isLoading && (
+                                                <div>Updating account settings...</div>
+                                        )}
+                                        {/* <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase">
                                             <span className="l-size">Cancel</span>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

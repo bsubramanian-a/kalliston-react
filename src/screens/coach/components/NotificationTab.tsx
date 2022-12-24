@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, CSSProperties } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { coachUpdateNotification } from '../../../slices/auth';
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -10,16 +10,6 @@ function NotificationTab() {
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-
-    const override: CSSProperties = {
-        display: "block",
-        margin: "0 auto",
-        borderColor: "red",
-        position: 'absolute',
-        zIndex: 1000,
-        left: '45%',
-        top: '45%',
-    };
 
     const initialValues = {
         email_notification: currentUser?.email_notification || false,
@@ -59,14 +49,6 @@ function NotificationTab() {
 
     return (
         <div className="tab-pane" role="tabpanel" id="tab-2">
-            <ClipLoader
-                color={'#ffffff'}
-                loading={isLoading}
-                cssOverride={override}
-                size={150}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-            />
             <div className="card card-s">
                 <div className="card-body">
                     {errormessage && (
@@ -157,15 +139,18 @@ function NotificationTab() {
                                 </div>
                                 <div className="col pt-5">
                                     <div className="d-flex justify-content-start align-items-center gap-3">
-                                        <button
+                                        {!isLoading && <button
                                             className="btn btn-primary text-uppercase px-3"
                                             type="submit"
                                         >
                                             Save changes
-                                        </button>
-                                        <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase">
+                                        </button>}
+                                        {isLoading && (
+                                                <div>Updating notification settings...</div>
+                                        )}
+                                        {/* <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase">
                                             <span className="l-size">Cancel</span>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, CSSProperties} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import CreditCard from '../../assets/img/card-img/_creditCards.svg';
 
 import LeftMenu from './components/LeftMenu';
@@ -16,16 +16,6 @@ function CardSettings() {
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-
-    const override: CSSProperties = {
-        display: "block",
-        margin: "0 auto",
-        borderColor: "red",
-        position: 'absolute',
-        zIndex: 1000,
-        left: '45%',
-        top: '45%',
-    };
     
     const initialValues = {
         card_number: card?.card_number || "",
@@ -34,7 +24,8 @@ function CardSettings() {
         billing_address1: card?.billing_address1 || "",
         billing_address2: card?.billing_address2 || "",
         city: card?.city || "",
-        country: card?.country || ""
+        country: card?.country || "",
+        cvv: card?.cvv || ""
     };
 
     const validationSchema = Yup.object().shape({
@@ -93,14 +84,6 @@ function CardSettings() {
                                 <div className="col col-12 col-md-4">
                                     <p className="text-black-50 l-size">We recommend enabling MFA even though you have a strong password.</p>
                                 </div>
-                                <ClipLoader
-                                    color={'#ffffff'}
-                                    loading={isLoading}
-                                    cssOverride={override}
-                                    size={150}
-                                    aria-label="Loading Spinner"
-                                    data-testid="loader"
-                                />
                                 <div className="col col-12 col-md-8">
                                     <div className="card card-s">
                                         <div className="card-body">
@@ -183,7 +166,9 @@ function CardSettings() {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="d-flex justify-content-start align-items-center gap-3"><button className="btn btn-primary text-uppercase px-3" type="submit">Save changes</button>
+                                                        <div className="d-flex justify-content-start align-items-center gap-3">
+                                                            {!isLoading && <button className="btn btn-primary text-uppercase px-3" type="submit">Save changes</button>}
+                                                            {isLoading && <div>Updating card details...</div>}
                                                             <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><span className="l-size">Cancel</span></div>
                                                         </div>
                                                     </div>
