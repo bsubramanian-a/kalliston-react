@@ -2,6 +2,7 @@ import axios from "axios";
 import authHeader from "./auth-header";
 
 const API_URL = "http://localhost:8000/api/v1/users/";
+const API = "http://localhost:8000/api/v1/";
 // const API_URL = "https://kalliston-api.onrender.com/api/v1/users/";
 
 
@@ -42,6 +43,24 @@ const login = (email:string, password:string) => {
     });
 };
 
+const getCardDetails = async() => {
+  return axios
+  .get(API + "cards/get-card-details", { headers: authHeader() })
+  .then((response) => {
+    return response.data;
+  });
+};
+
+const addCard = (card_number:string, card_holder_name:string, expiry_date:string, cvv:string, billing_address1:string, billing_address2:string, city:string, country:string) => {
+  return axios
+    .post(API + "cards/add-card", {
+      card_number, card_holder_name, expiry_date, cvv, billing_address1, billing_address2, city, country
+    }, {headers: authHeader()})
+    .then((response) => {
+      return response.data;
+    });
+};
+
 const coachUpdateProfilePic = async(image:any) => {
   const formData = new FormData();
   formData.append("image", image);
@@ -57,7 +76,7 @@ const coachUpdateProfilePic = async(image:any) => {
 };
 
 const coachUpdateProfile = (email?:string, firstname?:string, lastname?:string, gender?:any, dob?:any, email_notification?:any, client_request_notification?:any, message_from_client?:any, two_factor_auth?:any, sync_google?:any, cal?:any, bio?:any, customized_link?:any, website_link?:any, instagram_link?:any, facebook_link?:any, tiktok_link?:any, youtube_link?:any, cover_image?:any, user_type?:any, your_goal?:any, current_fitness_level?:any, latitude?:any, longitude?:any, billing_address1?:any, billing_address2?:any, city?:any, country?:any, experience?:any, certifications?:any, areas_of_interest?:any, long_description?:any) => {
-  console.log("coach profile service", firstname)
+  console.log("coach profile service", message_from_client)
   return axios
     .put(API_URL + "coach-update-profile", {
       email, 
@@ -92,6 +111,39 @@ const coachUpdateProfile = (email?:string, firstname?:string, lastname?:string, 
       certifications,
       areas_of_interest,
       long_description
+    }, { headers: authHeader() })
+    .then((response) => {
+      localStorage.setItem("coach", JSON.stringify(response.data.coach));
+      return response.data;
+    });
+};
+
+const coachUpdateNotification = (email_notification:boolean,
+  otp_required:boolean,
+  client_request_notification:boolean,
+  message_from_client:boolean) => {
+
+  return axios
+    .put(API_URL + "coach-update-profile", {
+      email_notification,
+      otp_required,
+      client_request_notification,
+      message_from_client
+    }, { headers: authHeader() })
+    .then((response) => {
+      localStorage.setItem("coach", JSON.stringify(response.data.coach));
+      return response.data;
+    });
+};
+
+const coachUpdateBilling = (billing_address1:string,
+  billing_address2:string,
+  city:string,
+  country:string) => {
+
+  return axios
+    .put(API_URL + "coach-update-profile", {
+      billing_address1, billing_address2, city, country
     }, { headers: authHeader() })
     .then((response) => {
       localStorage.setItem("coach", JSON.stringify(response.data.coach));
@@ -146,7 +198,11 @@ const authService = {
   forgetotp,
   coachUpdateProfile,
   changepassword,
-  coachUpdateProfilePic
+  coachUpdateProfilePic,
+  coachUpdateNotification,
+  coachUpdateBilling,
+  getCardDetails,
+  addCard
 };
 
 export default authService;

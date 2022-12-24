@@ -32,9 +32,56 @@ export const login = createAsyncThunk(
 export const coachUpdateProfile = createAsyncThunk(
   "auth/coach-update-profile",
   async ({ email, firstname, lastname }:any, thunkAPI) => {
-    console.log("coach profile", firstname)
     try {
       const response = await AuthService.coachUpdateProfile(email, firstname, lastname);
+      return response;
+    } catch (error:any) {
+      return thunkAPI.rejectWithValue(error.response);      
+    }
+  }
+);
+
+export const getCardDetails = createAsyncThunk(
+  "auth/get-card-details",
+  async (_:void, thunkAPI) => {
+    try {
+      const response = await AuthService.getCardDetails();
+      return response;
+    } catch (error:any) {
+      return thunkAPI.rejectWithValue(error.response);      
+    }
+  }
+);
+
+export const addCard = createAsyncThunk(
+  "auth/add-card",
+  async ({ card_number, card_holder_name, expiry_date, cvv, billing_address1, billing_address2, city, country}:any, thunkAPI) => {
+    try {
+      const response = await AuthService.addCard( card_number, card_holder_name, expiry_date, cvv, billing_address1, billing_address2, city, country );
+      return response;
+    } catch (error:any) {
+      return thunkAPI.rejectWithValue(error.response);      
+    }
+  }
+);
+
+export const coachUpdateNotification = createAsyncThunk(
+  "auth/coach-update-notification",
+  async ({ email_notification, otp_required, client_request_notification, message_from_client }:any, thunkAPI) => {
+    try {
+      const response = await AuthService.coachUpdateNotification(email_notification, otp_required, client_request_notification, message_from_client);
+      return response;
+    } catch (error:any) {
+      return thunkAPI.rejectWithValue(error.response);      
+    }
+  }
+);
+
+export const coachUpdateBilling = createAsyncThunk(
+  "auth/coach-update-billing",
+  async ({ billing_address1, billing_address2, city, country }:any, thunkAPI) => {
+    try {
+      const response = await AuthService.coachUpdateBilling(billing_address1, billing_address2, city, country);
       return response;
     } catch (error:any) {
       return thunkAPI.rejectWithValue(error.response);      
@@ -118,7 +165,7 @@ export const changepassword = createAsyncThunk(
 const initialState = (coach
   && Object.keys(coach).length === 0
   && Object.getPrototypeOf(coach) === Object.prototype)
-    ? { isLoggedIn: false, coach:null }
+    ? { isLoggedIn: false, coach:null, card:null }
     : { isLoggedIn: true, coach };
 
 const authSlice = createSlice({
@@ -148,6 +195,14 @@ const authSlice = createSlice({
       state.coach = action.payload.coach;
     });
 
+    builder.addCase(coachUpdateNotification.fulfilled, (state, action) => {
+      state.coach = action.payload.coach;
+    });
+
+    builder.addCase(coachUpdateBilling.fulfilled, (state, action) => {
+      state.coach = action.payload.coach;
+    });
+    
     builder.addCase(otp.rejected, (state, action) => {
       state.isLoggedIn = false;
       state.coach = null;
@@ -168,6 +223,10 @@ const authSlice = createSlice({
       state.coach = null;
     });
 
+    builder.addCase(getCardDetails.fulfilled, (state, action) => {
+      state.card = action.payload.card;
+    });
+    
     builder.addCase(forget.rejected, (state, action) => {
       state.isLoggedIn = false;
       state.coach = null;
@@ -186,6 +245,10 @@ const authSlice = createSlice({
     builder.addCase(logout.fulfilled, (state) => {
       state.isLoggedIn = false;
       state.coach = null;
+    });
+
+    builder.addCase(addCard.fulfilled, (state, action) => {
+      state.card = action.payload.card;
     });
   }
 });

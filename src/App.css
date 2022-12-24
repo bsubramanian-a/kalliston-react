@@ -31,6 +31,10 @@
   }
 }
 
+.link_decoration{
+  text-decoration: none !important;
+}
+
 .profile_pic{
   width: 70px;
   height: 70px;
@@ -146,8 +150,12 @@ a:hover {
   color: #9a8770;
 }
 
+.dropdown-menu{
+  top: unset !important;
+}
+
 .sidebar-dark .nav-item .nav-link.active, .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
-  background-color: #F2F0EC;
+  background-color: #ddd6cd;
   font-size: 16px;
   font-weight: 400;
 }

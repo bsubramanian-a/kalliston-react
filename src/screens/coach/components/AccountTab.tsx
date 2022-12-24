@@ -5,7 +5,6 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
 import ClipLoader from "react-spinners/ClipLoader";
-import axios from "axios";
 
 function AccountTab() {
     const { coach: currentUser } = useSelector((state:any) => state.auth);

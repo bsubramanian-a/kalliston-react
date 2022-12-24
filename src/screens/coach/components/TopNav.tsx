@@ -1,22 +1,28 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Notifications from '../../../assets/img/d-menu/notifications.svg';
 import ProfilePic from '../../../assets/img/avatars/avatar1.jpeg';
-import { Link } from 'react-router-dom';
 import { logout } from '../../../slices/auth';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import moment from 'moment';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 
 function TopNav() {
 
     const dispatch = useDispatch<any>();
-    const { coach: currentUser } = useSelector((state:any) => state.auth);
+    const { coach: currentUser, isLoggedIn } = useSelector((state:any) => state.auth);
     const handleLogout = () => {
-        dispatch(logout());            
+        dispatch(logout());     
+        navigate('/')         
     };
 
-    
+    let navigate = useNavigate();
+
+    if (!isLoggedIn) {
+        return <Navigate to="/" />;
+    }
+
     return (
         <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar shadow-n overflow-hidden">
             <div className="container-fluid"><button className="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i className="fas fa-bars"></i></button>
@@ -33,8 +39,9 @@ function TopNav() {
                             </form>
                         </div>
                     </li>
-                    <li className="nav-item dropdown no-arrow mx-1">
-                        <div className="nav-item dropdown no-arrow" style={{ zIndex: 999 }}><a className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span className="badge bg-danger badge-counter">3+</span><img src={Notifications} /></a>
+                    
+                    <li className="nav-item notification_menu dropdown no-arrow mx-1">
+                        <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span className="badge bg-danger badge-counter">3+</span><img src={Notifications} /></a>
                             <div className="dropdown-menu dropdown-menu-end dropdown-list position-fixed animated--grow-in">
                                 <h6 className="dropdown-header">alerts center</h6>
                                 <Link to={"#"} className="dropdown-item d-flex align-items-center">
@@ -69,8 +76,8 @@ function TopNav() {
                         <div className="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
                     </li>
                     <li className="nav-item dropdown no-arrow">
-                        <div className="nav-item dropdown show no-arrow" style={{ zIndex: 999 }}><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={ProfilePic} /></a>
-                            <div className="dropdown-menu show shadow dropdown-menu-end animated--grow-in position-fixed me-5 d-block" data-bs-popper="none" style={{ right: "-26px"}} >
+                        <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={ProfilePic} /></a>
+                            <div className="dropdown-menu shadow dropdown-menu-end animated--grow-in position-fixed me-5" data-bs-popper="none" style={{ right: "-26px"}} >
                                 <p className="mb-1 py-0" style={{fontSize: "16px", padding: "16px"}}>{currentUser?.firstname ?? ''} {currentUser?.lastname ?? ''}</p>
                                 <p className="mb-0 py-0 text-black-50" style={{fontSize: "14px", padding: "16px"}}>{currentUser?.email ?? ''}</p>
                                 <div className="dropdown-divider"></div>

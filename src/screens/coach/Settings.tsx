@@ -14,8 +14,29 @@ import ScheduleTab from "./components/ScheduleTab";
 import InvoicePayoutTab from './components/InovicePayoutTab';
 import BillingTab from './components/BillingTab';
 import CardTab from './components/CardTab';
+import { useDispatch, useSelector } from "react-redux";
+import { getCardDetails } from '../../slices/auth';
 
 function Settings() {
+  const { card: card } = useSelector((state:any) => state.auth);
+  const dispatch = useDispatch<any>();
+
+  useEffect(() => {
+    console.log("use effect")
+    getCardDetail();
+  }, [])
+
+  const getCardDetail = () => {
+    dispatch(getCardDetails())
+        .unwrap()
+        .then((res: any) => {
+            console.log("card", res);
+        })
+        .catch((error:any) => {
+            console.log("error", error);
+        });
+};
+
   return (
     <div id="page-top">
       <div id="wrapper" className="d-flex text-start">

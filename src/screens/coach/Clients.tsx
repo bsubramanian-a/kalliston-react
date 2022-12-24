@@ -35,7 +35,7 @@ function Clients() {
         <div id="page-top">
             <div id="wrapper" className='d-flex'>
                 <LeftMenu />
-                <div className="d-flex flex-column" id="content-wrapper">
+                <div className="d-flex flex-column text-start" id="content-wrapper">
                     <div id="content">
                         <TopNav />
                         <div className="container-fluid vh-100">

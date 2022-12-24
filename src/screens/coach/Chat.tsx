@@ -17,7 +17,7 @@ function Chat() {
                     <div id="content">
                         <TopNav />
                         <div className="container-fluid text-start vh-100">
-                            <div>
+                            <div><span className="text-black-50 l-size">Chat</span>
                                 <h1 className="h-size mb-5 f-color fw-normal mt-1">Chat</h1>
                             </div>
                             <div className="container-fluid">
