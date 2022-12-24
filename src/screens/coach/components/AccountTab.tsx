@@ -11,6 +11,7 @@ function AccountTab() {
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const hiddenFileInput = useRef<any>(null);
 
     const override: CSSProperties = {
@@ -38,6 +39,8 @@ function AccountTab() {
     const handleUpdate = (formValue: any) => {
         const { email, firstname, lastname } = formValue;
         setIsLoading(true);
+        setErrorMessage("");
+        setSuccessMessage("");
 
         dispatch(coachUpdateProfile({ email, firstname, lastname }))
             .unwrap()
@@ -48,10 +51,11 @@ function AccountTab() {
                 }
                 if (res.status == 200) {
                     setIsLoading(false);
-                    setErrorMessage(res.message);
+                    setSuccessMessage(res.message);
                 }
                 setTimeout(() => {
-                    setErrorMessage("")
+                    setErrorMessage("");
+                    setSuccessMessage("");
                 }, 3000)
             })
             .catch((error:any) => {
@@ -84,7 +88,7 @@ function AccountTab() {
         .catch((error:any) => {
             console.log("error", error);
             setIsLoading(false);
-            setErrorMessage(error.message);
+            setErrorMessage(error.data.message);
         });
     };
 
@@ -142,6 +146,9 @@ function AccountTab() {
                                     </h1>
                                     {errormessage && (
                                         <div className="alert alert-danger small border-0 py-1 mb-0 text-center my-2 mb-4">{errormessage}</div>
+                                    )}
+                                    {successMessage && (
+                                        <div className="alert alert-success small border-0 py-1 mb-0 text-center my-2 mb-4">{successMessage}</div>
                                     )}
                                     <div className="mb-3">
                                         <div className="row">

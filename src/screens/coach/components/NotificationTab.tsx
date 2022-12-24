@@ -1,13 +1,25 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, CSSProperties } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { coachUpdateNotification } from '../../../slices/auth';
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function NotificationTab() {
     const { coach: currentUser } = useSelector((state:any) => state.auth);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+
+    const override: CSSProperties = {
+        display: "block",
+        margin: "0 auto",
+        borderColor: "red",
+        position: 'absolute',
+        zIndex: 1000,
+        left: '45%',
+        top: '45%',
+    };
 
     const initialValues = {
         email_notification: currentUser?.email_notification || false,
@@ -19,6 +31,8 @@ function NotificationTab() {
     const handleUpdate = (formValue: any) => {
         const { email_notification, otp_required, client_request_notification, message_from_client } = formValue;
         setIsLoading(true);
+        setErrorMessage("");
+        setSuccessMessage("");
 
         dispatch(coachUpdateNotification({ email_notification, otp_required, client_request_notification, message_from_client }))
             .unwrap()
@@ -29,25 +43,37 @@ function NotificationTab() {
                 }
                 if (res.status == 200) {
                     setIsLoading(false);
-                    setErrorMessage(res.message);
+                    setSuccessMessage(res.message);
                 }
                 setTimeout(() => {
-                    setErrorMessage("")
+                    setErrorMessage("");
+                    setSuccessMessage("");
                 }, 3000)
             })
             .catch((error:any) => {
                 console.log("error", error);
                 setIsLoading(false);
-                setErrorMessage(error.message);
+                setErrorMessage(error.data.message);
             });
     };
 
     return (
         <div className="tab-pane" role="tabpanel" id="tab-2">
+            <ClipLoader
+                color={'#ffffff'}
+                loading={isLoading}
+                cssOverride={override}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+            />
             <div className="card card-s">
                 <div className="card-body">
                     {errormessage && (
                         <div className="alert alert-danger small border-0 py-1 mb-0"> {errormessage} </div>
+                    )}
+                    {successMessage && (
+                        <div className="alert alert-success small border-0 py-1 mb-0 text-center my-2 mb-4">{successMessage}</div>
                     )}
                     <Formik
                         initialValues={initialValues}

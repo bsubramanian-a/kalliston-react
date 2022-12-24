@@ -1,40 +1,69 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, CSSProperties } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { changepassword } from '../../../slices/auth';
 import * as Yup from "yup";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function SecurityTab() {
 
     const { coach: currentUser } = useSelector((state: any) => state.auth);
-    console.log("currentUser", currentUser);
+    const [errormessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('')
+    const [isLoading, setIsLoading] = useState(false);
+    // const [initialValues, setInitialValues] = useState({oldpassword: "", newpassword:""});
   
+    const override: CSSProperties = {
+        display: "block",
+        margin: "0 auto",
+        borderColor: "red",
+        position: 'absolute',
+        zIndex: 1000,
+        left: '45%',
+        top: '45%',
+    };
+
     const initialValues = {
       oldpassword: "",
       newpassword:""
     };
   
+    const validationSchema = Yup.object().shape({
+        oldpassword: Yup.string().required("This field is required!"),
+        newpassword: Yup.string().required("This field is required!")
+    });
+
     const dispatch = useDispatch<any>();
   
     const handleChangePassword = (formValue: any) => {
       const { oldpassword, newpassword } = formValue;
 
-      console.log("formvalue",formValue);
-      
-  
+      setIsLoading(true);
+      setErrorMessage("");
+      setSuccessMessage("");
+
       dispatch(changepassword({ email : currentUser?.email, currentpassword:oldpassword, newpassword}))
           .unwrap()
           .then((res: any) => {
-              console.log("response coming in", res);
-              if (res.status == 401) {
-                  
-              }
-              if (res.status == "success") {
-                  
-              }
+            console.log("response coming in", res);
+            if (res.status == 401) {
+                setIsLoading(false);
+                setErrorMessage(res.message);
+            }
+            if (res.status == 200) {
+                setIsLoading(false);
+                setSuccessMessage(res.message);
+                // setInitialValues({oldpassword: "", newpassword:""})
+            }
+            setTimeout(() => {
+                setErrorMessage("");
+                setSuccessMessage("");
+            }, 3000)
           })
-          .catch(() => {
-              //setSuccessful(false);
+          .catch((error:any) => {
+            console.log("error", error);
+            setIsLoading(false);
+            setErrorMessage(error.data.message);
           });
   };
   
@@ -42,13 +71,27 @@ function SecurityTab() {
     return (
         <div className="tab-pane" role="tabpanel" id="tab-3">
             <div className="card card-s">
+                <ClipLoader
+                    color={'#ffffff'}
+                    loading={isLoading}
+                    cssOverride={override}
+                    size={150}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                />
                 <div className="card-body">
                     <div className="row mb-4">
                         <div className="col">
                             <h1 className="f-color l-size mb-4">
                                 Change Password
                             </h1>
-                            <Formik initialValues={initialValues} onSubmit={handleChangePassword}>
+                            {errormessage && (
+                                <div className="alert alert-danger small border-0 py-1 mb-0 text-center my-2 mb-4">{errormessage}</div>
+                            )}
+                            {successMessage && (
+                                <div className="alert alert-success small border-0 py-1 mb-0 text-center my-2 mb-4">{successMessage}</div>
+                            )}
+                            <Formik initialValues={initialValues} onSubmit={handleChangePassword} validationSchema={validationSchema}>
                                 <Form>
                                     <div className="mb-5">
                                         <div className="row mb-5">
@@ -63,6 +106,11 @@ function SecurityTab() {
                                                         className="input-lg w-100 fw-normal t-color l-size"
                                                         style={{ outline: "none" }}
                                                     />
+                                                     <ErrorMessage
+                                                        name="oldpassword"
+                                                        component="div"
+                                                        className="alert alert-danger small border-0 py-1 mb-0"
+                                                    />
                                                 </div>
                                             </div>
                                             <div className="col col-12">
@@ -75,6 +123,11 @@ function SecurityTab() {
                                                         type="text"
                                                         className="input-lg w-100 fw-normal t-color l-size"
                                                         style={{ outline: "none" }}
+                                                    />
+                                                     <ErrorMessage
+                                                        name="newpassword"
+                                                        component="div"
+                                                        className="alert alert-danger small border-0 py-1 mb-0"
                                                     />
                                                 </div>
                                             </div>

@@ -148,11 +148,8 @@ export const forgetotp = createAsyncThunk(
 );
 
 export const changepassword = createAsyncThunk(
-  "auth/forgetotp",
+  "auth/change-password",
   async ({ email, currentpassword, newpassword }:any, thunkAPI) => {
-    console.log("email",email);
-    console.log("currentpassword",currentpassword);
-    console.log("newpassword",newpassword);
     try {
       const response = await AuthService.changepassword(email, currentpassword,newpassword);
       return response;
