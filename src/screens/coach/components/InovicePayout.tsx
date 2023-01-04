@@ -2,17 +2,19 @@ import React, { useContext, useState, useEffect } from 'react';
 import Left from '../../../assets/img/d-img/left.svg';
 import Right from '../../../assets/img/d-img/right.svg';
 
-function InvoicePayoutTab() {
+function InvoicePayout() {
 
     return (
-        <div className="tab-pane" role="tabpanel" id="tab-5">
+        <div>
             <div className="card card-s mb-4">
                 <div className="card-body">
                     <div className="row py-2">
                         <div className="col col-12">
-                            <h1 className="f-h f-color fw-normal mb-5">Next Payout</h1>
+                            <div className="pt-1 pb-2 b-c mb-3">
+                                <h1 className="f-h f-color fw-normal">Next Payout</h1>
+                            </div>
                             <div className="d-flex justify-content-between align-items-center mb-2">
-                                <p className="f-color fw-normal mb-0" style={{ fontSize: "20px" }}>Estimed on 12 September</p><span className="f-h f-color fw-normal">£2,365.28</span>
+                                <p className="f-color fw-normal mb-0 big-font">Estimed on 12 September</p><span className="f-h f-color fw-normal">£2,365.28</span>
                             </div>
                             <p className="l-size text-black-50 fw-normal mb-0">For custom solutions and pricing contact our support team</p>
                         </div>
@@ -21,7 +23,9 @@ function InvoicePayoutTab() {
             </div>
             <div className="card shadow mb-4 py-2 card-s">
                 <div className="card-header py-3 pb-4 bg-white border-0">
-                    <h6 className="text-primary f-h f-color fw-normal">Client Request</h6>
+                    <div className="pt-1 pb-2 b-c mb-3">
+                        <h6 className="text-primary f-h f-color fw-normal">Your Invoices</h6>
+                    </div>
                 </div>
                 <div className="card-body py-0">
                     <div className="table-responsive">
@@ -122,4 +126,4 @@ function InvoicePayoutTab() {
     );
 }
 
-export default InvoicePayoutTab;
+export default InvoicePayout;

@@ -83,7 +83,7 @@ function Package() {
                                                     </div>
                                                 </div>
                                                 <div className="col col-12 d-flex justify-content-end align-items-center">
-                                                    <div className="px-3 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></div>
+                                                    <Link to={"/coach/profile"} className="px-3 text-decoration-none ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +111,7 @@ function Package() {
                                                                 <p className="f-color fw-medium mb-0 big-font">Basic</p>
                                                             </div>
                                                             <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-0 f-h f-color">20.00&nbsp;<span className="fw-regular font-size text-black-50">/per month</span></p>
+                                                                <p className="mb-0 f-h f-color">20.00&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -122,7 +122,7 @@ function Package() {
                                                                 <p className="f-color fw-medium mb-0 big-font">Premium</p>
                                                             </div>
                                                             <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-0 f-h f-color">30.00&nbsp;<span className="fw-regular font-size text-black-50">/per month</span></p>
+                                                                <p className="mb-0 f-h f-color">30.00&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -139,7 +139,7 @@ function Package() {
                                                     </div>
                                                 </div>
                                                 <div className="col col-12 d-flex justify-content-end align-items-center">
-                                                    <div className="px-3 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></div>
+                                                    <Link to={"/coach/current-package"} className="px-3 ll-div d-flex justify-content-center align-items-center n-br text-decoration-none"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></Link>
                                                 </div>
                                             </div>
                                         </div>

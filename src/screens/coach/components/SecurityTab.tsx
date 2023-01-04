@@ -114,30 +114,6 @@ function SecurityTab() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="row">
-                                            <div className="col mb-5">
-                                                <h1 className="f-color l-size mb-1">
-                                                    Two-Factor Authentication
-                                                </h1>
-                                                <p className="mb-4">
-                                                    Enabling this will provide an extra
-                                                    layer of security for your account.
-                                                    When logging in, we will ask for a
-                                                    special authentication code from
-                                                    your device.
-                                                </p>
-                                                <button
-                                                    className="btn btn-primary text-uppercase btn-profile px-3"
-                                                    type="submit"
-                                                    style={{
-                                                        height: "36px",
-                                                        fontSize: "14px",
-                                                    }}
-                                                >
-                                                    Enable Two-factor authentication
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div className="d-flex justify-content-start align-items-center gap-3">
                                         {!isLoading && <button

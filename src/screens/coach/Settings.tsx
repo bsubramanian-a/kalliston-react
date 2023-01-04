@@ -11,7 +11,7 @@ import AccountTab from "./components/AccountTab";
 import NotificationTab from "./components/NotificationTab";
 import SecurityTab from "./components/SecurityTab";
 import ScheduleTab from "./components/ScheduleTab";
-import InvoicePayoutTab from './components/InovicePayoutTab';
+import InvoicePayoutTab from './components/InovicePayout';
 import BillingTab from './components/BillingTab';
 import CardTab from './components/CardTab';
 import { useDispatch, useSelector } from "react-redux";

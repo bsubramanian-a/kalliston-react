@@ -70,14 +70,13 @@ function BillingSettings() {
                         <div className="container-fluid text-start vh-100">
                             <div>
                                 <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><Link to={"/coach/settings"} className="text-decoration-none"><span className="t-color text-decoration-none"> settings</span></Link></li>
+                                    <li className="breadcrumb-item"><Link to={"/coach/settings"} className="text-decoration-none"><span className="t-color text-decoration-none"> Settings</span></Link></li>
                                     <li className="breadcrumb-item"><Link to={"#"} className="text-decoration-none"><span className="f-color">Billing settings</span></Link></li>
                                 </ol>
                                 <h1 className="h-size mb-2 f-color fw-normal mt-1">Your Billing Details</h1>
                             </div>
                             <div className="row">
                                 <div className="col col-12 col-md-4">
-                                    <p className="text-black-50 l-size">We recommend enabling MFA even though you have a strong password.</p>
                                 </div>
                                 <div className="col col-12 col-md-8">
                                     <div className="card card-s">
@@ -134,7 +133,7 @@ function BillingSettings() {
                                                             <div className="d-flex justify-content-start align-items-center gap-3">
                                                                 {!isLoading && <button className="btn btn-primary text-uppercase px-3" type="submit">Save changes</button>}
                                                                 {isLoading && <div>Updating Billing Address...</div>}
-                                                                <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><Link className="l-size link_decoration" to={"/coach/settings"}>Cancel</Link></div>
+                                                                <div className="px-3 btn-cancel d-flex justify-content-center align-items-center text-uppercase"><Link className="l-size  fw-medium link_decoration l-color" to={"/coach/settings"}>Cancel</Link></div>
                                                             </div>
                                                         </div>
                                                     </Form>

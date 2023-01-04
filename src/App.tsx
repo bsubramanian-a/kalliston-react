@@ -20,6 +20,7 @@ import EditProgram from './screens/coach/EditProgram';
 import EditProgram1 from './screens/coach/EditProgram1';
 import OnboardingAnswer from './screens/coach/OnboardingAnswer';
 import Onboarding from './screens/client/Onboarding';
+import CurrentPackage from './screens/coach/CurrentPackage';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path='/coach/edit-program' element={<EditProgram />} />
         <Route path='/coach/edit-program1' element={<EditProgram1 />} />
         <Route path='/coach/onboarding-answer' element={<OnboardingAnswer />} />
+        <Route path='/coach/current-package' element={<CurrentPackage />} />
         <Route path='/client/onboarding' element={<Onboarding />} />
       </Routes>
     </div>
