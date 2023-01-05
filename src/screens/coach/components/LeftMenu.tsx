@@ -35,7 +35,7 @@ function LeftMenu() {
                         {/* <li className="nav-item"><Link to={"/coach/fitness"} className="nav-link"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></Link></li> */}
                     </ul>
                 </div>
-                <ul className="navbar-nav text-light" id="accordionSidebar-1">
+                <ul className="position-fixed bottom-0 navbar-nav text-light" id="accordionSidebar-1">
                 <li className="nav-item"><Link to={"/coach/settings"} className={clocation == '/coach/settings' ? 'nav-link active': 'nav-link'}><i className="fas fa-cogs fa-fw me-2 text-black" style={{fontSize: "20px"}}></i><span className="f-color ms-md-4 l-size">Settings</span></Link></li>
                 </ul>
             </div>

@@ -22,7 +22,7 @@ function CurrentPackage() {
                             </div>
                             <div className="row">
                                 <div className="col col-12 col-md-4">
-                                    <p className="text-black-50 l-size">We recommend enabling MFA even though you have a strong password.</p>
+                                    
                                 </div>
                                 <div className="col col-12 col-md-8">
                                     <div className="card card-s mb-4">
