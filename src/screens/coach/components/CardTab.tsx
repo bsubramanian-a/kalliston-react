@@ -25,7 +25,7 @@ function CardTab() {
                                         <span>City : </span>{currentUser?.city && <span>{currentUser?.city}</span>}
                                         <br />
                                         <span>Country : </span>{currentUser?.country && <span>{currentUser?.country}</span>}
-                                    </div>:
+                                    </div> :
                                     <div>
                                         No address available.
                                     </div>

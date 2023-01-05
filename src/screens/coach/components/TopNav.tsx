@@ -78,7 +78,7 @@ function TopNav() {
                     <li className="nav-item dropdown no-arrow">
                         <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><img className="border rounded-circle img-profile border-0" src={currentUser?.avatar || Avatar} /></a>
                             <div className="dropdown-menu shadow dropdown-menu-end animated--grow-in position-fixed me-5" data-bs-popper="none" style={{ right: "-26px"}} >
-                                <p className="mb-1 py-0" style={{fontSize: "16px", padding: "16px"}}>{currentUser?.firstname ?? ''} {currentUser?.lastname ?? ''}</p>
+                                <p className="mb-1 py-0 l-size" style={{padding: "16px"}}>{currentUser?.firstname ?? ''} {currentUser?.lastname ?? ''}</p>
                                 <p className="mb-0 py-0 text-black-50" style={{fontSize: "14px", padding: "16px"}}>{currentUser?.email ?? ''}</p>
                                 <div className="dropdown-divider"></div>
                                 <Link to={"/coach/settings"} className="dropdown-item"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</Link>
