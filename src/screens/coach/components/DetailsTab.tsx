@@ -147,7 +147,7 @@ function DetailsTab() {
                                                 <div className="form-group position-relative py-2">
                                                     <label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Category</label>
                                                     <div className="dropdown">
-                                                        <Field className="btn btn-dropdown dropdown-toggle w-100 p-0 f-color d-flex justify-content-between align-items-center m-drp" name="color" component="select">
+                                                        <Field className="btn btn-dropdown dropdown-toggle w-100 p-0 f-color d-flex justify-content-between text-start align-items-center m-drp" name="color" component="select">
                                                             <option value="red">General Trainer</option>
                                                             <option value="green">Second Item</option>
                                                             <option value="blue">Third Item</option>
