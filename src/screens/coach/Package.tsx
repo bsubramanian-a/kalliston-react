@@ -6,8 +6,10 @@ import Modify from '../../assets/img/package-img/modify.svg'
 import User from '../../assets/img/package-img/user.svg'
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
+import { useSelector } from 'react-redux';
 
 function Package() {
+    const { coach: currentUser } = useSelector((state:any) => state.auth);
 
     return (
         <div id="page-top">
@@ -46,14 +48,14 @@ function Package() {
                                             </div>
                                         </div>
                                         <div className="position-relative mb-5 pro-cover">
-                                            <div className="position-absolute" style={{bottom: "-40%", left: "2%"}}><img className="me-3" src={User} /><span className="f-color fw-medium big-font">Isa Smith</span></div>
+                                            <div className="position-absolute" style={{bottom: "-40%", left: "2%"}}><img className="me-3 img-profile rounded-circle profile_pic" src={currentUser?.avatar || User} /><span className="f-color fw-medium big-font">{currentUser?.firstname+" "+currentUser?.lastname}</span></div>
                                         </div>
                                         <div className="card-body pt-4">
                                             <div className="row">
                                                 <div className="col col-12 mb-4">
                                                     <div className="row gap-2 gap-lg-0">
                                                         <div className="col col-12 col-lg-6">
-                                                            <h1 className="l-size f-color fw-semibold mb-0">Trainning cathegory</h1>
+                                                            <h1 className="l-size f-color fw-semibold mb-0">Trainning category</h1>
                                                         </div>
                                                         <div className="col col-12 col-lg-6">
                                                             <div className="d-flex justify-content-lg-end align-items-center"><span className="l-size f-color fw-regular mb-0">General training</span></div>
