@@ -63,7 +63,7 @@ function CurrentPackage() {
                                                                 <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Amount</label>
                                                                     <div className="d-flex justify-content-start align-items-center">
                                                                         <div className="dropdown"><button className="btn dropdown-toggle border-0 px-1 p-0 t-color no-bg" aria-expanded="false" data-bs-toggle="dropdown" type="button" style={{outline: "none"}}>$</button>
-                                                                            <div className="dropdown-menu"><a className="dropdown-item" href="#"><span className='t-color'>£</span></a><a className="dropdown-item" href="#"><span className='t-color'>€</span></a><a className="dropdown-item" href="#"><span className='t-color'>₹</span></a></div>
+                                                                            <div className="dropdown-menu"><a className="dropdown-item" href="#"><span className='t-color'>£</span></a><a className="dropdown-item" href="#"><span className='t-color'>€</span></a><a className="dropdown-item" href="#"><span className='t-color'>$</span></a></div>
                                                                         </div><input type="text" className="input-lg w-100 fw-normal t-color l-size border-0" style={{outline: "none"}} />
                                                                     </div>
                                                                 </div>

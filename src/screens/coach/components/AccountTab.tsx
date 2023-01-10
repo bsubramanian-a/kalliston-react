@@ -88,6 +88,9 @@ function AccountTab() {
     const handleClick = (event:any) => {
         if(hiddenFileInput.current) hiddenFileInput.current.click();
     };
+
+    console.log("current user from account tab");
+    console.log(currentUser);
   
     return (
         <div className="tab-pane active" role="tabpanel" id="tab-1">
