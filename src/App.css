@@ -158,7 +158,7 @@ a:hover {
 }
 
 .dropdown-menu{
-  top: 16px;
+  top: unset !important;
 }
 
 .sidebar-dark .nav-item .nav-link.active, .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {

@@ -84,8 +84,7 @@ function TopNav() {
                                 <p className="mb-1 py-0 l-size" style={{padding: "16px"}}>{currentUser?.firstname ?? ''} {currentUser?.lastname ?? ''}</p>
                                 <p className="mb-0 py-0 text-black-50" style={{fontSize: "14px", padding: "16px"}}>{currentUser?.email ?? ''}</p>
                                 <div className="dropdown-divider"></div>
-                                <Link to={"/coach/settings"} className="dropdown-item"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</Link>
-                                <Link to={"/coach/invoice-billing"} className="dropdown-item"><i className="fas fa-credit-card fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Inovice & Billing</Link>
+                                <Link to={"#"} className="dropdown-item"><i className="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Support</Link>
                                 <div className="dropdown-divider"></div>
                                 <span onClick={handleLogout} style={{cursor:'pointer'}} className="dropdown-item"><i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400" ></i>&nbsp;Logout</span>
                             </div>
