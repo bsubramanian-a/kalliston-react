@@ -76,7 +76,7 @@ const coachUpdateProfilePic = async(image:any) => {
   return res.data;
 };
 
-const coachUpdateProfile = (email?:string, firstname?:string, lastname?:string, gender?:any, dob?:any, email_notification?:any, client_request_notification?:any, message_from_client?:any, two_factor_auth?:any, sync_google?:any, cal?:any, bio?:any, customized_link?:any, website_link?:any, instagram_link?:any, facebook_link?:any, tiktok_link?:any, youtube_link?:any, cover_image?:any, user_type?:any, your_goal?:any, current_fitness_level?:any, latitude?:any, longitude?:any, billing_address1?:any, billing_address2?:any, city?:any, country?:any, experience?:any, certifications?:any, areas_of_interest?:any, long_description?:any) => {
+const coachUpdateProfile = (email?:string, firstname?:string, lastname?:string, gender?:any, dob?:any, email_notification?:any, client_request_notification?:any, message_from_client?:any, two_factor_auth?:any, sync_google?:any, cal?:any, bio?:any, customized_link?:any, website_link?:any, instagram_link?:any, facebook_link?:any, tiktok_link?:any, youtube_link?:any, cover_image?:any, user_type?:any, your_goal?:any, current_fitness_level?:any, latitude?:any, longitude?:any, billing_address1?:any, billing_address2?:any, city?:any, country?:any, experience?:any, certifications?:any, areas_of_interest?:any, long_description?:any, category?:any) => {
   console.log("coach profile service", message_from_client)
   return axios
     .put(API_URL + "coach-update-profile", {
@@ -111,7 +111,8 @@ const coachUpdateProfile = (email?:string, firstname?:string, lastname?:string, 
       experience,
       certifications,
       areas_of_interest,
-      long_description
+      long_description,
+      category
     }, { headers: authHeader() })
     .then((response) => {
       localStorage.setItem("coach", JSON.stringify(response.data.coach));

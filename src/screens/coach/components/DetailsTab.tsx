@@ -19,7 +19,9 @@ function DetailsTab() {
     const initialValues = {
         email: currentUser?.email || "",
         firstname: currentUser?.firstname || "",
-        lastname: currentUser?.lastname || ""
+        lastname: currentUser?.lastname || "",
+        category: currentUser?.category || 0,
+        bio: currentUser?.bio || ""
     };
     // const validationSchema = Yup.object().shape({
     //     email: Yup.string()
@@ -31,12 +33,12 @@ function DetailsTab() {
 
 
     const handleUpdate = (formValue: any) => {
-        const { email, firstname, lastname } = formValue;
+        const { email, firstname, lastname, category, bio } = formValue;
         setIsLoading(true);
         setErrorMessage("");
         setSuccessMessage("");
 
-        dispatch(coachUpdateProfile({ email, firstname, lastname }))
+        dispatch(coachUpdateProfile({ email, firstname, lastname, category, bio }))
             .unwrap()
             .then((res: any) => {
                 if (res.status == 401) {
@@ -147,10 +149,10 @@ function DetailsTab() {
                                                 <div className="form-group position-relative py-2">
                                                     <label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Category</label>
                                                     <div className="dropdown">
-                                                        <Field className="btn btn-dropdown dropdown-toggle w-100 p-0 f-color d-flex justify-content-between text-start align-items-center m-drp" name="color" component="select">
-                                                            <option value="red">General Trainer</option>
-                                                            <option value="green">Second Item</option>
-                                                            <option value="blue">Third Item</option>
+                                                        <Field className="btn btn-dropdown dropdown-toggle w-100 p-0 f-color d-flex justify-content-between text-start align-items-center m-drp" name="category" component="select">
+                                                            <option value="0">General Trainer</option>
+                                                            <option value="1">Second Item</option>
+                                                            <option value="2">Third Item</option>
                                                         </Field>
                                                     </div>                                                    
                                                     {/* <div className="dropdown">
@@ -164,7 +166,12 @@ function DetailsTab() {
                                                 </div>
                                             </div>
                                             <div className="col col-12 mb-3 mb-md-0">
-                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Bio</label><textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{ height: "76px" }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</textarea></div>
+                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Bio</label>
+                                                <Field as="textarea" name="bio" className="input-lg w-100 fw-normal t-color l-size border-0" style={{ height: "76px" }} />
+                                                
+                                                {/* <textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{ height: "76px" }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</textarea> */}
+                                                
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

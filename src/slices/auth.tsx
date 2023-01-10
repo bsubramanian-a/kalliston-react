@@ -31,9 +31,9 @@ export const login = createAsyncThunk(
 
 export const coachUpdateProfile = createAsyncThunk(
   "auth/coach-update-profile",
-  async ({ email, firstname, lastname }:any, thunkAPI) => {
+  async ({ email, firstname, lastname, category, bio }:any, thunkAPI) => {
     try {
-      const response = await AuthService.coachUpdateProfile(email, firstname, lastname);
+      const response = await AuthService.coachUpdateProfile(email, firstname, lastname, category, bio);
       return response;
     } catch (error:any) {
       return thunkAPI.rejectWithValue(error.response);      
