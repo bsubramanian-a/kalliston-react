@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from '../../../assets/img/avatars/avatar1.jpeg'
 
 function DetailsTab() {
@@ -25,20 +26,24 @@ function DetailsTab() {
                                         <h1 className="f-color mb-0 big-font">Details</h1>
                                     </div>
                                     <div className="col col-12 col-md-6 mb-3">
-                                        <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">First name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
+                                        <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">First name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                     </div>
                                     <div className="col col-12 col-md-6 mb-3">
-                                        <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Last name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
+                                        <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Last name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{ outline: "none" }} /></div>
                                     </div>
                                     <div className="col col-12 mb-3">
                                         <div className="form-group position-relative py-2"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Category</label>
-                                            <div className="dropdown"><button className="btn btn-primary dropdown-toggle w-100 p-0 f-color d-flex justify-content-between align-items-center m-drp" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown</button>
-                                                <div className="dropdown-menu w-100"><a className="dropdown-item" href="#">First Item</a><a className="dropdown-item" href="#">Second Item</a><a className="dropdown-item" href="#">Third Item</a></div>
+                                            <div className="dropdown"><button className="btn btn-dropdown dropdown-toggle w-100 p-0 f-color d-flex justify-content-between align-items-center m-drp" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown</button>
+                                                <div className="dropdown-menu w-100">
+                                                    <Link to={"#"} className="dropdown-item">First Item</Link>
+                                                    <Link to={"#"} className="dropdown-item">Second Item</Link>
+                                                    <Link to={"#"} className="dropdown-item">Third Item</Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col col-12 mb-3 mb-md-0">
-                                        <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Bio</label><textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{height: "76px"}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</textarea></div>
+                                        <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Bio</label><textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{ height: "76px" }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</textarea></div>
                                     </div>
                                 </div>
                             </div>
