@@ -21,8 +21,8 @@ function Package() {
                         <div className="container-fluid vh-100 text-start">
                             <div className="row mb-4 gap-3 gap-lg-0 align-items-lg-end">
                                 <div className="col col-12 col-lg-6">
-                                    <div><span className="text-black-50 l-size">Marketplace Profile</span>
-                                        <h1 className="h-size f-color fw-normal mt-1 mb-0">Marketplace Profile</h1>
+                                    <div><span className="text-black-50 l-size">Marketplace</span>
+                                        <h1 className="h-size f-color fw-normal mt-1 mb-0">Marketplace</h1>
                                     </div>
                                 </div>
                                 <div className="col col-12 col-lg-6">
