@@ -36,9 +36,10 @@ function EditProgram() {
                                         <div className="card-body">
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <div className="d-flex justify-content-start align-items-center gap-2">
-                                                    <div className="position-relative m-img"><img className="rounded-circle m-img" src={UserPro} /><img className="position-absolute bottom-0 mo-img" src={Online} /></div>
+                                                    <img className="rounded-circle m-img" src={UserPro} />
                                                     <div>
-                                                        <p className="mb-0 fw-normal f-color">John Doe</p><span className="m-p text-black-50">Package 1</span>
+                                                        <p className="mb-0 fw-normal f-color">John Doe</p>
+                                                        <span className="m-p text-black-50">Package 1</span>
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center align-items-center">
@@ -56,14 +57,14 @@ function EditProgram() {
                                                     <div className="row">
                                                         <div className="col">
                                                             <h1 className="f-h f-color fw-normal">Template</h1>
-                                                            <div className="dropdown" style={{ boxShadow: "none", marginTop:"-5%" }}><button className="btn btn-dropdown dropdown-toggle w-100 btn-drp d-flex justify-content-between align-items-center" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
+                                                            <div className="dropdown" style={{ boxShadow: "none", marginTop: "-5%", marginBottom: 30 }}><button className="btn btn-dropdown dropdown-toggle w-100 btn-drp d-flex justify-content-between align-items-center" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
                                                                 <div className="dropdown-menu w-100 bg-white btn-drp">
                                                                     <a className="dropdown-item l-size f-color fw-normal" href="#">First Item</a>
                                                                     <a className="dropdown-item l-size f-color fw-normal" href="#">Second Item</a>
                                                                     <a className="dropdown-item l-size f-color fw-normal" href="#">Third Item</a>
                                                                 </div>
                                                             </div>
-                                                            <button className="btn btn-primary mt-4 w-100 text-uppercase" type="submit">Select</button>
+                                                            <button className="btn btn-primary mt-5 w-100 text-uppercase" type="submit">Select</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -96,11 +97,11 @@ function EditProgram() {
                             </div>
                             <div className="pb-5">
                                 <ul className="nav nav-tabs border-0 mb-4" role="tablist">
-                                    <li className="nav-item" role="presentation"><a className="nav-link active nav-a position-relative d-flex justify-content-center align-items-center gap-1 text-uppercase" role="tab" data-bs-toggle="tab" href="#tab-1">Week 1<div className='mActive'></div><img className="position-absolute cursor-pointer" src={AddT} style={{right: "-18%"}} /></a></li>
+                                    <li className="nav-item" role="presentation"><a className="nav-link active nav-a position-relative d-flex justify-content-center align-items-center gap-1 text-uppercase" role="tab" data-bs-toggle="tab" href="#tab-1">Week 1<div className='mActive'></div><img className="position-absolute cursor-pointer" src={AddT} style={{ right: "-18%" }} /></a></li>
                                 </ul>
                                 <div className="tab-content">
                                     <div className="tab-pane active bg-white-primary" role="tabpanel" id="tab-1">
-                                        <div className="py-4 d-flex justify-content-center align-items-center gap-1 addDiv"><img src={AddDay} /><span className="fw-regular f-color expire-f" style={{opacity: "50%"}}>Add day</span></div>
+                                        <div className="py-4 d-flex justify-content-center align-items-center gap-1 addDiv"><img src={AddDay} /><span className="fw-regular f-color expire-f" style={{ opacity: "50%" }}>Add day</span></div>
                                     </div>
                                 </div>
                             </div>
