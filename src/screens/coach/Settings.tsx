@@ -14,6 +14,7 @@ import ScheduleTab from "./components/ScheduleTab";
 import InvoicePayoutTab from './components/InovicePayout';
 import BillingTab from './components/BillingTab';
 import CardTab from './components/CardTab';
+import ProgramTab from './components/ProgramTab';
 import { useDispatch, useSelector } from "react-redux";
 import { getCardDetails } from '../../slices/auth';
 
@@ -112,6 +113,14 @@ function Settings() {
                           Card Setting
                         </Link>
                       </li>
+                      <li className="nav-item" role="presentation">
+                        <Link to={"#tab-7"}
+                          className="nav-link d-flex justify-content-start align-items-center"
+                          role="tab"
+                          data-bs-toggle="tab">
+                          Programme templates
+                        </Link>
+                      </li>
                     </ul>
                     <div className="tab-content px-4 w-75" style={{ float: "right" }}>
                       <AccountTab />
@@ -121,6 +130,7 @@ function Settings() {
                       {/* <InvoicePayoutTab /> */}
                       <BillingTab />
                       <CardTab />
+                      <ProgramTab />
                     </div>
                   </div>
                 </div>
