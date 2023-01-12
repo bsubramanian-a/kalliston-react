@@ -1,12 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
 import UserPro from '../../assets/img/avatars/avatar3.jpeg';
 import Message from '../../assets/img/icon-manage/message.svg';
+import Approve from '../../assets/img/icon-manage/approve.svg';
+import Reject from '../../assets/img/icon-manage/reject.svg'
 
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
 import { Link } from 'react-router-dom';
 
-function ManageUser() {
+function ManageNewUser() {
 
     return (
         <div id="page-top">
@@ -35,7 +37,11 @@ function ManageUser() {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center align-items-center">
-                                                    <div className="px-3 msgBtn d-flex justify-content-center align-items-center"><img className="me-2" src={Message} /><span className="m-p fw-medium text-uppercase">Message</span></div>
+                                                    <div className="px-3 msgBtn me-3 d-flex justify-content-center align-items-center"><img className="me-2" src={Message} /><span className="m-p fw-medium text-uppercase">Message</span></div>
+                                                    <div className="d-flex justify-content-center align-items-center">
+                                                        <div className="px-3 cursor-pointer ll-div d-flex justify-content-center align-items-center"><img className="me-2" src={Approve} /><span className="m-p fw-medium text-uppercase">Approve</span></div>
+                                                        <div className="px-3 cursor-pointer rl-div d-flex justify-content-center align-items-center"><img className="me-2" src={Reject} /><span className="m-p fw-medium text-uppercase">Reject</span></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -53,7 +59,7 @@ function ManageUser() {
                                                         <div className="d-flex justify-content-between align-items-center mb-4"><span className="f-color l-size fw-medium">Email</span><span className="f-color l-size fw-normal">henry@gmail.com</span></div>
                                                         <div className="d-flex justify-content-between align-items-center mb-3"><span className="f-color l-size fw-medium">Phone</span><span className="f-color l-size fw-normal">+447236 5489 721</span></div>
                                                     </div>
-                                                    <div className="px-3 w-100 cursor-pointer msgBtn d-flex justify-content-center align-items-center"><span className="m-p fw-medium text-uppercase">See more details</span></div>
+                                                    <div className="px-3 w-100 cursor-pointer ll-div d-flex justify-content-center align-items-center bR"><span className="m-p fw-medium text-uppercase">See more details</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,16 +73,8 @@ function ManageUser() {
                                             </div>
                                             <div className="row">
                                                 <div className="col col-12">
-                                                    <div>
-                                                        <div className="d-flex justify-content-between align-items-center mb-4"><span className="f-color l-size fw-medium">Description</span><span className="f-color l-size fw-normal">Full body level 3</span></div>
-                                                        <div className="d-flex justify-content-between align-items-center mb-4"><span className="f-color l-size fw-medium">Last modified</span><span className="f-color l-size fw-normal">28/12/22</span></div>
-                                                        <div className="d-flex justify-content-between align-items-center mb-5"><span className="f-color l-size fw-medium">Status</span>
-                                                            <div className="d-flex justify-content-center align-items-center rounded-pill px-3 py-1 bg-tag"><span className="text-white m-p">Published</span></div>
-                                                        </div>
-                                                    </div>
+                                                    <p className="mb-2 l-size text-black-50">To start the programme, you need to accept the client </p>
                                                 </div>
-                                                <div className="col col-12 col-lg-6 pe-lg-2"><button className="btn btn-primary w-100 text-uppercase btn-view border-0 editBtn" type="button">EDIT</button></div>
-                                                <div className="col col-12 col-lg-6 ps-lg-2"><button className="btn btn-primary w-100 text-uppercase btn-view border-0 pBtn" type="button">PUBLISH</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -90,4 +88,4 @@ function ManageUser() {
     );
 }
 
-export default ManageUser;
+export default ManageNewUser;

@@ -44,8 +44,8 @@ function Clients() {
                             </div>
                             <div>
                                 <ul className="nav nav-tabs border-0 d-flex justify-content-center align-items-center mb-4" role="tablist">
-                                    <li className="nav-item w-50" role="presentation"><Link to={"#tab-1"} className="nav-link mb-0 text-capitalize text-center fw-medium" role="tab" data-bs-toggle="tab">CURRENT CLIENTS</Link></li>
-                                    <li className="nav-item w-50" role="presentation"><Link to={"#tab-2"} className="nav-link active mb-0 text-capitalize text-center fw-medium" role="tab" data-bs-toggle="tab">NEW REQUESTS</Link></li>
+                                    <li className="nav-item w-50" role="presentation"><Link to={"#tab-1"} className="nav-link mb-0 active text-capitalize text-center fw-medium" role="tab" data-bs-toggle="tab">CURRENT CLIENTS</Link></li>
+                                    <li className="nav-item w-50" role="presentation"><Link to={"#tab-2"} className="nav-link mb-0 text-capitalize text-center fw-medium" role="tab" data-bs-toggle="tab">NEW REQUESTS</Link></li>
                                 </ul>
                                 <div className="tab-content">
                                     <CurrentTab />
