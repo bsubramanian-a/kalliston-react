@@ -59,17 +59,21 @@ function CurrentPackage() {
                                                             <div className="col col-12 mb-3">
                                                                 <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Package name</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
                                                             </div>
-                                                            <div className="col col-12 col-md-6 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Amount</label>
+                                                            <div className="col col-12 col-md-4 mb-3">
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Currency</label>
                                                                     <div className="d-flex justify-content-start align-items-center">
-                                                                        <div className="dropdown"><button className="btn dropdown-toggle border-0 px-1 p-0 t-color no-bg" aria-expanded="false" data-bs-toggle="dropdown" type="button" style={{outline: "none"}}>$</button>
-                                                                            <div className="dropdown-menu"><a className="dropdown-item" href="#"><span className='t-color'>£</span></a><a className="dropdown-item" href="#"><span className='t-color'>€</span></a><a className="dropdown-item" href="#"><span className='t-color'>$</span></a></div>
-                                                                        </div><input type="text" className="input-lg w-100 fw-normal t-color l-size border-0" style={{outline: "none"}} />
+                                                                        <div className="dropdown w-100"><button className="btn w-100 d-flex justify-content-between align-items-center dropdown-toggle border-0 text-start px-1 p-0 t-color no-bg" aria-expanded="false" data-bs-toggle="dropdown" type="button" style={{outline: "none"}}>$</button>
+                                                                            <div className="dropdown-menu w-100"><a className="dropdown-item" href="#"><span className='t-color'>£</span></a><a className="dropdown-item" href="#"><span className='t-color'>€</span></a><a className="dropdown-item" href="#"><span className='t-color'>$</span></a></div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="col col-12 col-md-6 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Maximum client</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
+                                                            <div className="col col-12 col-md-8 mb-3">
+                                                                <div className="form-group position-relative d-flex justify-content-center align-items-center gap-5">
+                                                                    <label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Amount</label>
+                                                                    <input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} />
+                                                                    <span className='t-h text-black-50 fw-normal'>Per&nbsp;month</span>
+                                                                </div>
                                                             </div>
                                                             <div className="col col-12 mb-3 mb-md-0">
                                                                 <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Description</label><textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{height: "200px"}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using </textarea></div>

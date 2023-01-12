@@ -30,7 +30,7 @@ function LeftMenu() {
                         <li className="nav-item"><Link to={"/coach/dashboard"} className={clocation == '/coach/dashboard' ? 'nav-link active': 'nav-link'}><img src={Trending} /><span className="f-color ms-md-4 l-size">Sales</span></Link></li>
                         <li className="nav-item"><Link to={"/coach/clients"} className={clocation == '/coach/clients' ? 'nav-link active': 'nav-link'}><img src={Person} /><span className="f-color ms-md-4 l-size">Clients</span></Link></li>
                         <li className="nav-item"><Link to={"/coach/chat"} className={clocation == '/coach/chat' ? 'nav-link active': 'nav-link'}><img src={ChatBubble} /><span className="f-color ms-md-4 l-size">Chat</span></Link></li>
-                        <li className="nav-item"><Link to={"/coach/package"} className={clocation == '/coach/package' ? 'nav-link active': 'nav-link'}><img src={StoreFront} /><span className="f-color ms-md-4 l-size">Packages</span></Link></li>
+                        <li className="nav-item"><Link to={"/coach/package"} className={clocation == '/coach/package' ? 'nav-link active': 'nav-link'}><img src={StoreFront} /><span className="f-color ms-md-4 l-size">Marketplace</span></Link></li>
                         {/* <li className="nav-item"><Link to={"/coach/schedule"} className="nav-link"><img src={Calendar} /><span className="f-color ms-md-4 l-size">Schedule</span></Link></li> */}
                         {/* <li className="nav-item"><Link to={"/coach/fitness"} className="nav-link"><img src={FitnessCenter} /><span className="f-color ms-md-4 l-size">Fitness Programs</span></Link></li> */}
                     </ul>
