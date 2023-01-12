@@ -274,7 +274,7 @@ a:hover {
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
   color: #212121;
   font-size: 16px;
-  background-color: #F2F0EC;
+  background-color: #DDD6CD !important;
   border-color: transparent;
   border-radius: 4px;
   box-shadow: none;
@@ -723,6 +723,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   box-shadow: none !important;
   border: 1px solid #c4c4c4;
   background-color: transparent;
+  transform: translate3d(0px, 44px, 0px) !important;
   color: #212121;
 }
 
@@ -735,7 +736,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 .nav-tabs .nav-a.active {
   color: #aa9882 !important;
   font-size: 16px;
-  background-color: transparent !important;
+  background-color: #DDD6CD !important;
   border-bottom: 2px solid #aa9882 !important;
   border-radius: 0px !important;
   box-shadow: none;
@@ -1521,4 +1522,15 @@ input:focus, select:focus, textarea:focus, button:focus {
   border-radius: 4px;
   border: 1px solid #aa9882;
   height: 36px;
+}
+
+.mActive {
+  background: url(assets/img/icon-manage/moreActive.svg) center / cover no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.addDiv {
+  border-radius: 4px;
+  border: 1px solid #E4E4E4;
 }

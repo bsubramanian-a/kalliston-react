@@ -16,8 +16,8 @@ import CardSettings from './screens/coach/CardSettings';
 import Chat from './screens/coach/Chat';
 import Clients from './screens/coach/Clients';
 import ManageUser from './screens/coach/ManageUser';
+import AddProgram from './screens/coach/AddProgram';
 import EditProgram from './screens/coach/EditProgram';
-import EditProgram1 from './screens/coach/EditProgram1';
 import OnboardingAnswer from './screens/coach/OnboardingAnswer';
 import Onboarding from './screens/client/Onboarding';
 import CurrentPackage from './screens/coach/CurrentPackage';
@@ -43,8 +43,8 @@ function App() {
         <Route path='/coach/chat' element={<Chat />} />
         <Route path='/coach/clients' element={<Clients />} />
         <Route path='/coach/manage-user' element={<ManageUser />} />
+        <Route path='/coach/add-program' element={<AddProgram />} />
         <Route path='/coach/edit-program' element={<EditProgram />} />
-        <Route path='/coach/edit-program1' element={<EditProgram1 />} />
         <Route path='/coach/onboarding-answer' element={<OnboardingAnswer />} />
         <Route path='/coach/current-package' element={<CurrentPackage />} />
         <Route path='/client/onboarding' element={<Onboarding />} />

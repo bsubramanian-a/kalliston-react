@@ -1,31 +1,36 @@
 import React, { useContext, useState, useEffect } from 'react';
-import CreditCard from '../../../assets/img/card-img/_creditCards.svg';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
-function BillingTab() {
-    const { card } = useSelector((state:any) => state.auth);
-    
+function CardTab() {
+    const { coach: currentUser } = useSelector((state: any) => state.auth);
+
     return (
         <div className="tab-pane" role="tabpanel" id="tab-6">
-            <div className="card mb-4 card-s">
+            <div className="card card-s mb-4">
                 <div className="card-body">
                     <div className="row py-2">
                         <div className="col col-12">
-                            <h1 className="f-h f-color fw-normal mb-5">Your Card</h1>
+                            <h1 className="f-h f-color fw-normal mb-5">Your billing details</h1>
+
                             <div className="payment-div d-flex justify-content-between align-items-start p-3 mb-2">
-                                <div className="d-flex justify-content-start align-items-start gap-3">
-                                {card ? 
-                                    <>
-                                        <img src={CreditCard} />
-                                        <div>
-                                            {card?.card_number && <p className="f-color fw-normal mb-0" style={{ fontSize: "20px" }}>**** {card?.card_number.substr(card?.card_number.length - 4)}</p>}
-                                            {card?.card_number && <p className="expire-f text-black-50 fw-normal mb-0">Expires at {card?.expiry_date}</p>}
-                                        </div>
-                                    </>:
-                                    <div>No card available</div>
+                                {(currentUser?.billing_address1 || currentUser?.billing_address2) ?
+                                    <div>
+                                        <span>Address 1 : </span>{currentUser?.billing_address1 && <span className="f-color fw-normal mb-0 l-size">{currentUser?.billing_address1}</span>}
+                                        <br />
+                                        <span>Address 2 : </span>{currentUser?.billing_address2 && <span>{currentUser?.billing_address2}</span>}
+                                        <br />
+                                        {/* <span>Pin : </span>{currentUser?.pin && <span>{currentUser?.pin}</span>} */}
+                                        {/* <br /> */}
+                                        <span>City : </span>{currentUser?.city && <span>{currentUser?.city}</span>}
+                                        <br />
+                                        <span>Country : </span>{currentUser?.country && <span>{currentUser?.country}</span>}
+                                    </div> :
+                                    <div>
+                                        No address available.
+                                    </div>
                                 }
-                                </div><Link to={"/coach/card-settings"} className="expire-f mt-1 l-color fw-normal text-uppercase text-decoration-none">{card ? 'Change' : 'Add Card'}</Link>
+                                <Link to={"/coach/billing-settings"} className="expire-f mt-1 l-color fw-normal text-uppercase text-decoration-none">{(currentUser?.billing_address1 || currentUser?.billing_address2) ? 'Change' : 'Add Address'}</Link>
                             </div>
                         </div>
                     </div>
@@ -35,4 +40,4 @@ function BillingTab() {
     );
 }
 
-export default BillingTab;    
+export default CardTab;

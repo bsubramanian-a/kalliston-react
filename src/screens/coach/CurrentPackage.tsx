@@ -49,7 +49,7 @@ function CurrentPackage() {
                                                     <div className="d-flex justify-content-end align-items-center"><img src={DotMenu} /></div>
                                                 </div>
                                                 <div className="col col-12 mt-3">
-                                                    <div className='b-m'></div>
+                                                    <div className='bottomC'></div>
                                                 </div>
                                             </div>
                                             <div className="row">
@@ -69,10 +69,10 @@ function CurrentPackage() {
                                                                 </div>
                                                             </div>
                                                             <div className="col col-12 col-md-6 mb-3">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Maximum space</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Maximum client</label><input type="text" className="input-lg w-100 fw-normal t-color l-size" style={{outline: "none"}} /></div>
                                                             </div>
                                                             <div className="col col-12 mb-3 mb-md-0">
-                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Bio</label><textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{height: "200px"}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using </textarea></div>
+                                                                <div className="form-group position-relative"><label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Description</label><textarea className="input-lg w-100 fw-normal t-color l-size border-0" style={{height: "200px"}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using </textarea></div>
                                                             </div>
                                                         </div>
                                                     </div>
