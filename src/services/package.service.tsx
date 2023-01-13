@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import authHeader from './auth-header';
 
-const baseUrl = 'http://localhost:8000/api/v1/companies/';
+const baseUrl = 'http://localhost:8000/api/v1/packages/';
 
 export const packageApi = createApi({
     reducerPath: 'packageApi',
@@ -16,10 +16,10 @@ export const packageApi = createApi({
             return headers
         },
     }),
-    tagTypes: ['Companies'],
+    tagTypes: ['Packages'],
     endpoints: (builder) => ({
-        getCompanies: builder.query({
-            query: () => `companies`,
+        getPackages: builder.query({
+            query: () => `get-packages`,
             transformResponse: (response: { data:any }, meta, arg) => response.data,
             // Pick out errors and prevent nested properties in a hook or selector
             transformErrorResponse: (
@@ -27,11 +27,11 @@ export const packageApi = createApi({
               meta,
               arg
             ) => response.status,
-            providesTags: (result, error, id) => [{ type: 'Companies', id }],
+            providesTags: (result, error, id) => [{ type: 'Packages', id }],
         }),
         getPackage: builder.query({
-            query: () => ({
-                url: `get-package`,
+            query: (id) => ({
+                url: `packages/get-package/${id}`,
                 method: 'GET',
             }),
             transformResponse: (response: { data:any }, meta, arg) => response.data,
@@ -41,32 +41,32 @@ export const packageApi = createApi({
               meta,
               arg
             ) => response.status,
-            providesTags: (result, error, id) => [{ type: 'Companies', id }],
+            providesTags: (result, error, id) => [{ type: 'Packages', id }],
         }),
         createPackage: builder.mutation({
             query: (data) => ({
-                url: `create-package`,
+                url: `add-package`,
                 method: 'POST',
                 body: { data },
             }),
-            invalidatesTags: ['Companies'],
+            invalidatesTags: ['Packages'],
         }),
         updatePackage: builder.mutation({
             query: (data) => ({
-                url: `update-package/${data.package_id}`,
+                url: `packages/update-package/${data.package_id}`,
                 method: 'PUT',
                 body: { data },
             }),
-            invalidatesTags: ['Companies'],
+            invalidatesTags: ['Packages'],
         }),
         deletePackage: builder.mutation({
             query: (id) => ({
-            url: `companies/${id}`,
+            url: `packages/delete-package/${id}`,
             method: 'DELETE',
             }),
-            invalidatesTags: ['Companies'],
+            invalidatesTags: ['Packages'],
         }),
     }),
 });
   
-export const { useGetCompaniesQuery, useCreatePackageMutation, useGetPackageQuery, useUpdatePackageMutation } = packageApi;
+export const { useGetPackagesQuery, useCreatePackageMutation, useGetPackageQuery, useUpdatePackageMutation, useDeletePackageMutation } = packageApi;

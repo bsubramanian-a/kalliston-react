@@ -4,9 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
+import { useGetCoachQuery } from '../../../services/coach-service';
 
 function AccountTab() {
     const { coach: currentUser } = useSelector((state:any) => state.auth);
+    const { data: coach = [], isFetching, isError, error }:any = useGetCoachQuery(1);
+    console.log("coach", coach);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');

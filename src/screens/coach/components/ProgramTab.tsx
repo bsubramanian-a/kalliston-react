@@ -118,7 +118,7 @@ function ProgramTab() {
                                 <div className="col d-flex justify-content-end align-items-center gap-4">
                                     <div className="d-flex justify-content-center align-items-center gap-2">
                                         <p className="fw-normal t-h text-black-50 mb-0">Rows per page:</p><select className="fw-normal border-0 t-h f-color d-btn">
-                                            <optgroup label="Display content">
+                                            <optgroup className="p-2" label="Number of rows">
                                                 <option value="12" selected>10</option>
                                                 <option value="13">20</option>
                                                 <option value="14">50</option>

@@ -7,9 +7,22 @@ import User from '../../assets/img/package-img/user.svg'
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
 import { useSelector } from 'react-redux';
+import { useGetPackagesQuery } from '../../services/package.service';
 
 function Package() {
+    const { data: packages = [], isFetching, isError, error }:any = useGetPackagesQuery(1);
+
+    const [basic, setBasic] = useState<any>();
+    const [premium, setPremium] = useState<any>();
+    const [elite, setElite] = useState<any>();
+
     const { coach: currentUser } = useSelector((state:any) => state.auth);
+
+    useEffect(() => {
+        setBasic(packages.find((cpackage:any) => cpackage.package_type == 'basic'));
+        setPremium(packages.find((cpackage:any) => cpackage.package_type == 'premium'));
+        setElite(packages.find((cpackage:any) => cpackage.package_type == 'elite'));
+     }, [packages]) 
 
     return (
         <div id="page-top">
@@ -104,46 +117,66 @@ function Package() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="row">
-                                                <div className="col col-12 mb-4">
-                                                    <div className="p-3 mb-3 n-br p-border">
-                                                        <div className="row align-items-sm-end">
-                                                            <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-2 fw-regular font-size text-black-50">Package 1</p>
-                                                                <p className="f-color fw-medium mb-0 big-font">Basic</p>
-                                                            </div>
-                                                            <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-0 f-h f-color">20.00&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="p-3 mb-3 n-br p-border">
-                                                        <div className="row align-items-sm-end">
-                                                            <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-2 fw-regular text-black-50 size-font">Package 2</p>
-                                                                <p className="f-color fw-medium mb-0 big-font">Premium</p>
-                                                            </div>
-                                                            <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-0 f-h f-color">30.00&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                            
+                                            {isFetching ? 
+                                                <div>Loading...</div>
+                                                :
+                                                <>
+                                                    <div className="row">
+                                                        <div className="col col-12 mb-4">
+                                                            <div className="p-3 mb-3 n-br p-border">
+                                                                <div className="row align-items-sm-end">
+                                                                    <div className="col col-12 col-sm-6 px-2">
+                                                                        <p className="mb-2 fw-regular font-size text-black-50">Basic</p>
+                                                                        <p className="f-color fw-medium mb-0 big-font" style={{textTransform: 'capitalize'}}>{basic?.package_type}</p>
+                                                                    </div>
+                                                                    {basic?.amount && 
+                                                                    <div className="col col-12 col-sm-6 px-2">
+                                                                        <p className="mb-0 f-h f-color">{basic?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                                                    </div>}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="p-3 mb-3 n-br p-border">
-                                                        <div className="row align-items-sm-end">
-                                                            <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-2 fw-regular text-black-50 size-font">Package 3</p>
-                                                                <p className="f-color fw-medium mb-0 big-font">Elite</p>
-                                                            </div>
-                                                            <div className="col col-12 col-sm-6 px-2">
-                                                                <p className="mb-0 f-h f-color">40.00&nbsp;<span className="fw-regular text-black-50 size-font">/per month</span></p>
+
+                                                    <div className="row">
+                                                        <div className="col col-12 mb-4">
+                                                            <div className="p-3 mb-3 n-br p-border">
+                                                                <div className="row align-items-sm-end">
+                                                                    <div className="col col-12 col-sm-6 px-2">
+                                                                        <p className="mb-2 fw-regular font-size text-black-50">Premium</p>
+                                                                        <p className="f-color fw-medium mb-0 big-font" style={{textTransform: 'capitalize'}}>{premium?.package_type}</p>
+                                                                    </div>
+                                                                    {premium?.amount && 
+                                                                    <div className="col col-12 col-sm-6 px-2">
+                                                                        <p className="mb-0 f-h f-color">{premium?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                                                    </div>}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div className="col col-12 d-flex justify-content-end align-items-center">
-                                                    <Link to={"/coach/current-package"} className="px-3 ll-div d-flex justify-content-center align-items-center n-br text-decoration-none"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></Link>
-                                                </div>
-                                            </div>
+
+                                                    <div className="row">
+                                                        <div className="col col-12 mb-4">
+                                                            <div className="p-3 mb-3 n-br p-border">
+                                                                <div className="row align-items-sm-end">
+                                                                    <div className="col col-12 col-sm-6 px-2">
+                                                                        <p className="mb-2 fw-regular font-size text-black-50">Elite</p>
+                                                                        <p className="f-color fw-medium mb-0 big-font" style={{textTransform: 'capitalize'}}>{elite?.package_type}</p>
+                                                                    </div>
+                                                                    {elite?.amount && 
+                                                                    <div className="col col-12 col-sm-6 px-2">
+                                                                        <p className="mb-0 f-h f-color">{elite?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                                                    </div>}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col col-12 d-flex justify-content-end align-items-center">
+                                                            <Link to={"/coach/current-package"} className="px-3 ll-div d-flex justify-content-center align-items-center n-br text-decoration-none"><img className="me-2" src={Modify} /><span className="m-p fw-medium text-uppercase">Modify</span></Link>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            }
                                         </div>
                                     </div>
                                 </div>

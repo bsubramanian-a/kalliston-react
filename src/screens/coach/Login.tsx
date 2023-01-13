@@ -8,10 +8,11 @@ import * as Yup from "yup";
 
 import { login, otp } from '../../slices/auth';
 import OtpInput from 'react18-input-otp';
+import { useValidateCoachOtpMutation } from '../../services/coach-service';
 
 function Login() {
     let navigate = useNavigate();
-
+    const [ validateCoachOtp ]:any = useValidateCoachOtpMutation();
     const { isLoggedIn } = useSelector((state: any) => state.auth);
 
     const [successful, setSuccessful] = useState(false);
@@ -93,40 +94,58 @@ function Login() {
             });
     };
 
-    const handleCode = (formValue: any) => {
+    const handleCode = async(formValue: any) => {
         // const { code1, code2, code3, code4, code5, code6 } = formValue;
         // let finalCode = parseInt(code1 + code2 + code3 + code4 + code5 + code6);
         // console.log("final code", finalCode);
         setIsLogin(false);
         setIsOTP(true);
 
-        dispatch(otp({ email, otp: otpcode }))
-            .unwrap()
-            .then((res: any) => {
-                console.log("otp response coming in", res);
-                if (res.status == 401) {
-                    setIsLoading(false);
-                    setSuccessful(true);
-                    setErrorMessage(res.data.status);
-                    setIsError(true);
-                    setIsLogin(false);
-                    setIsOTP(true);
-                }
-                if (res.status == "success") {
-                    setIsLoading(false);
-                    navigate("/coach/dashboard");
-                    window.location.reload();
-                    //setSuccessful(true);                    
-                }
-            })
-            .catch((error:any) => {
-                setIsLoading(false);
-                setSuccessful(true);
-                setErrorMessage(error.data.status);
-                setIsError(true);
-                setIsLogin(false);
-                setIsOTP(true);
-            });
+        const res = await validateCoachOtp({email, otp: otpcode});
+        console.log("otp validation res", res)
+
+        if (res?.error?.data) {
+            setIsLoading(false);
+            setSuccessful(true);
+            setErrorMessage(res?.error?.data.message);
+            setIsError(true);
+            setIsLogin(false);
+            setIsOTP(true);
+        }else {
+            setIsLoading(false);
+            localStorage.setItem("coach", JSON.stringify(res.data.coach));
+            localStorage.setItem("accesstoken", JSON.stringify(res.data.token));
+            navigate("/coach/dashboard");
+            window.location.reload();                
+        }
+
+        // dispatch(otp({ email, otp: otpcode }))
+        //     .unwrap()
+        //     .then((res: any) => {
+        //         console.log("otp response coming in", res);
+        //         if (res.status == 401) {
+        //             setIsLoading(false);
+        //             setSuccessful(true);
+        //             setErrorMessage(res.data.status);
+        //             setIsError(true);
+        //             setIsLogin(false);
+        //             setIsOTP(true);
+        //         }
+        //         if (res.status == "success") {
+        //             setIsLoading(false);
+        //             navigate("/coach/dashboard");
+        //             window.location.reload();
+        //             //setSuccessful(true);                    
+        //         }
+        //     })
+        //     .catch((error:any) => {
+        //         setIsLoading(false);
+        //         setSuccessful(true);
+        //         setErrorMessage(error.data.status);
+        //         setIsError(true);
+        //         setIsLogin(false);
+        //         setIsOTP(true);
+        //     });
     };
 
     console.log("isLoggedIn", isLoggedIn);
