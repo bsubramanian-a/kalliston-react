@@ -70,7 +70,7 @@ export const coachApi = createApi({
         }),
         updateCoach: builder.mutation({
             query: (data) => ({
-                url: `update-coach/${data.id}`,
+                url: `coach-update-profile`,
                 method: 'PUT',
                 body: { data },
             }),

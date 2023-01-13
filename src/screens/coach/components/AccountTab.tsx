@@ -5,16 +5,20 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
 import { useGetCoachQuery } from '../../../services/coach-service';
+import { useUpdateCoachMutation } from '../../../services/coach-service';
 
 function AccountTab() {
-    const { coach: currentUser } = useSelector((state:any) => state.auth);
-    const { data: coach = [], isFetching, isError, error }:any = useGetCoachQuery(1);
-    console.log("coach", coach);
+    // const { coach: currentUser } = useSelector((state:any) => state.auth);
+    const { data: currentUser = [], isFetching, isError, error }:any = useGetCoachQuery(1);
+    const [ coachUpdate ]:any = useUpdateCoachMutation();
+    // console.log("coach", coach);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const hiddenFileInput = useRef<any>(null);
+
+    if(isFetching) return <div>Loading...</div>
       
     const initialValues = {
         email: currentUser?.email || "",
@@ -28,33 +32,42 @@ function AccountTab() {
             .required("This field is required!")
     });
 
-    const handleUpdate = (formValue: any) => {
+    const handleUpdate = async(formValue: any) => {
         const { email, firstname, lastname } = formValue;
         setIsLoading(true);
         setErrorMessage("");
         setSuccessMessage("");
 
-        dispatch(coachUpdateProfile({ email, firstname, lastname }))
-            .unwrap()
-            .then((res: any) => {
-                if (res.status == 401) {
-                    setIsLoading(false);
-                    setErrorMessage(res.message);
-                }
-                if (res.status == 200) {
-                    setIsLoading(false);
-                    setSuccessMessage(res.message);
-                }
-                setTimeout(() => {
-                    setErrorMessage("");
-                    setSuccessMessage("");
-                }, 3000)
-            })
-            .catch((error:any) => {
-                console.log("error", error);
-                setIsLoading(false);
-                setErrorMessage(error.message);
-            });
+        const res = await coachUpdate({ email, firstname, lastname });
+        console.log("res", res);
+
+        if(res?.data?.status == 200){
+            setSuccessMessage(res?.data?.message);
+        }else{
+            setErrorMessage(res?.data?.message);
+        }
+
+        // dispatch(coachUpdateProfile({ email, firstname, lastname }))
+        //     .unwrap()
+        //     .then((res: any) => {
+        //         if (res.status == 401) {
+        //             setIsLoading(false);
+        //             setErrorMessage(res.message);
+        //         }
+        //         if (res.status == 200) {
+        //             setIsLoading(false);
+        //             setSuccessMessage(res.message);
+        //         }
+        //         setTimeout(() => {
+        //             setErrorMessage("");
+        //             setSuccessMessage("");
+        //         }, 3000)
+        //     })
+        //     .catch((error:any) => {
+        //         console.log("error", error);
+        //         setIsLoading(false);
+        //         setErrorMessage(error.message);
+        //     });
     };
 
     const handleChange = async(event:any) => {
