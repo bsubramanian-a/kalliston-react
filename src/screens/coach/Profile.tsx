@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import DetailsTab from './components/DetailsTab';
 import SocialTab from './components/SocialTab';
 import MediaTab from './components/MediaTab';
+import Modal from './components/Modal';
 
 
 function Profile() {
@@ -61,7 +62,7 @@ function Profile() {
                             <div className="row">
                                 <div className="col col-12">
                                     <div>
-                                        <ul className="nav nav-tabs flex-column mt-1 border-0 w-25" role="tablist" style={{float: "left"}}>
+                                        <ul className="nav nav-tabs flex-column mt-1 border-0 w-25" role="tablist" style={{ float: "left" }}>
                                             <li className="nav-item" role="presentation">
                                                 <Link to={"#tab-1"} className="nav-link active d-flex justify-content-start align-items-center" role="tab" data-bs-toggle="tab">Profile Details</Link>
                                             </li>
@@ -72,7 +73,7 @@ function Profile() {
                                                 <Link to={"#tab-3"} className="nav-link d-flex justify-content-start align-items-center" role="tab" data-bs-toggle="tab">Social Links</Link>
                                             </li>
                                         </ul>
-                                        <div className="tab-content px-4 w-75" style={{float: "right"}}>
+                                        <div className="tab-content px-4 w-75" style={{ float: "right" }}>
                                             <DetailsTab />
                                             <MediaTab />
                                             <SocialTab />
@@ -80,6 +81,7 @@ function Profile() {
                                         <a className="border rounded d-inline scroll-to-top" href="#page-top">
                                             <i className="fas fa-angle-up"></i>
                                         </a>
+                                        <Modal />
                                     </div>
                                 </div>
                             </div>

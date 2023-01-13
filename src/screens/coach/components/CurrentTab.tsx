@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function CurrentTab() {
 
     return (
-        <div className="tab-pane  active" role="tabpanel" id="tab-1">
+        <div className="tab-pane active" role="tabpanel" id="tab-1">
             <div className="card shadow mb-4 shadow-n">
                 <div className="card-header py-3 bg-white border-0">
                     <div className="row">
