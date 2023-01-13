@@ -115,13 +115,13 @@ function AccountTab() {
                     <div className="row mb-4">
                         <div className="col">
                             <h1 className="f-color l-size mb-4">Avatar</h1>
-                            <div className="flex-column d-flex justify-content-start align-items-start gap-3">
+                            <div className="d-flex justify-content-start align-items-center gap-4">
                                 <img
                                     className="img-profile rounded-circle profile_pic"
                                     src={currentUser?.avatar || Avatar}
                                 />
                                 <button
-                                    className="btn btn-primary text-uppercase btn-profile px-3"
+                                    className="btn btn-primary bCancel text-uppercase btn-profile px-3"
                                     onClick={handleClick}
                                 >
                                     Change
