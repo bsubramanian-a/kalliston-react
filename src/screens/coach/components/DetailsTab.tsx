@@ -110,7 +110,9 @@ function DetailsTab() {
                                 <div className="row mb-5">
                                     <div className="col col-12">
                                         <h1 className="f-color mb-4 big-font">Avatar</h1>
-                                        <div className="d-flex justify-content-start align-items-center gap-4"><img className="img-profile pro-size rounded-circle" src={currentUser?.avatar || Avatar} /><button className="btn btn-primary text-uppercase btn-profile px-3 c-btn" type="button" onClick={handleClick}>Change</button>
+                                        <div className="d-flex justify-content-start align-items-center gap-4">
+                                            <img className="img-profile pro-size rounded-circle" src={currentUser?.avatar || Avatar} />
+                                            <button className="btn btn-primary bCancel text-uppercase px-3 fw-medium expire-f" type="button" data-bs-toggle="modal" data-bs-target="#modal-1">CHANGE</button>
                                             <input
                                                 type="file"
                                                 ref={hiddenFileInput}

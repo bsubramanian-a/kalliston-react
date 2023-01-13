@@ -1577,3 +1577,67 @@ input:focus, select:focus, textarea:focus, button:focus {
   background-color: #AA988226;
   color: #AA988280;
 }
+
+.cancelBtn {
+  background-color: transparent;
+  border: 1px solid #aa9882;
+  color: #aa9882;
+  box-shadow: none;
+}
+
+.cLink {
+  color: #aa9882;
+}
+
+.uploadDiv {
+  border-radius: 4px;
+  border: 1px dashed #0000001F;
+}
+
+.cDiv {
+  height: 3.5px;
+  width: 3.5px;
+  background-color: #00000080;
+}
+
+.bCancel {
+  background-color: transparent;
+  border: 1px solid #aa9882;
+  color: #aa9882;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.modal {
+  --bs-modal-zindex: 1055;
+  --bs-modal-width: 600px;
+  --bs-modal-padding: 1rem;
+  --bs-modal-margin: 0.5rem;
+  --bs-modal-bg: #fff;
+  --bs-modal-border-color: var(--bs-border-color-translucent);
+  --bs-modal-border-width: 1px;
+  --bs-modal-border-radius: 0.5rem;
+  --bs-modal-box-shadow: 0 0.125rem 0.25rem 0 rgba(58, 59, 69, 0.2);
+  --bs-modal-inner-border-radius: calc(0.5rem - 1px);
+  --bs-modal-header-padding-x: 1rem;
+  --bs-modal-header-padding-y: 1rem;
+  --bs-modal-header-padding: 1rem 1rem;
+  --bs-modal-header-border-color: var(--bs-border-color);
+  --bs-modal-header-border-width: 1px;
+  --bs-modal-title-line-height: 1.5;
+  --bs-modal-footer-gap: 0.5rem;
+  --bs-modal-footer-border-color: var(--bs-border-color);
+  --bs-modal-footer-border-width: 1px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: var(--bs-modal-zindex);
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
