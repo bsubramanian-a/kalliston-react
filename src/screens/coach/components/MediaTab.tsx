@@ -21,7 +21,7 @@ function MediaTab() {
     // baseURL: "http://localhost:8000/api/v1/medias",
 
     const axiosInstance = axios.create({
-        baseURL : "http://localhost:8000/api/v1/"
+        baseURL : "https://kalliston-api.onrender.com/api/v1/medias"
     });
 
     // Create state for dropped files:
