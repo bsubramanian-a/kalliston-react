@@ -29,10 +29,10 @@ function MediaTab() {
     const [progress, setProgress] = useState<any>(0)
     const [preview, setPreview] = useState<any>();
 
-    // baseURL : "https://kalliston-api.onrender.com/api/v1/medias"
 
+    // baseURL: "http://localhost:8000/api/v1/",
     const axiosInstance = axios.create({
-        baseURL: "http://localhost:8000/api/v1/",
+        baseURL : "https://kalliston-api.onrender.com/api/v1/"
     });
 
     const handleClick = (event:any) => {

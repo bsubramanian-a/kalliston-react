@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import authHeader from './auth-header';
 
-// const baseUrl = "https://kalliston-api.onrender.com/api/v1/users/";
-const baseUrl = 'http://localhost:8000/api/v1/users/';
+const baseUrl = "https://kalliston-api.onrender.com/api/v1/users/";
+// const baseUrl = 'http://localhost:8000/api/v1/users/';
 
 export const coachApi = createApi({
     reducerPath: 'coachApi',
