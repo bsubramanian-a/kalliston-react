@@ -11,9 +11,9 @@ export const UploadProgress = ((props:any) => {
     const [isuploaded, setIsuploaded] = useState(false);
     const controller = new AbortController();
 
-    //         baseURL: "http://localhost:8000/api/v1/medias",
+    //         baseURL: "http://localhost:8000/api/v1/medias/",
     const axiosInstance = axios.create({
-        baseURL : "https://kalliston-api.onrender.com/api/v1/"
+        baseURL : "https://kalliston-api.onrender.com/api/v1/medias/"
     });
 
     useEffect(() => {
