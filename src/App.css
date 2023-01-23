@@ -1641,3 +1641,14 @@ input:focus, select:focus, textarea:focus, button:focus {
   overflow-y: auto;
   outline: 0;
 }
+
+.close_div{
+  background-color: #fff;
+  border-radius: 50%;
+  right: 15px;
+  top: 3px;
+}
+
+.err_msg{
+  color: red;
+}

@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import authHeader from './auth-header';
 
-const baseUrl = "https://kalliston-api.onrender.com/api/v1/users/";
-// const baseUrl = 'http://localhost:8000/api/v1/users/';
+// const baseUrl = "https://kalliston-api.onrender.com/api/v1/users/";
+const baseUrl = 'http://localhost:8000/api/v1/users/';
 
 export const coachApi = createApi({
     reducerPath: 'coachApi',
@@ -77,6 +77,21 @@ export const coachApi = createApi({
             }),
             invalidatesTags: ['Coach'],
         }),
+        updateCoachCoverImage: builder.mutation({
+            query: (data) => ({
+                url: `coach-update-cover-image`,
+                method: 'post',
+                body: { data },
+            }),
+            invalidatesTags: ['Coach'],
+        }),
+        deleteCoachCoverImage: builder.mutation({
+            query: () => ({
+                url: `coach-delete-cover-image`,
+                method: 'delete',
+            }),
+            invalidatesTags: ['Coach'],
+        }),
         deleteCoach: builder.mutation({
             query: (id) => ({
             url: `delete-coach/${id}`,
@@ -87,4 +102,4 @@ export const coachApi = createApi({
     }),
 });
   
-export const { useGetCoachesQuery, useCreateCoachMutation, useValidateCoachOtpMutation, useGetCoachQuery, useUpdateCoachMutation, useDeleteCoachMutation } = coachApi;
+export const { useGetCoachesQuery, useCreateCoachMutation, useValidateCoachOtpMutation, useGetCoachQuery, useUpdateCoachMutation, useDeleteCoachMutation, useUpdateCoachCoverImageMutation, useDeleteCoachCoverImageMutation } = coachApi;
