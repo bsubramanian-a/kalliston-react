@@ -23,6 +23,7 @@ function Package() {
     const { data: medias = [], refetch }:any = useGetMediasQuery(1);
     const [ coachUpdate ]:any = useUpdateCoachMutation();
     const [basic, setBasic] = useState<any>();
+    console.log("packages", packages)
     const [premium, setPremium] = useState<any>();
     const [elite, setElite] = useState<any>();
     console.log("currentUser", currentUser);
@@ -111,7 +112,7 @@ function Package() {
 
                                                 <div className="col col-12 mb-4">
                                                     <div className='d-flex justify-content-between align-items-center'>
-                                                        <h1 className="l-size f-color fw-semibold mb-3">Social Media</h1>
+                                                        <h1 className="l-size f-color fw-semibold mb-0">Social Media</h1>
                                                         <div className='d-flex gap-2'>
                                                             {currentUser?.facebook_link &&
                                                                 <a href={currentUser?.facebook_link} target="_blank"><img src={Facebook} alt="" /></a>
@@ -176,7 +177,7 @@ function Package() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             {isFetching ? 
                                                 <div>Loading...</div>
                                                 :
@@ -190,8 +191,8 @@ function Package() {
                                                                         <p className="f-color fw-medium mb-0 big-font" style={{textTransform: 'capitalize'}}>{basic?.package_type}</p>
                                                                     </div>
                                                                     {basic?.amount && 
-                                                                    <div className="col col-12 col-sm-6 px-2">
-                                                                        <p className="mb-0 f-h f-color">{basic?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                                                    <div className="col col-12 col-sm-6 px-2 text-end">
+                                                                        <p className="mb-0 f-h f-color">{basic?.currency == 'gbp' ? '£' : (basic?.currency == 'euro' ? '€' : '$')}{basic?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
                                                                     </div>}
                                                                 </div>
                                                             </div>
@@ -207,8 +208,8 @@ function Package() {
                                                                         <p className="f-color fw-medium mb-0 big-font" style={{textTransform: 'capitalize'}}>{premium?.package_type}</p>
                                                                     </div>
                                                                     {premium?.amount && 
-                                                                    <div className="col col-12 col-sm-6 px-2">
-                                                                        <p className="mb-0 f-h f-color">{premium?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                                                    <div className="col col-12 col-sm-6 px-2 text-end">
+                                                                        <p className="mb-0 f-h f-color">{premium?.currency == 'gbp' ? '£' : (premium?.currency == 'euro' ? '€' : '$')}{premium?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
                                                                     </div>}
                                                                 </div>
                                                             </div>
@@ -224,8 +225,8 @@ function Package() {
                                                                         <p className="f-color fw-medium mb-0 big-font" style={{textTransform: 'capitalize'}}>{elite?.package_type}</p>
                                                                     </div>
                                                                     {elite?.amount && 
-                                                                    <div className="col col-12 col-sm-6 px-2">
-                                                                        <p className="mb-0 f-h f-color">{elite?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
+                                                                    <div className="col col-12 col-sm-6 px-2 text-end">
+                                                                        <p className="mb-0 f-h f-color">{elite?.currency == 'gbp' ? '£' : (elite?.currency == 'euro' ? '€' : '$')}{elite?.amount}&nbsp;<span className="fw-regular size-font text-black-50">/per month</span></p>
                                                                     </div>}
                                                                 </div>
                                                             </div>
