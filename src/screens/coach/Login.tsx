@@ -116,7 +116,7 @@ function Login() {
             localStorage.setItem("coach", JSON.stringify(res.data.coach));
             localStorage.setItem("accesstoken", JSON.stringify(res.data.token));
             navigate("/coach/dashboard");
-            window.location.reload();                
+            // window.location.reload();                
         }
 
         // dispatch(otp({ email, otp: otpcode }))

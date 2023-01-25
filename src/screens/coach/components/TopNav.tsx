@@ -7,11 +7,13 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import moment from 'moment';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
+import { useGetCoachQuery } from '../../../services/coach-service';
 
 function TopNav() {
 
     const dispatch = useDispatch<any>();
-    const { coach: currentUser, isLoggedIn } = useSelector((state:any) => state.auth);
+    // const { coach: currentUser, isLoggedIn } = useSelector((state:any) => state.auth);
+    const { data: currentUser = []}:any = useGetCoachQuery(1);
     const handleLogout = () => {
         dispatch(logout());     
         navigate('/')         
@@ -19,12 +21,17 @@ function TopNav() {
 
     let navigate = useNavigate();
 
-    if (!isLoggedIn) {
-        return <Navigate to="/" />;
-    }
+    // if (!isLoggedIn) {
+    //     return <Navigate to="/" />;
+    // }
 
-    console.log("current user from topnav");
-    console.log(currentUser);
+    // console.log("current user from topnav");
+    // console.log(currentUser);
+
+    if (localStorage.getItem('coach') == null) {
+        console.log("inside")
+        // return <Navigate to="/coach/login" />;
+    }
 
     return (
         <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar shadow-n overflow-hidden">

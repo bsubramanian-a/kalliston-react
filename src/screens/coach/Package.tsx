@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Publish from '../../assets/img/package-img/publish.svg'
 import Preview from '../../assets/img/package-img/preview.svg'
 import Modify from '../../assets/img/package-img/modify.svg'
-import User from '../../assets/img/package-img/user.svg'
+import User from "../../assets/img/avatar.webp";
 import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
 import { useSelector } from 'react-redux';

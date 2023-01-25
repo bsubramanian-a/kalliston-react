@@ -4,7 +4,7 @@ import LogoMain from '../../assets/img/logo.svg';
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 import { register } from '../../slices/auth';
 
 function Register() {
@@ -63,6 +63,9 @@ function Register() {
                             <div className="col col-12">
                                 <p className="f-color f-h mb-0 text-start">Thank you for your email!</p>
                                 <p className="text-black-50 l-size mb-0 text-start">We will get back to you within 48 working hours</p>
+                                <div style={{textAlign: 'left'}}>
+                                    <Link to={"/coach/login"} className="me-4 l-color l-size">Back to login</Link>
+                                </div>
                             </div>
                             )}
                             {!successful && (

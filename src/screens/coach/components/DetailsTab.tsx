@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Avatar from '../../../assets/img/avatars/avatar1.jpeg'
+import Avatar from "../../../assets/img/avatar.webp";
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
