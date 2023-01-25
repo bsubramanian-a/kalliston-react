@@ -167,7 +167,7 @@ function MediaTab() {
                                         }
                                     </div>
                                 </div>
-                                <div id="preview" className='positon-relative'>
+                                <div id="preview" className='position-relative'>
                                     <h1 className="f-color fw-normal mb-3 l-size"></h1> 
                                     <div className='position-absolute close_div'>
                                         <img src={Close} alt="delete" className='close_img' onClick={() => deleteCoverImage()}/>

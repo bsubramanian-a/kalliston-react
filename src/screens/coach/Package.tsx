@@ -10,6 +10,12 @@ import { useSelector } from 'react-redux';
 import { useGetPackagesQuery } from '../../services/package.service';
 import { useGetCoachQuery, useUpdateCoachMutation } from '../../services/coach-service';
 import { useGetMediasQuery } from '../../services/media-service';
+import Facebook from '../../assets/img/media-icon/facebook.svg'
+import Insta from '../../assets/img/media-icon/insta.svg'
+import TikTok from '../../assets/img/media-icon/tiktok.svg'
+import Twitter from '../../assets/img/media-icon/twitter.svg'
+import LinkedIn from '../../assets/img/media-icon/linkedIn.svg'
+import Web from '../../assets/img/media-icon/web.svg'
 
 function Package() {
     const { data: packages = [], isFetching, isError, error }:any = useGetPackagesQuery(1);
@@ -102,10 +108,42 @@ function Package() {
                           
                                                     <div className="d-flex justify-content-between align-items-center"></div>
                                                 </div>
+
+                                                <div className="col col-12 mb-4">
+                                                    <div className='d-flex justify-content-between align-items-center'>
+                                                        <h1 className="l-size f-color fw-semibold mb-3">Social Media</h1>
+                                                        <div className='d-flex gap-2'>
+                                                            {currentUser?.facebook_link &&
+                                                                <a href={currentUser?.facebook_link} target="_blank"><img src={Facebook} alt="" /></a>
+                                                            }
+
+                                                            {currentUser?.twitter_link &&
+                                                                <a href={currentUser?.twitter_link} target="_blank"><img src={Twitter} alt="" /></a>
+                                                            }
+
+                                                            {currentUser?.instagram_link &&
+                                                                <a href={currentUser?.instagram_link} target="_blank"><img src={Insta} alt="" /></a>
+                                                            }
+
+                                                            {currentUser?.tiktok_link &&
+                                                                <a href={currentUser?.tiktok_link} target="_blank"><img src={TikTok} alt="" /></a>
+                                                            }
+
+                                                            {currentUser?.linkedin_link &&
+                                                                <a href={currentUser?.linkedin_link} target="_blank"><img src={LinkedIn} alt="" /></a>
+                                                            }
+
+                                                            {currentUser?.website_link &&
+                                                                <a href={currentUser?.website_link} target="_blank"><img src={Web} alt="" /></a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
                                                 <div className="col col-12 mb-4">
                                                     <h1 className="l-size f-color fw-semibold mb-3">Media</h1>
                                                     {medias?.length > 0 ? 
-                                                    <div className="row">
+                                                    <div className="row gy-3">
                                                         {medias?.map((media:any) => {
                                                             return(
                                                                 <div className="col col-6 col-md-3 mb-3 mb-md-0">
