@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
 import { useGetCoachQuery } from '../../../services/coach-service';
 import { useUpdateCoachMutation } from '../../../services/coach-service';
+import Modal from './Modal';
 
 function AccountTab() {
     // const { coach: currentUser } = useSelector((state:any) => state.auth);
@@ -46,33 +47,13 @@ function AccountTab() {
         }else{
             setErrorMessage(res?.data?.message);
         }
-
-        // dispatch(coachUpdateProfile({ email, firstname, lastname }))
-        //     .unwrap()
-        //     .then((res: any) => {
-        //         if (res.status == 401) {
-        //             setIsLoading(false);
-        //             setErrorMessage(res.message);
-        //         }
-        //         if (res.status == 200) {
-        //             setIsLoading(false);
-        //             setSuccessMessage(res.message);
-        //         }
-        //         setTimeout(() => {
-        //             setErrorMessage("");
-        //             setSuccessMessage("");
-        //         }, 3000)
-        //     })
-        //     .catch((error:any) => {
-        //         console.log("error", error);
-        //         setIsLoading(false);
-        //         setErrorMessage(error.message);
-        //     });
+        setIsLoading(false);
     };
 
     const handleChange = async(event:any) => {
         setIsLoading(true);
         const fileUploaded = event.target.files[0];
+        console.log("account image", fileUploaded);
 
         setErrorMessage("");
         setSuccessMessage("");
@@ -111,6 +92,7 @@ function AccountTab() {
     return (
         <div className="tab-pane active" role="tabpanel" id="tab-1">
             <div className="card card-s">
+                <Modal/>
                 <div className="card-body">
                     <div className="row mb-4">
                         <div className="col">
@@ -120,12 +102,7 @@ function AccountTab() {
                                     className="img-profile rounded-circle profile_pic"
                                     src={currentUser?.avatar || Avatar}
                                 />
-                                <button
-                                    className="btn btn-primary bCancel text-uppercase btn-profile px-3"
-                                    onClick={handleClick}
-                                >
-                                    Change
-                                </button>
+                               <button className="btn btn-primary bCancel text-uppercase px-3 fw-medium expire-f" type="button" data-bs-toggle="modal" data-bs-target="#modal-1">CHANGE</button>
                             </div>
                         </div>
                      

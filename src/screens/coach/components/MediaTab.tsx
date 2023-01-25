@@ -30,9 +30,10 @@ function MediaTab() {
     const [preview, setPreview] = useState<any>();
 
 
-    // baseURL: "http://localhost:8000/api/v1/",
+
     const axiosInstance = axios.create({
         baseURL : "https://kalliston-api.onrender.com/api/v1/"
+        // baseURL: "http://localhost:8000/api/v1/",
     });
 
     const handleClick = (event:any) => {
@@ -103,7 +104,7 @@ function MediaTab() {
     }
 
     return (
-        <div className="tab-pane" role="tabpanel" id="tab-2">
+        <div className="tab-pane active" role="tabpanel" id="tab-2">
             <div className="card card-s mb-4">
                 <div className="card-body py-4">
                     <div className="pt-1 pb-2 bottomC">

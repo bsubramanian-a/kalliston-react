@@ -1652,3 +1652,11 @@ input:focus, select:focus, textarea:focus, button:focus {
 .err_msg{
   color: red;
 }
+
+.active_tab{
+  font-size: 16px;
+  background-color: #DDD6CD !important;
+  border-color: transparent;
+  border-radius: 4px;
+  box-shadow: none;
+}

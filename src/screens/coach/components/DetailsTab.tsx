@@ -4,15 +4,18 @@ import Avatar from '../../../assets/img/avatars/avatar1.jpeg'
 import { coachUpdateProfile, coachUpdateProfilePic } from '../../../slices/auth';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useGetCoachQuery, useUpdateCoachMutation } from '../../../services/coach-service';
+import Modal from './Modal';
 
 function DetailsTab() {
 
-    const { coach: currentUser } = useSelector((state: any) => state.auth);
+    const { data: currentUser = [], isFetching, isError, error, refetch: refCoach }:any = useGetCoachQuery(1);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch<any>();
     const [errormessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const hiddenFileInput = useRef<any>(null);
+    const [ coachUpdate ]:any = useUpdateCoachMutation();
 
     console.log("current user in details tab", currentUser);
 
@@ -21,44 +24,26 @@ function DetailsTab() {
         firstname: currentUser?.firstname || "",
         lastname: currentUser?.lastname || "",
         category: currentUser?.category || 0,
-        bio: currentUser?.bio || ""
+        bio: currentUser?.bio || "",
     };
-    // const validationSchema = Yup.object().shape({
-    //     email: Yup.string()
-    //         .email("This is not a valid email.")
-    //         .required("This field is required!")
-    // });
 
     const validationSchema = Yup.object().shape({});
 
-
-    const handleUpdate = (formValue: any) => {
+    const handleUpdate = async (formValue: any) => {
         const { email, firstname, lastname, category, bio } = formValue;
         setIsLoading(true);
         setErrorMessage("");
         setSuccessMessage("");
 
-        dispatch(coachUpdateProfile({ email, firstname, lastname, category, bio }))
-            .unwrap()
-            .then((res: any) => {
-                if (res.status == 401) {
-                    setIsLoading(false);
-                    setErrorMessage(res.message);
-                }
-                if (res.status == 200) {
-                    setIsLoading(false);
-                    setSuccessMessage(res.message);
-                }
-                setTimeout(() => {
-                    setErrorMessage("");
-                    setSuccessMessage("");
-                }, 3000)
-            })
-            .catch((error: any) => {
-                console.log("error", error);
-                setIsLoading(false);
-                setErrorMessage(error.message);
-            });
+        const res = await coachUpdate({ email, firstname, lastname, category, bio });
+        console.log("res", res);
+
+        if(res?.data?.status == 200){
+            setSuccessMessage(res?.data?.message);
+        }else{
+            setErrorMessage(res?.data?.message);
+        }
+        setIsLoading(false);
     };
 
     const handleChange = async (event: any) => {
@@ -96,6 +81,8 @@ function DetailsTab() {
         if (hiddenFileInput.current) hiddenFileInput.current.click();
     };
 
+    if(isFetching) return <div>Loading...</div>
+
     return (
         <div className="tab-pane active" role="tabpanel" id="tab-1">
             <div className="card card-s">
@@ -104,7 +91,7 @@ function DetailsTab() {
                         <h1 className="f-color fw-regular f-h">Profile Details</h1>
                     </div>
                     <div className="row my-4">
-
+                        <Modal/>
                         <div className="col col-12">
                             <div className="mb-5">
                                 <div className="row mb-5">
@@ -152,9 +139,9 @@ function DetailsTab() {
                                                     <label className="form-label px-1 d-flex justify-content-center align-items-center t-color t-h">Category</label>
                                                     <div className="dropdown">
                                                         <Field className="btn btn-dropdown dropdown-toggle w-100 p-0 f-color d-flex justify-content-between text-start align-items-center m-drp" name="category" component="select">
-                                                            <option value="0">General Trainer</option>
-                                                            <option value="1">Second Item</option>
-                                                            <option value="2">Third Item</option>
+                                                            <option value="General Trainer">General Trainer</option>
+                                                            <option value="Trainer 1">Trainer 1</option>
+                                                            <option value="Trainer 2">Trainer 2</option>
                                                         </Field>
                                                     </div>                                                    
                                                     {/* <div className="dropdown">

@@ -12,6 +12,7 @@ import Modal from './components/Modal';
 
 
 function Profile() {
+    const [tab, setTab] = useState(1);
 
     return (
         // <div id="page-top">
@@ -64,24 +65,23 @@ function Profile() {
                                     <div>
                                         <ul className="nav nav-tabs flex-column mt-1 border-0 w-25" role="tablist" style={{ float: "left" }}>
                                             <li className="nav-item" role="presentation">
-                                                <Link to={"#tab-1"} className="nav-link active d-flex justify-content-start align-items-center" role="tab" data-bs-toggle="tab">Profile Details</Link>
+                                                <Link to={"#"} className={`nav-link d-flex justify-content-start align-items-center ${tab == 1 && 'active_tab'}`} onClick={() => setTab(1)}>Profile Details</Link>
                                             </li>
                                             <li className="nav-item" role="presentation">
-                                                <Link to={"#tab-2"} className="nav-link d-flex justify-content-start align-items-center" role="tab" data-bs-toggle="tab">Media & Banner</Link>
+                                                <Link to={"#"} className={`nav-link d-flex justify-content-start align-items-center ${tab == 2 && 'active_tab'}`} onClick={() => setTab(2)}>Media & Banner</Link>
                                             </li>
                                             <li className="nav-item" role="presentation">
-                                                <Link to={"#tab-3"} className="nav-link d-flex justify-content-start align-items-center" role="tab" data-bs-toggle="tab">Social Links</Link>
+                                                <Link to={"#"} className={`nav-link d-flex justify-content-start align-items-center ${tab == 3 && 'active_tab'}`} onClick={() => setTab(3)}>Social Links</Link>
                                             </li>
                                         </ul>
                                         <div className="tab-content px-4 w-75" style={{ float: "right" }}>
-                                            <DetailsTab />
-                                            <MediaTab />
-                                            <SocialTab />
+                                            { tab == 1 && <DetailsTab />}
+                                            { tab == 2 && <MediaTab />}
+                                            { tab == 3 && <SocialTab />}
                                         </div>
                                         <a className="border rounded d-inline scroll-to-top" href="#page-top">
                                             <i className="fas fa-angle-up"></i>
                                         </a>
-                                        <Modal />
                                     </div>
                                 </div>
                             </div>

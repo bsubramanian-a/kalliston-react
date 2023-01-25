@@ -8,25 +8,33 @@ import LeftMenu from './components/LeftMenu';
 import TopNav from './components/TopNav';
 import { useSelector } from 'react-redux';
 import { useGetPackagesQuery } from '../../services/package.service';
-import { useGetCoachQuery } from '../../services/coach-service';
+import { useGetCoachQuery, useUpdateCoachMutation } from '../../services/coach-service';
 import { useGetMediasQuery } from '../../services/media-service';
 
 function Package() {
     const { data: packages = [], isFetching, isError, error }:any = useGetPackagesQuery(1);
     const { data: currentUser = []}:any = useGetCoachQuery(1);
-    const { data: medias = [], isLoading, refetch }:any = useGetMediasQuery(1);
+    const { data: medias = [], refetch }:any = useGetMediasQuery(1);
+    const [ coachUpdate ]:any = useUpdateCoachMutation();
     const [basic, setBasic] = useState<any>();
     const [premium, setPremium] = useState<any>();
     const [elite, setElite] = useState<any>();
     console.log("currentUser", currentUser);
-
-    // const { coach: currentUser } = useSelector((state:any) => state.auth);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setBasic(packages.find((cpackage:any) => cpackage.package_type == 'basic'));
         setPremium(packages.find((cpackage:any) => cpackage.package_type == 'premium'));
         setElite(packages.find((cpackage:any) => cpackage.package_type == 'elite'));
-     }, [packages]) 
+     }, [packages]);
+
+    const changeStatus = async() => {
+        setIsLoading(true);
+        const package_status = currentUser?.package_status == 'draft' ? 'published' : 'draft';
+        const res = await coachUpdate({ package_status });
+        console.log("res status update", res);
+        setIsLoading(false);
+    };
 
     return (
         <div id="page-top">
@@ -45,7 +53,11 @@ function Package() {
                                 <div className="col col-12 col-lg-6">
                                     <div className="d-flex justify-content-lg-end align-items-center gap-3">
                                         <div className="px-2 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Preview} /><span className="m-p fw-medium text-uppercase">Preview</span></div>
-                                        <div className="px-3 d-flex justify-content-center align-items-center border-0 n-br p-btn"><img className="me-2" src={Publish} /><span className="m-p fw-medium text-uppercase">Publish</span></div>
+                                        {
+                                            currentUser?.package_status == 'draft' ? 
+                                            <div className="px-2 ll-div d-flex justify-content-center align-items-center n-br"><img className="me-2" src={Publish} /><span className="m-p fw-medium text-uppercase" onClick={changeStatus}>{isLoading ? 'Publishing' : 'Publish'}</span></div> :
+                                            <div className="px-2 ll-div d-flex justify-content-center align-items-center n-br p-btn"><img className="me-2" src={Publish} /><span className="m-p fw-medium text-uppercase">{currentUser?.package_status}</span></div>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -59,12 +71,12 @@ function Package() {
                                                 </div>
                                                 <div className="col">
                                                     <div className="d-flex justify-content-sm-end align-items-center">
-                                                        <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white t-h">Published</span></div>
+                                                        <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white t-h" style={{textTransform: 'capitalize'}}>{currentUser?.package_status}</span></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="position-relative mb-5 pro-cover" style={{backgroundImage: `url(${currentUser?.cover_image})`}}>
+                                        <div className="position-relative mb-5 pro-cover" style={{backgroundImage: `url(${currentUser?.cover_image})`, backgroundSize: 'cover'}}>
                                             <div className="position-absolute" style={{bottom: "-40%", left: "2%"}}><img className="me-3 img-profile rounded-circle profile_pic" src={currentUser?.avatar || User} /><span className="f-color fw-medium big-font">{(currentUser?.firstname || "")  +" "+(currentUser?.lastname || "")}</span></div>
                                         </div>
                                         <div className="card-body pt-4">
@@ -122,7 +134,7 @@ function Package() {
                                                 </div>
                                                 <div className="col col-12 col-sm-6">
                                                     <div className="d-flex justify-content-sm-end align-items-center">
-                                                        <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white t-h">Published</span></div>
+                                                        <div className="px-3 py-1 tag-p d-flex justify-content-center align-items-center rounded-pill"><span className="text-white t-h" style={{textTransform: 'capitalize'}}>{currentUser?.package_status}</span></div>
                                                     </div>
                                                 </div>
                                             </div>
