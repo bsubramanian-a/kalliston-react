@@ -17,17 +17,17 @@ function Clients() {
     const { coach: currentUser } = useSelector((state:any) => state.auth);
     console.log("currentUser",currentUser);
     
-    if (currentUser // 👈 null and undefined check
-    && Object.keys(currentUser).length === 0
-    && Object.getPrototypeOf(currentUser) === Object.prototype) {
-        console.log("coming inside current user");
-        dispatch(logout());
-        return <Navigate to="/coach/login" />;
-    }
+    // if (currentUser // 👈 null and undefined check
+    // && Object.keys(currentUser).length === 0
+    // && Object.getPrototypeOf(currentUser) === Object.prototype) {
+    //     console.log("coming inside current user");
+    //     dispatch(logout());
+    //     return <Navigate to="/coach/login" />;
+    // }
 
-    if (currentUser == null) {
-        return <Navigate to="/coach/login" />;
-    }
+    // if (currentUser == null) {
+    //     return <Navigate to="/coach/login" />;
+    // }
 
     console.log("coming inside cliens");
 
